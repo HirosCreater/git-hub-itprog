@@ -15,7 +15,6 @@ namespace MuseumObserver
         public Form1()
         {
             InitializeComponent();
-            double testForum = 0;
         }
     }
 }
