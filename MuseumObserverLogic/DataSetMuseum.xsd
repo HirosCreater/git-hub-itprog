@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMuseum" targetNamespace="http://tempuri.org/DataSetMuseum.xsd" xmlns:mstns="http://tempuri.org/DataSetMuseum.xsd" xmlns="http://tempuri.org/DataSetMuseum.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MuseumDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MuseumDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MuseumObserverLogic.Properties.Settings.GlobalReference.Default.MuseumDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMuseum" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMuseum" msprop:Generator_UserDSName="DataSetMuseum">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Meacenas" msprop:Generator_TableClassName="MeacenasDataTable" msprop:Generator_TableVarName="tableMeacenas" msprop:Generator_TablePropName="Meacenas" msprop:Generator_RowDeletingName="MeacenasRowDeleting" msprop:Generator_RowChangingName="MeacenasRowChanging" msprop:Generator_RowEvHandlerName="MeacenasRowChangeEventHandler" msprop:Generator_RowDeletedName="MeacenasRowDeleted" msprop:Generator_UserTableName="Meacenas" msprop:Generator_RowChangedName="MeacenasRowChanged" msprop:Generator_RowEvArgName="MeacenasRowChangeEvent" msprop:Generator_RowClassName="MeacenasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Museum" msprop:Generator_TableClassName="MuseumDataTable" msprop:Generator_TableVarName="tableMuseum" msprop:Generator_TablePropName="Museum" msprop:Generator_RowDeletingName="MuseumRowDeleting" msprop:Generator_RowChangingName="MuseumRowChanging" msprop:Generator_RowEvHandlerName="MuseumRowChangeEventHandler" msprop:Generator_RowDeletedName="MuseumRowDeleted" msprop:Generator_UserTableName="Museum" msprop:Generator_RowChangedName="MuseumRowChanged" msprop:Generator_RowEvArgName="MuseumRowChangeEvent" msprop:Generator_RowClassName="MuseumRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Category" msprop:Generator_TableClassName="CategoryDataTable" msprop:Generator_TableVarName="tableCategory" msprop:Generator_TablePropName="Category" msprop:Generator_RowDeletingName="CategoryRowDeleting" msprop:Generator_RowChangingName="CategoryRowChanging" msprop:Generator_RowEvHandlerName="CategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoryRowDeleted" msprop:Generator_UserTableName="Category" msprop:Generator_RowChangedName="CategoryRowChanged" msprop:Generator_RowEvArgName="CategoryRowChangeEvent" msprop:Generator_RowClassName="CategoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Crutch" msprop:Generator_TableClassName="CrutchDataTable" msprop:Generator_TableVarName="tableCrutch" msprop:Generator_TablePropName="Crutch" msprop:Generator_RowDeletingName="CrutchRowDeleting" msprop:Generator_RowChangingName="CrutchRowChanging" msprop:Generator_RowEvHandlerName="CrutchRowChangeEventHandler" msprop:Generator_RowDeletedName="CrutchRowDeleted" msprop:Generator_UserTableName="Crutch" msprop:Generator_RowChangedName="CrutchRowChanged" msprop:Generator_RowEvArgName="CrutchRowChangeEvent" msprop:Generator_RowClassName="CrutchRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="_x005B_From_x005D_" msprop:Generator_ColumnVarNameInTable="_column_From_" msprop:Generator_ColumnPropNameInRow="__From_" msprop:Generator_ColumnPropNameInTable="__From_Column" msprop:Generator_UserColumnName="[From]" type="xs:string" minOccurs="0" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Exhibit" msprop:Generator_TableClassName="ExhibitDataTable" msprop:Generator_TableVarName="tableExhibit" msprop:Generator_TablePropName="Exhibit" msprop:Generator_RowDeletingName="ExhibitRowDeleting" msprop:Generator_RowChangingName="ExhibitRowChanging" msprop:Generator_RowEvHandlerName="ExhibitRowChangeEventHandler" msprop:Generator_RowDeletedName="ExhibitRowDeleted" msprop:Generator_UserTableName="Exhibit" msprop:Generator_RowChangedName="ExhibitRowChanged" msprop:Generator_RowEvArgName="ExhibitRowChangeEvent" msprop:Generator_RowClassName="ExhibitRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msdata:Caption="[From]" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="CategoryID" msdata:Caption="InstanceID" msprop:Generator_ColumnVarNameInTable="columnCategoryID" msprop:Generator_ColumnPropNameInRow="CategoryID" msprop:Generator_ColumnPropNameInTable="CategoryIDColumn" msprop:Generator_UserColumnName="CategoryID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApperanceDate" msprop:Generator_ColumnVarNameInTable="columnApperanceDate" msprop:Generator_ColumnPropNameInRow="ApperanceDate" msprop:Generator_ColumnPropNameInTable="ApperanceDateColumn" msprop:Generator_UserColumnName="ApperanceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_UserColumnName="Photo" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="CrutchID" msprop:Generator_ColumnVarNameInTable="columnCrutchID" msprop:Generator_ColumnPropNameInRow="CrutchID" msprop:Generator_ColumnPropNameInTable="CrutchIDColumn" msprop:Generator_UserColumnName="CrutchID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Exhibition" msprop:Generator_TableClassName="ExhibitionDataTable" msprop:Generator_TableVarName="tableExhibition" msprop:Generator_TablePropName="Exhibition" msprop:Generator_RowDeletingName="ExhibitionRowDeleting" msprop:Generator_RowChangingName="ExhibitionRowChanging" msprop:Generator_RowEvHandlerName="ExhibitionRowChangeEventHandler" msprop:Generator_RowDeletedName="ExhibitionRowDeleted" msprop:Generator_UserTableName="Exhibition" msprop:Generator_RowChangedName="ExhibitionRowChanged" msprop:Generator_RowEvArgName="ExhibitionRowChangeEvent" msprop:Generator_RowClassName="ExhibitionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Start" msprop:Generator_ColumnVarNameInTable="columnStart" msprop:Generator_ColumnPropNameInRow="Start" msprop:Generator_ColumnPropNameInTable="StartColumn" msprop:Generator_UserColumnName="Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="_x005B_End_x005D_" msprop:Generator_ColumnVarNameInTable="_column_End_" msprop:Generator_ColumnPropNameInRow="__End_" msprop:Generator_ColumnPropNameInTable="__End_Column" msprop:Generator_UserColumnName="[End]" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShowroomID" msprop:Generator_ColumnVarNameInTable="columnShowroomID" msprop:Generator_ColumnPropNameInRow="ShowroomID" msprop:Generator_ColumnPropNameInTable="ShowroomIDColumn" msprop:Generator_UserColumnName="ShowroomID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Exhibit-Exhibition" msprop:Generator_TableClassName="_Exhibit_ExhibitionDataTable" msprop:Generator_TableVarName="_tableExhibit_Exhibition" msprop:Generator_TablePropName="_Exhibit_Exhibition" msprop:Generator_RowDeletingName="_Exhibit_ExhibitionRowDeleting" msprop:Generator_RowChangingName="_Exhibit_ExhibitionRowChanging" msprop:Generator_RowEvHandlerName="_Exhibit_ExhibitionRowChangeEventHandler" msprop:Generator_RowDeletedName="_Exhibit_ExhibitionRowDeleted" msprop:Generator_UserTableName="Exhibit-Exhibition" msprop:Generator_RowChangedName="_Exhibit_ExhibitionRowChanged" msprop:Generator_RowEvArgName="_Exhibit_ExhibitionRowChangeEvent" msprop:Generator_RowClassName="_Exhibit_ExhibitionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ExhibitID" msprop:Generator_ColumnVarNameInTable="columnExhibitID" msprop:Generator_ColumnPropNameInRow="ExhibitID" msprop:Generator_ColumnPropNameInTable="ExhibitIDColumn" msprop:Generator_UserColumnName="ExhibitID" type="xs:int" minOccurs="0" />
+              <xs:element name="ExhibitionID" msprop:Generator_ColumnVarNameInTable="columnExhibitionID" msprop:Generator_ColumnPropNameInRow="ExhibitionID" msprop:Generator_ColumnPropNameInTable="ExhibitionIDColumn" msprop:Generator_UserColumnName="ExhibitionID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rent" msprop:Generator_TableClassName="RentDataTable" msprop:Generator_TableVarName="tableRent" msprop:Generator_TablePropName="Rent" msprop:Generator_RowDeletingName="RentRowDeleting" msprop:Generator_RowChangingName="RentRowChanging" msprop:Generator_RowEvHandlerName="RentRowChangeEventHandler" msprop:Generator_RowDeletedName="RentRowDeleted" msprop:Generator_UserTableName="Rent" msprop:Generator_RowChangedName="RentRowChanged" msprop:Generator_RowEvArgName="RentRowChangeEvent" msprop:Generator_RowClassName="RentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ExhibitID" msprop:Generator_ColumnVarNameInTable="columnExhibitID" msprop:Generator_ColumnPropNameInRow="ExhibitID" msprop:Generator_ColumnPropNameInTable="ExhibitIDColumn" msprop:Generator_UserColumnName="ExhibitID" type="xs:int" minOccurs="0" />
+              <xs:element name="MuseumID" msprop:Generator_ColumnVarNameInTable="columnMuseumID" msprop:Generator_ColumnPropNameInRow="MuseumID" msprop:Generator_ColumnPropNameInTable="MuseumIDColumn" msprop:Generator_UserColumnName="MuseumID" type="xs:int" minOccurs="0" />
+              <xs:element name="Start" msprop:Generator_ColumnVarNameInTable="columnStart" msprop:Generator_ColumnPropNameInRow="Start" msprop:Generator_ColumnPropNameInTable="StartColumn" msprop:Generator_UserColumnName="Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="_x005B_End_x005D_" msprop:Generator_ColumnVarNameInTable="_column_End_" msprop:Generator_ColumnPropNameInRow="__End_" msprop:Generator_ColumnPropNameInTable="__End_Column" msprop:Generator_UserColumnName="[End]" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Restoration" msprop:Generator_TableClassName="RestorationDataTable" msprop:Generator_TableVarName="tableRestoration" msprop:Generator_TablePropName="Restoration" msprop:Generator_RowDeletingName="RestorationRowDeleting" msprop:Generator_RowChangingName="RestorationRowChanging" msprop:Generator_RowEvHandlerName="RestorationRowChangeEventHandler" msprop:Generator_RowDeletedName="RestorationRowDeleted" msprop:Generator_UserTableName="Restoration" msprop:Generator_RowChangedName="RestorationRowChanged" msprop:Generator_RowEvArgName="RestorationRowChangeEvent" msprop:Generator_RowClassName="RestorationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ExhibitID" msprop:Generator_ColumnVarNameInTable="columnExhibitID" msprop:Generator_ColumnPropNameInRow="ExhibitID" msprop:Generator_ColumnPropNameInTable="ExhibitIDColumn" msprop:Generator_UserColumnName="ExhibitID" type="xs:int" minOccurs="0" />
+              <xs:element name="RestorerID" msprop:Generator_ColumnVarNameInTable="columnRestorerID" msprop:Generator_ColumnPropNameInRow="RestorerID" msprop:Generator_ColumnPropNameInTable="RestorerIDColumn" msprop:Generator_UserColumnName="RestorerID" type="xs:int" minOccurs="0" />
+              <xs:element name="Start" msprop:Generator_ColumnVarNameInTable="columnStart" msprop:Generator_ColumnPropNameInRow="Start" msprop:Generator_ColumnPropNameInTable="StartColumn" msprop:Generator_UserColumnName="Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="_x005B_End_x005D_" msprop:Generator_ColumnVarNameInTable="_column_End_" msprop:Generator_ColumnPropNameInRow="__End_" msprop:Generator_ColumnPropNameInTable="__End_Column" msprop:Generator_UserColumnName="[End]" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_UserColumnName="Photo" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Restorer" msprop:Generator_TableClassName="RestorerDataTable" msprop:Generator_TableVarName="tableRestorer" msprop:Generator_TablePropName="Restorer" msprop:Generator_RowDeletingName="RestorerRowDeleting" msprop:Generator_RowChangingName="RestorerRowChanging" msprop:Generator_RowEvHandlerName="RestorerRowChangeEventHandler" msprop:Generator_RowDeletedName="RestorerRowDeleted" msprop:Generator_UserTableName="Restorer" msprop:Generator_RowChangedName="RestorerRowChanged" msprop:Generator_RowEvArgName="RestorerRowChangeEvent" msprop:Generator_RowClassName="RestorerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Showroom" msprop:Generator_TableClassName="ShowroomDataTable" msprop:Generator_TableVarName="tableShowroom" msprop:Generator_TablePropName="Showroom" msprop:Generator_RowDeletingName="ShowroomRowDeleting" msprop:Generator_RowChangingName="ShowroomRowChanging" msprop:Generator_RowEvHandlerName="ShowroomRowChangeEventHandler" msprop:Generator_RowDeletedName="ShowroomRowDeleted" msprop:Generator_UserTableName="Showroom" msprop:Generator_RowChangedName="ShowroomRowChanged" msprop:Generator_RowEvArgName="ShowroomRowChangeEvent" msprop:Generator_RowClassName="ShowroomRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="MeacenasKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Meacenas" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="MuseumKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Museum" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="CategoryKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Category" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="CrutchKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Crutch" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ExhibitKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Exhibit" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ExhibitionKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Exhibition" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Exhibit-ExhibitionKey">
+      <xs:selector xpath=".//mstns:Exhibit-Exhibition" />
+      <xs:field xpath="mstns:ExhibitID" />
+      <xs:field xpath="mstns:ExhibitionID" />
+    </xs:unique>
+    <xs:unique name="RentKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Rent" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="RestorationKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Restoration" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="RestorerKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Restorer" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ShowroomKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Showroom" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Museum_Rent" msdata:parent="Museum" msdata:child="Rent" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Rent" msprop:Generator_ChildPropName="GetRentRows" msprop:Generator_UserRelationName="Museum_Rent" msprop:Generator_ParentPropName="MuseumRow" msprop:Generator_RelationVarName="relationMuseum_Rent" msprop:Generator_UserParentTable="Museum" />
+      <msdata:Relationship name="Exhibit_Rent" msdata:parent="Exhibit" msdata:child="Rent" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Rent" msprop:Generator_ChildPropName="GetRentRows" msprop:Generator_UserRelationName="Exhibit_Rent" msprop:Generator_ParentPropName="ExhibitRow" msprop:Generator_RelationVarName="relationExhibit_Rent" msprop:Generator_UserParentTable="Exhibit" />
+      <msdata:Relationship name="Restorer_Restoration" msdata:parent="Restorer" msdata:child="Restoration" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Restoration" msprop:Generator_ChildPropName="GetRestorationRows" msprop:Generator_UserRelationName="Restorer_Restoration" msprop:Generator_RelationVarName="relationRestorer_Restoration" msprop:Generator_UserParentTable="Restorer" msprop:Generator_ParentPropName="RestorerRow" />
+      <msdata:Relationship name="Exhibit_Restoration" msdata:parent="Exhibit" msdata:child="Restoration" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Restoration" msprop:Generator_ChildPropName="GetRestorationRows" msprop:Generator_UserRelationName="Exhibit_Restoration" msprop:Generator_ParentPropName="ExhibitRow" msprop:Generator_RelationVarName="relationExhibit_Restoration" msprop:Generator_UserParentTable="Exhibit" />
+      <msdata:Relationship name="Crutch_Exhibit" msdata:parent="Crutch" msdata:child="Exhibit" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Exhibit" msprop:Generator_ChildPropName="GetExhibitRows" msprop:Generator_UserRelationName="Crutch_Exhibit" msprop:Generator_ParentPropName="CrutchRow" msprop:Generator_RelationVarName="relationCrutch_Exhibit" msprop:Generator_UserParentTable="Crutch" />
+      <msdata:Relationship name="Category_Exhibit" msdata:parent="Category" msdata:child="Exhibit" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Exhibit" msprop:Generator_ChildPropName="GetExhibitRows" msprop:Generator_UserRelationName="Category_Exhibit" msprop:Generator_ParentPropName="CategoryRow" msprop:Generator_RelationVarName="relationCategory_Exhibit" msprop:Generator_UserParentTable="Category" />
+      <msdata:Relationship name="Exhibit_Exhibit-Exhibition" msdata:parent="Exhibit" msdata:child="Exhibit-Exhibition" msdata:parentkey="ID" msdata:childkey="ExhibitID" msprop:Generator_UserChildTable="Exhibit-Exhibition" msprop:Generator_ChildPropName="_GetExhibit_ExhibitionRows" msprop:Generator_UserRelationName="Exhibit_Exhibit-Exhibition" msprop:Generator_ParentPropName="ExhibitRow" msprop:Generator_RelationVarName="_relationExhibit_Exhibit_Exhibition" msprop:Generator_UserParentTable="Exhibit" />
+      <msdata:Relationship name="Showroom_Exhibition" msdata:parent="Showroom" msdata:child="Exhibition" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="Exhibition" msprop:Generator_ChildPropName="GetExhibitionRows" msprop:Generator_UserRelationName="Showroom_Exhibition" msprop:Generator_RelationVarName="relationShowroom_Exhibition" msprop:Generator_UserParentTable="Showroom" msprop:Generator_ParentPropName="ShowroomRow" />
+      <msdata:Relationship name="Exhibition_Exhibit-Exhibition" msdata:parent="Exhibition" msdata:child="Exhibit-Exhibition" msdata:parentkey="ID" msdata:childkey="ExhibitionID" msprop:Generator_UserChildTable="Exhibit-Exhibition" msprop:Generator_ChildPropName="_GetExhibit_ExhibitionRows" msprop:Generator_UserRelationName="Exhibition_Exhibit-Exhibition" msprop:Generator_ParentPropName="ExhibitionRow" msprop:Generator_RelationVarName="_relationExhibition_Exhibit_Exhibition" msprop:Generator_UserParentTable="Exhibition" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

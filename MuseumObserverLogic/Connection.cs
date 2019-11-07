@@ -13,7 +13,7 @@ namespace MuseumObserverLogic
 
         public Connection()
         {
-            var connectionString = @"Data Source = (local)\SQLEXPRESS; Initial Catalog = MuseumDB; Integrated Security = True";
+            var connectionString = @"Data Source = (local)\SQLEXPRESS;Initial Catalog=MuseumDB;Integrated Security=True";
             Conn = new SqlConnection(connectionString);
         }
         public void Open() { Conn.Open(); }
