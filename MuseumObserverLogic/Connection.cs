@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace MuseumObserverLogic
 {
-    //test
-    //one more test
     class Connection
     {
         private System.Data.SqlClient.SqlConnection Conn;

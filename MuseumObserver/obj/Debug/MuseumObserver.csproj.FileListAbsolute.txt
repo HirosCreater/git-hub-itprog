@@ -1,8 +1,0 @@
-E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserver.exe.config
-E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserver.exe
-E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserver.pdb
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csprojAssemblyReference.cache
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Properties.Resources.resources
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csproj.GenerateResource.cache
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.exe
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.pdb
