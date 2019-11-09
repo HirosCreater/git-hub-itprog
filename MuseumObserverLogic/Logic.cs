@@ -1,9 +1,4 @@
 ﻿using MuseumObserverLogic.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MuseumObserverLogic
 {
@@ -85,7 +80,7 @@ namespace MuseumObserverLogic
                 }
                 return result;
             }
-            public bool setShowroom(DataSetMuseum dataSet)
+            public bool setCharacteristics(DataSetMuseum dataSet)
             {
                 bool result = false;
                 Connection connection = new Connection();
@@ -112,7 +107,6 @@ namespace MuseumObserverLogic
                 }
                 return result;
             }
-
         }
     }
 }
