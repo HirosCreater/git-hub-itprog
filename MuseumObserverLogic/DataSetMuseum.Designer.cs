@@ -46,9 +46,9 @@ namespace MuseumObserverLogic {
         
         private ShowroomDataTable tableShowroom;
         
-        private global::System.Data.DataRelation relationMuseum_Rent;
+        private global::System.Data.DataRelation _relationExhibit_Exhibit_Exhibition;
         
-        private global::System.Data.DataRelation relationExhibit_Rent;
+        private global::System.Data.DataRelation _relationExhibition_Exhibit_Exhibition;
         
         private global::System.Data.DataRelation relationRestorer_Restoration;
         
@@ -58,11 +58,11 @@ namespace MuseumObserverLogic {
         
         private global::System.Data.DataRelation relationCategory_Exhibit;
         
-        private global::System.Data.DataRelation _relationExhibit_Exhibit_Exhibition;
-        
         private global::System.Data.DataRelation relationShowroom_Exhibition;
         
-        private global::System.Data.DataRelation _relationExhibition_Exhibit_Exhibition;
+        private global::System.Data.DataRelation relationExhibit_Rent;
+        
+        private global::System.Data.DataRelation relationMuseum_Rent;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -452,15 +452,15 @@ namespace MuseumObserverLogic {
                     this.tableShowroom.InitVars();
                 }
             }
-            this.relationMuseum_Rent = this.Relations["Museum_Rent"];
-            this.relationExhibit_Rent = this.Relations["Exhibit_Rent"];
+            this._relationExhibit_Exhibit_Exhibition = this.Relations["Exhibit_Exhibit-Exhibition"];
+            this._relationExhibition_Exhibit_Exhibition = this.Relations["Exhibition_Exhibit-Exhibition"];
             this.relationRestorer_Restoration = this.Relations["Restorer_Restoration"];
             this.relationExhibit_Restoration = this.Relations["Exhibit_Restoration"];
             this.relationCrutch_Exhibit = this.Relations["Crutch_Exhibit"];
             this.relationCategory_Exhibit = this.Relations["Category_Exhibit"];
-            this._relationExhibit_Exhibit_Exhibition = this.Relations["Exhibit_Exhibit-Exhibition"];
             this.relationShowroom_Exhibition = this.Relations["Showroom_Exhibition"];
-            this._relationExhibition_Exhibit_Exhibition = this.Relations["Exhibition_Exhibit-Exhibition"];
+            this.relationExhibit_Rent = this.Relations["Exhibit_Rent"];
+            this.relationMuseum_Rent = this.Relations["Museum_Rent"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -493,42 +493,42 @@ namespace MuseumObserverLogic {
             base.Tables.Add(this.tableRestorer);
             this.tableShowroom = new ShowroomDataTable();
             base.Tables.Add(this.tableShowroom);
-            this.relationMuseum_Rent = new global::System.Data.DataRelation("Museum_Rent", new global::System.Data.DataColumn[] {
-                        this.tableMuseum.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRent.IDColumn}, false);
-            this.Relations.Add(this.relationMuseum_Rent);
-            this.relationExhibit_Rent = new global::System.Data.DataRelation("Exhibit_Rent", new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRent.IDColumn}, false);
-            this.Relations.Add(this.relationExhibit_Rent);
-            this.relationRestorer_Restoration = new global::System.Data.DataRelation("Restorer_Restoration", new global::System.Data.DataColumn[] {
-                        this.tableRestorer.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRestoration.IDColumn}, false);
-            this.Relations.Add(this.relationRestorer_Restoration);
-            this.relationExhibit_Restoration = new global::System.Data.DataRelation("Exhibit_Restoration", new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRestoration.IDColumn}, false);
-            this.Relations.Add(this.relationExhibit_Restoration);
-            this.relationCrutch_Exhibit = new global::System.Data.DataRelation("Crutch_Exhibit", new global::System.Data.DataColumn[] {
-                        this.tableCrutch.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, false);
-            this.Relations.Add(this.relationCrutch_Exhibit);
-            this.relationCategory_Exhibit = new global::System.Data.DataRelation("Category_Exhibit", new global::System.Data.DataColumn[] {
-                        this.tableCategory.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, false);
-            this.Relations.Add(this.relationCategory_Exhibit);
             this._relationExhibit_Exhibit_Exhibition = new global::System.Data.DataRelation("Exhibit_Exhibit-Exhibition", new global::System.Data.DataColumn[] {
                         this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
                         this._tableExhibit_Exhibition.ExhibitIDColumn}, false);
             this.Relations.Add(this._relationExhibit_Exhibit_Exhibition);
-            this.relationShowroom_Exhibition = new global::System.Data.DataRelation("Showroom_Exhibition", new global::System.Data.DataColumn[] {
-                        this.tableShowroom.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableExhibition.IDColumn}, false);
-            this.Relations.Add(this.relationShowroom_Exhibition);
             this._relationExhibition_Exhibit_Exhibition = new global::System.Data.DataRelation("Exhibition_Exhibit-Exhibition", new global::System.Data.DataColumn[] {
                         this.tableExhibition.IDColumn}, new global::System.Data.DataColumn[] {
                         this._tableExhibit_Exhibition.ExhibitionIDColumn}, false);
             this.Relations.Add(this._relationExhibition_Exhibit_Exhibition);
+            this.relationRestorer_Restoration = new global::System.Data.DataRelation("Restorer_Restoration", new global::System.Data.DataColumn[] {
+                        this.tableRestorer.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRestoration.RestorerIDColumn}, false);
+            this.Relations.Add(this.relationRestorer_Restoration);
+            this.relationExhibit_Restoration = new global::System.Data.DataRelation("Exhibit_Restoration", new global::System.Data.DataColumn[] {
+                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRestoration.ExhibitIDColumn}, false);
+            this.Relations.Add(this.relationExhibit_Restoration);
+            this.relationCrutch_Exhibit = new global::System.Data.DataRelation("Crutch_Exhibit", new global::System.Data.DataColumn[] {
+                        this.tableCrutch.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibit.CrutchIDColumn}, false);
+            this.Relations.Add(this.relationCrutch_Exhibit);
+            this.relationCategory_Exhibit = new global::System.Data.DataRelation("Category_Exhibit", new global::System.Data.DataColumn[] {
+                        this.tableCategory.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibit.CategoryIDColumn}, false);
+            this.Relations.Add(this.relationCategory_Exhibit);
+            this.relationShowroom_Exhibition = new global::System.Data.DataRelation("Showroom_Exhibition", new global::System.Data.DataColumn[] {
+                        this.tableShowroom.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibition.ShowroomIDColumn}, false);
+            this.Relations.Add(this.relationShowroom_Exhibition);
+            this.relationExhibit_Rent = new global::System.Data.DataRelation("Exhibit_Rent", new global::System.Data.DataColumn[] {
+                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRent.ExhibitIDColumn}, false);
+            this.Relations.Add(this.relationExhibit_Rent);
+            this.relationMuseum_Rent = new global::System.Data.DataRelation("Museum_Rent", new global::System.Data.DataColumn[] {
+                        this.tableMuseum.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRent.MuseumIDColumn}, false);
+            this.Relations.Add(this.relationMuseum_Rent);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1946,19 +1946,22 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow AddExhibitRow(CrutchRow parentCrutchRowByCrutch_Exhibit, string Name, int CategoryID, System.DateTime CreateDate, System.DateTime ApperanceDate, string Photo, string Description, int CrutchID) {
+            public ExhibitRow AddExhibitRow(int ID, string Name, CategoryRow parentCategoryRowByCategory_Exhibit, System.DateTime CreateDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
                 ExhibitRow rowExhibitRow = ((ExhibitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        ID,
                         Name,
-                        CategoryID,
+                        null,
                         CreateDate,
                         ApperanceDate,
                         Photo,
                         Description,
-                        CrutchID};
+                        null};
+                if ((parentCategoryRowByCategory_Exhibit != null)) {
+                    columnValuesArray[2] = parentCategoryRowByCategory_Exhibit[0];
+                }
                 if ((parentCrutchRowByCrutch_Exhibit != null)) {
-                    columnValuesArray[0] = parentCrutchRowByCrutch_Exhibit[0];
+                    columnValuesArray[7] = parentCrutchRowByCrutch_Exhibit[0];
                 }
                 rowExhibitRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowExhibitRow);
@@ -2277,16 +2280,16 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow AddExhibitionRow(ShowroomRow parentShowroomRowByShowroom_Exhibition, string Name, System.DateTime Start, System.DateTime @__End_, int ShowroomID) {
+            public ExhibitionRow AddExhibitionRow(int ID, string Name, System.DateTime Start, System.DateTime @__End_, ShowroomRow parentShowroomRowByShowroom_Exhibition) {
                 ExhibitionRow rowExhibitionRow = ((ExhibitionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        ID,
                         Name,
                         Start,
                         @__End_,
-                        ShowroomID};
+                        null};
                 if ((parentShowroomRowByShowroom_Exhibition != null)) {
-                    columnValuesArray[0] = parentShowroomRowByShowroom_Exhibition[0];
+                    columnValuesArray[4] = parentShowroomRowByShowroom_Exhibition[0];
                 }
                 rowExhibitionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowExhibitionRow);
@@ -2868,16 +2871,19 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RentRow AddRentRow(MuseumRow parentMuseumRowByMuseum_Rent, int ExhibitID, int MuseumID, System.DateTime Start, System.DateTime @__End_) {
+            public RentRow AddRentRow(int ID, ExhibitRow parentExhibitRowByExhibit_Rent, MuseumRow parentMuseumRowByMuseum_Rent, System.DateTime Start, System.DateTime @__End_) {
                 RentRow rowRentRow = ((RentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ID,
                         null,
-                        ExhibitID,
-                        MuseumID,
+                        null,
                         Start,
                         @__End_};
+                if ((parentExhibitRowByExhibit_Rent != null)) {
+                    columnValuesArray[1] = parentExhibitRowByExhibit_Rent[0];
+                }
                 if ((parentMuseumRowByMuseum_Rent != null)) {
-                    columnValuesArray[0] = parentMuseumRowByMuseum_Rent[0];
+                    columnValuesArray[2] = parentMuseumRowByMuseum_Rent[0];
                 }
                 rowRentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRentRow);
@@ -3207,18 +3213,21 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorationRow AddRestorationRow(RestorerRow parentRestorerRowByRestorer_Restoration, int ExhibitID, int RestorerID, System.DateTime Start, System.DateTime @__End_, string Photo, string Description) {
+            public RestorationRow AddRestorationRow(int ID, ExhibitRow parentExhibitRowByExhibit_Restoration, RestorerRow parentRestorerRowByRestorer_Restoration, System.DateTime Start, System.DateTime @__End_, string Photo, string Description) {
                 RestorationRow rowRestorationRow = ((RestorationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ID,
                         null,
-                        ExhibitID,
-                        RestorerID,
+                        null,
                         Start,
                         @__End_,
                         Photo,
                         Description};
+                if ((parentExhibitRowByExhibit_Restoration != null)) {
+                    columnValuesArray[1] = parentExhibitRowByExhibit_Restoration[0];
+                }
                 if ((parentRestorerRowByRestorer_Restoration != null)) {
-                    columnValuesArray[0] = parentRestorerRowByRestorer_Restoration[0];
+                    columnValuesArray[2] = parentRestorerRowByRestorer_Restoration[0];
                 }
                 rowRestorationRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRestorationRow);
@@ -4473,12 +4482,12 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RentRow[] GetRentRows() {
-                if ((this.Table.ChildRelations["Exhibit_Rent"] == null)) {
-                    return new RentRow[0];
+            public _Exhibit_ExhibitionRow[] _GetExhibit_ExhibitionRows() {
+                if ((this.Table.ChildRelations["Exhibit_Exhibit-Exhibition"] == null)) {
+                    return new _Exhibit_ExhibitionRow[0];
                 }
                 else {
-                    return ((RentRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Rent"])));
+                    return ((_Exhibit_ExhibitionRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Exhibit-Exhibition"])));
                 }
             }
             
@@ -4495,12 +4504,12 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow[] _GetExhibit_ExhibitionRows() {
-                if ((this.Table.ChildRelations["Exhibit_Exhibit-Exhibition"] == null)) {
-                    return new _Exhibit_ExhibitionRow[0];
+            public RentRow[] GetRentRows() {
+                if ((this.Table.ChildRelations["Exhibit_Rent"] == null)) {
+                    return new RentRow[0];
                 }
                 else {
-                    return ((_Exhibit_ExhibitionRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Exhibit-Exhibition"])));
+                    return ((RentRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Rent"])));
                 }
             }
         }
@@ -4849,23 +4858,23 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow MuseumRow {
-                get {
-                    return ((MuseumRow)(this.GetParentRow(this.Table.ParentRelations["Museum_Rent"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Museum_Rent"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ExhibitRow ExhibitRow {
                 get {
                     return ((ExhibitRow)(this.GetParentRow(this.Table.ParentRelations["Exhibit_Rent"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Exhibit_Rent"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MuseumRow MuseumRow {
+                get {
+                    return ((MuseumRow)(this.GetParentRow(this.Table.ParentRelations["Museum_Rent"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Museum_Rent"]);
                 }
             }
             
