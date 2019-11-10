@@ -72,6 +72,12 @@
     <Compile Include="Restoration.Designer.cs">
       <DependentUpon>Restoration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Showroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Showroom.Designer.cs">
+      <DependentUpon>Showroom.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Exhibit.resx">
       <DependentUpon>Exhibit.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="Restoration.resx">
       <DependentUpon>Restoration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Showroom.resx">
+      <DependentUpon>Showroom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
