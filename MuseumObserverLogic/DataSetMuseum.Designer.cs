@@ -24,45 +24,45 @@ namespace MuseumObserverLogic {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSetMuseum : global::System.Data.DataSet {
         
-        private MeacenasDataTable tableMeacenas;
-        
-        private MuseumDataTable tableMuseum;
-        
-        private CategoryDataTable tableCategory;
+        private ExhibitDataTable tableExhibit;
         
         private CrutchDataTable tableCrutch;
         
-        private ExhibitDataTable tableExhibit;
+        private CategoryDataTable tableCategory;
         
-        private ExhibitionDataTable tableExhibition;
-        
-        private _Exhibit_ExhibitionDataTable _tableExhibit_Exhibition;
+        private MuseumDataTable tableMuseum;
         
         private RentDataTable tableRent;
         
+        private RestorerDataTable tableRestorer;
+        
         private RestorationDataTable tableRestoration;
         
-        private RestorerDataTable tableRestorer;
+        private MaecenasDataTable tableMaecenas;
         
         private ShowroomDataTable tableShowroom;
         
-        private global::System.Data.DataRelation _relationExhibit_Exhibit_Exhibition;
+        private ExhibitionDataTable tableExhibition;
         
-        private global::System.Data.DataRelation _relationExhibition_Exhibit_Exhibition;
-        
-        private global::System.Data.DataRelation relationRestorer_Restoration;
-        
-        private global::System.Data.DataRelation relationExhibit_Restoration;
+        private Exhibit_ExhibitionDataTable tableExhibit_Exhibition;
         
         private global::System.Data.DataRelation relationCrutch_Exhibit;
         
         private global::System.Data.DataRelation relationCategory_Exhibit;
         
-        private global::System.Data.DataRelation relationShowroom_Exhibition;
+        private global::System.Data.DataRelation relationMuseum_Rent;
         
         private global::System.Data.DataRelation relationExhibit_Rent;
         
-        private global::System.Data.DataRelation relationMuseum_Rent;
+        private global::System.Data.DataRelation relationRestorer_Restoration;
+        
+        private global::System.Data.DataRelation relationExhibit_Restoration;
+        
+        private global::System.Data.DataRelation relationShowroom_Exhibition;
+        
+        private global::System.Data.DataRelation relationExhibition_Exhibit_Exhibition;
+        
+        private global::System.Data.DataRelation relationExhibit_Exhibit_Exhibition;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -92,38 +92,38 @@ namespace MuseumObserverLogic {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Meacenas"] != null)) {
-                    base.Tables.Add(new MeacenasDataTable(ds.Tables["Meacenas"]));
-                }
-                if ((ds.Tables["Museum"] != null)) {
-                    base.Tables.Add(new MuseumDataTable(ds.Tables["Museum"]));
-                }
-                if ((ds.Tables["Category"] != null)) {
-                    base.Tables.Add(new CategoryDataTable(ds.Tables["Category"]));
+                if ((ds.Tables["Exhibit"] != null)) {
+                    base.Tables.Add(new ExhibitDataTable(ds.Tables["Exhibit"]));
                 }
                 if ((ds.Tables["Crutch"] != null)) {
                     base.Tables.Add(new CrutchDataTable(ds.Tables["Crutch"]));
                 }
-                if ((ds.Tables["Exhibit"] != null)) {
-                    base.Tables.Add(new ExhibitDataTable(ds.Tables["Exhibit"]));
+                if ((ds.Tables["Category"] != null)) {
+                    base.Tables.Add(new CategoryDataTable(ds.Tables["Category"]));
                 }
-                if ((ds.Tables["Exhibition"] != null)) {
-                    base.Tables.Add(new ExhibitionDataTable(ds.Tables["Exhibition"]));
-                }
-                if ((ds.Tables["Exhibit-Exhibition"] != null)) {
-                    base.Tables.Add(new _Exhibit_ExhibitionDataTable(ds.Tables["Exhibit-Exhibition"]));
+                if ((ds.Tables["Museum"] != null)) {
+                    base.Tables.Add(new MuseumDataTable(ds.Tables["Museum"]));
                 }
                 if ((ds.Tables["Rent"] != null)) {
                     base.Tables.Add(new RentDataTable(ds.Tables["Rent"]));
                 }
-                if ((ds.Tables["Restoration"] != null)) {
-                    base.Tables.Add(new RestorationDataTable(ds.Tables["Restoration"]));
-                }
                 if ((ds.Tables["Restorer"] != null)) {
                     base.Tables.Add(new RestorerDataTable(ds.Tables["Restorer"]));
                 }
+                if ((ds.Tables["Restoration"] != null)) {
+                    base.Tables.Add(new RestorationDataTable(ds.Tables["Restoration"]));
+                }
+                if ((ds.Tables["Maecenas"] != null)) {
+                    base.Tables.Add(new MaecenasDataTable(ds.Tables["Maecenas"]));
+                }
                 if ((ds.Tables["Showroom"] != null)) {
                     base.Tables.Add(new ShowroomDataTable(ds.Tables["Showroom"]));
+                }
+                if ((ds.Tables["Exhibition"] != null)) {
+                    base.Tables.Add(new ExhibitionDataTable(ds.Tables["Exhibition"]));
+                }
+                if ((ds.Tables["Exhibit_Exhibition"] != null)) {
+                    base.Tables.Add(new Exhibit_ExhibitionDataTable(ds.Tables["Exhibit_Exhibition"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -147,29 +147,9 @@ namespace MuseumObserverLogic {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MeacenasDataTable Meacenas {
+        public ExhibitDataTable Exhibit {
             get {
-                return this.tableMeacenas;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MuseumDataTable Museum {
-            get {
-                return this.tableMuseum;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CategoryDataTable Category {
-            get {
-                return this.tableCategory;
+                return this.tableExhibit;
             }
         }
         
@@ -187,9 +167,9 @@ namespace MuseumObserverLogic {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ExhibitDataTable Exhibit {
+        public CategoryDataTable Category {
             get {
-                return this.tableExhibit;
+                return this.tableCategory;
             }
         }
         
@@ -197,19 +177,9 @@ namespace MuseumObserverLogic {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ExhibitionDataTable Exhibition {
+        public MuseumDataTable Museum {
             get {
-                return this.tableExhibition;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public _Exhibit_ExhibitionDataTable _Exhibit_Exhibition {
-            get {
-                return this._tableExhibit_Exhibition;
+                return this.tableMuseum;
             }
         }
         
@@ -227,16 +197,6 @@ namespace MuseumObserverLogic {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RestorationDataTable Restoration {
-            get {
-                return this.tableRestoration;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public RestorerDataTable Restorer {
             get {
                 return this.tableRestorer;
@@ -247,9 +207,49 @@ namespace MuseumObserverLogic {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public RestorationDataTable Restoration {
+            get {
+                return this.tableRestoration;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MaecenasDataTable Maecenas {
+            get {
+                return this.tableMaecenas;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public ShowroomDataTable Showroom {
             get {
                 return this.tableShowroom;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ExhibitionDataTable Exhibition {
+            get {
+                return this.tableExhibition;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Exhibit_ExhibitionDataTable Exhibit_Exhibition {
+            get {
+                return this.tableExhibit_Exhibition;
             }
         }
         
@@ -320,38 +320,38 @@ namespace MuseumObserverLogic {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Meacenas"] != null)) {
-                    base.Tables.Add(new MeacenasDataTable(ds.Tables["Meacenas"]));
-                }
-                if ((ds.Tables["Museum"] != null)) {
-                    base.Tables.Add(new MuseumDataTable(ds.Tables["Museum"]));
-                }
-                if ((ds.Tables["Category"] != null)) {
-                    base.Tables.Add(new CategoryDataTable(ds.Tables["Category"]));
+                if ((ds.Tables["Exhibit"] != null)) {
+                    base.Tables.Add(new ExhibitDataTable(ds.Tables["Exhibit"]));
                 }
                 if ((ds.Tables["Crutch"] != null)) {
                     base.Tables.Add(new CrutchDataTable(ds.Tables["Crutch"]));
                 }
-                if ((ds.Tables["Exhibit"] != null)) {
-                    base.Tables.Add(new ExhibitDataTable(ds.Tables["Exhibit"]));
+                if ((ds.Tables["Category"] != null)) {
+                    base.Tables.Add(new CategoryDataTable(ds.Tables["Category"]));
                 }
-                if ((ds.Tables["Exhibition"] != null)) {
-                    base.Tables.Add(new ExhibitionDataTable(ds.Tables["Exhibition"]));
-                }
-                if ((ds.Tables["Exhibit-Exhibition"] != null)) {
-                    base.Tables.Add(new _Exhibit_ExhibitionDataTable(ds.Tables["Exhibit-Exhibition"]));
+                if ((ds.Tables["Museum"] != null)) {
+                    base.Tables.Add(new MuseumDataTable(ds.Tables["Museum"]));
                 }
                 if ((ds.Tables["Rent"] != null)) {
                     base.Tables.Add(new RentDataTable(ds.Tables["Rent"]));
                 }
-                if ((ds.Tables["Restoration"] != null)) {
-                    base.Tables.Add(new RestorationDataTable(ds.Tables["Restoration"]));
-                }
                 if ((ds.Tables["Restorer"] != null)) {
                     base.Tables.Add(new RestorerDataTable(ds.Tables["Restorer"]));
                 }
+                if ((ds.Tables["Restoration"] != null)) {
+                    base.Tables.Add(new RestorationDataTable(ds.Tables["Restoration"]));
+                }
+                if ((ds.Tables["Maecenas"] != null)) {
+                    base.Tables.Add(new MaecenasDataTable(ds.Tables["Maecenas"]));
+                }
                 if ((ds.Tables["Showroom"] != null)) {
                     base.Tables.Add(new ShowroomDataTable(ds.Tables["Showroom"]));
+                }
+                if ((ds.Tables["Exhibition"] != null)) {
+                    base.Tables.Add(new ExhibitionDataTable(ds.Tables["Exhibition"]));
+                }
+                if ((ds.Tables["Exhibit_Exhibition"] != null)) {
+                    base.Tables.Add(new Exhibit_ExhibitionDataTable(ds.Tables["Exhibit_Exhibition"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -386,22 +386,10 @@ namespace MuseumObserverLogic {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableMeacenas = ((MeacenasDataTable)(base.Tables["Meacenas"]));
+            this.tableExhibit = ((ExhibitDataTable)(base.Tables["Exhibit"]));
             if ((initTable == true)) {
-                if ((this.tableMeacenas != null)) {
-                    this.tableMeacenas.InitVars();
-                }
-            }
-            this.tableMuseum = ((MuseumDataTable)(base.Tables["Museum"]));
-            if ((initTable == true)) {
-                if ((this.tableMuseum != null)) {
-                    this.tableMuseum.InitVars();
-                }
-            }
-            this.tableCategory = ((CategoryDataTable)(base.Tables["Category"]));
-            if ((initTable == true)) {
-                if ((this.tableCategory != null)) {
-                    this.tableCategory.InitVars();
+                if ((this.tableExhibit != null)) {
+                    this.tableExhibit.InitVars();
                 }
             }
             this.tableCrutch = ((CrutchDataTable)(base.Tables["Crutch"]));
@@ -410,22 +398,16 @@ namespace MuseumObserverLogic {
                     this.tableCrutch.InitVars();
                 }
             }
-            this.tableExhibit = ((ExhibitDataTable)(base.Tables["Exhibit"]));
+            this.tableCategory = ((CategoryDataTable)(base.Tables["Category"]));
             if ((initTable == true)) {
-                if ((this.tableExhibit != null)) {
-                    this.tableExhibit.InitVars();
+                if ((this.tableCategory != null)) {
+                    this.tableCategory.InitVars();
                 }
             }
-            this.tableExhibition = ((ExhibitionDataTable)(base.Tables["Exhibition"]));
+            this.tableMuseum = ((MuseumDataTable)(base.Tables["Museum"]));
             if ((initTable == true)) {
-                if ((this.tableExhibition != null)) {
-                    this.tableExhibition.InitVars();
-                }
-            }
-            this._tableExhibit_Exhibition = ((_Exhibit_ExhibitionDataTable)(base.Tables["Exhibit-Exhibition"]));
-            if ((initTable == true)) {
-                if ((this._tableExhibit_Exhibition != null)) {
-                    this._tableExhibit_Exhibition.InitVars();
+                if ((this.tableMuseum != null)) {
+                    this.tableMuseum.InitVars();
                 }
             }
             this.tableRent = ((RentDataTable)(base.Tables["Rent"]));
@@ -434,16 +416,22 @@ namespace MuseumObserverLogic {
                     this.tableRent.InitVars();
                 }
             }
+            this.tableRestorer = ((RestorerDataTable)(base.Tables["Restorer"]));
+            if ((initTable == true)) {
+                if ((this.tableRestorer != null)) {
+                    this.tableRestorer.InitVars();
+                }
+            }
             this.tableRestoration = ((RestorationDataTable)(base.Tables["Restoration"]));
             if ((initTable == true)) {
                 if ((this.tableRestoration != null)) {
                     this.tableRestoration.InitVars();
                 }
             }
-            this.tableRestorer = ((RestorerDataTable)(base.Tables["Restorer"]));
+            this.tableMaecenas = ((MaecenasDataTable)(base.Tables["Maecenas"]));
             if ((initTable == true)) {
-                if ((this.tableRestorer != null)) {
-                    this.tableRestorer.InitVars();
+                if ((this.tableMaecenas != null)) {
+                    this.tableMaecenas.InitVars();
                 }
             }
             this.tableShowroom = ((ShowroomDataTable)(base.Tables["Showroom"]));
@@ -452,15 +440,27 @@ namespace MuseumObserverLogic {
                     this.tableShowroom.InitVars();
                 }
             }
-            this._relationExhibit_Exhibit_Exhibition = this.Relations["Exhibit_Exhibit-Exhibition"];
-            this._relationExhibition_Exhibit_Exhibition = this.Relations["Exhibition_Exhibit-Exhibition"];
-            this.relationRestorer_Restoration = this.Relations["Restorer_Restoration"];
-            this.relationExhibit_Restoration = this.Relations["Exhibit_Restoration"];
+            this.tableExhibition = ((ExhibitionDataTable)(base.Tables["Exhibition"]));
+            if ((initTable == true)) {
+                if ((this.tableExhibition != null)) {
+                    this.tableExhibition.InitVars();
+                }
+            }
+            this.tableExhibit_Exhibition = ((Exhibit_ExhibitionDataTable)(base.Tables["Exhibit_Exhibition"]));
+            if ((initTable == true)) {
+                if ((this.tableExhibit_Exhibition != null)) {
+                    this.tableExhibit_Exhibition.InitVars();
+                }
+            }
             this.relationCrutch_Exhibit = this.Relations["Crutch_Exhibit"];
             this.relationCategory_Exhibit = this.Relations["Category_Exhibit"];
-            this.relationShowroom_Exhibition = this.Relations["Showroom_Exhibition"];
-            this.relationExhibit_Rent = this.Relations["Exhibit_Rent"];
             this.relationMuseum_Rent = this.Relations["Museum_Rent"];
+            this.relationExhibit_Rent = this.Relations["Exhibit_Rent"];
+            this.relationRestorer_Restoration = this.Relations["Restorer_Restoration"];
+            this.relationExhibit_Restoration = this.Relations["Exhibit_Restoration"];
+            this.relationShowroom_Exhibition = this.Relations["Showroom_Exhibition"];
+            this.relationExhibition_Exhibit_Exhibition = this.Relations["Exhibition_Exhibit_Exhibition"];
+            this.relationExhibit_Exhibit_Exhibition = this.Relations["Exhibit_Exhibit_Exhibition"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -471,44 +471,28 @@ namespace MuseumObserverLogic {
             this.Namespace = "http://tempuri.org/DataSetMuseum.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableMeacenas = new MeacenasDataTable();
-            base.Tables.Add(this.tableMeacenas);
-            this.tableMuseum = new MuseumDataTable();
-            base.Tables.Add(this.tableMuseum);
-            this.tableCategory = new CategoryDataTable();
-            base.Tables.Add(this.tableCategory);
-            this.tableCrutch = new CrutchDataTable();
-            base.Tables.Add(this.tableCrutch);
             this.tableExhibit = new ExhibitDataTable();
             base.Tables.Add(this.tableExhibit);
-            this.tableExhibition = new ExhibitionDataTable();
-            base.Tables.Add(this.tableExhibition);
-            this._tableExhibit_Exhibition = new _Exhibit_ExhibitionDataTable();
-            base.Tables.Add(this._tableExhibit_Exhibition);
+            this.tableCrutch = new CrutchDataTable();
+            base.Tables.Add(this.tableCrutch);
+            this.tableCategory = new CategoryDataTable();
+            base.Tables.Add(this.tableCategory);
+            this.tableMuseum = new MuseumDataTable();
+            base.Tables.Add(this.tableMuseum);
             this.tableRent = new RentDataTable();
             base.Tables.Add(this.tableRent);
-            this.tableRestoration = new RestorationDataTable();
-            base.Tables.Add(this.tableRestoration);
             this.tableRestorer = new RestorerDataTable();
             base.Tables.Add(this.tableRestorer);
+            this.tableRestoration = new RestorationDataTable();
+            base.Tables.Add(this.tableRestoration);
+            this.tableMaecenas = new MaecenasDataTable();
+            base.Tables.Add(this.tableMaecenas);
             this.tableShowroom = new ShowroomDataTable();
             base.Tables.Add(this.tableShowroom);
-            this._relationExhibit_Exhibit_Exhibition = new global::System.Data.DataRelation("Exhibit_Exhibit-Exhibition", new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
-                        this._tableExhibit_Exhibition.ExhibitIDColumn}, false);
-            this.Relations.Add(this._relationExhibit_Exhibit_Exhibition);
-            this._relationExhibition_Exhibit_Exhibition = new global::System.Data.DataRelation("Exhibition_Exhibit-Exhibition", new global::System.Data.DataColumn[] {
-                        this.tableExhibition.IDColumn}, new global::System.Data.DataColumn[] {
-                        this._tableExhibit_Exhibition.ExhibitionIDColumn}, false);
-            this.Relations.Add(this._relationExhibition_Exhibit_Exhibition);
-            this.relationRestorer_Restoration = new global::System.Data.DataRelation("Restorer_Restoration", new global::System.Data.DataColumn[] {
-                        this.tableRestorer.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRestoration.RestorerIDColumn}, false);
-            this.Relations.Add(this.relationRestorer_Restoration);
-            this.relationExhibit_Restoration = new global::System.Data.DataRelation("Exhibit_Restoration", new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRestoration.ExhibitIDColumn}, false);
-            this.Relations.Add(this.relationExhibit_Restoration);
+            this.tableExhibition = new ExhibitionDataTable();
+            base.Tables.Add(this.tableExhibition);
+            this.tableExhibit_Exhibition = new Exhibit_ExhibitionDataTable();
+            base.Tables.Add(this.tableExhibit_Exhibition);
             this.relationCrutch_Exhibit = new global::System.Data.DataRelation("Crutch_Exhibit", new global::System.Data.DataColumn[] {
                         this.tableCrutch.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableExhibit.CrutchIDColumn}, false);
@@ -517,35 +501,39 @@ namespace MuseumObserverLogic {
                         this.tableCategory.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableExhibit.CategoryIDColumn}, false);
             this.Relations.Add(this.relationCategory_Exhibit);
-            this.relationShowroom_Exhibition = new global::System.Data.DataRelation("Showroom_Exhibition", new global::System.Data.DataColumn[] {
-                        this.tableShowroom.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableExhibition.ShowroomIDColumn}, false);
-            this.Relations.Add(this.relationShowroom_Exhibition);
-            this.relationExhibit_Rent = new global::System.Data.DataRelation("Exhibit_Rent", new global::System.Data.DataColumn[] {
-                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRent.ExhibitIDColumn}, false);
-            this.Relations.Add(this.relationExhibit_Rent);
             this.relationMuseum_Rent = new global::System.Data.DataRelation("Museum_Rent", new global::System.Data.DataColumn[] {
                         this.tableMuseum.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableRent.MuseumIDColumn}, false);
             this.Relations.Add(this.relationMuseum_Rent);
+            this.relationExhibit_Rent = new global::System.Data.DataRelation("Exhibit_Rent", new global::System.Data.DataColumn[] {
+                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRent.ExhibitIDColumn}, false);
+            this.Relations.Add(this.relationExhibit_Rent);
+            this.relationRestorer_Restoration = new global::System.Data.DataRelation("Restorer_Restoration", new global::System.Data.DataColumn[] {
+                        this.tableRestorer.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRestoration.RestorerIDColumn}, false);
+            this.Relations.Add(this.relationRestorer_Restoration);
+            this.relationExhibit_Restoration = new global::System.Data.DataRelation("Exhibit_Restoration", new global::System.Data.DataColumn[] {
+                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRestoration.ExhibitIDColumn}, false);
+            this.Relations.Add(this.relationExhibit_Restoration);
+            this.relationShowroom_Exhibition = new global::System.Data.DataRelation("Showroom_Exhibition", new global::System.Data.DataColumn[] {
+                        this.tableShowroom.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibition.ShowroomIDColumn}, false);
+            this.Relations.Add(this.relationShowroom_Exhibition);
+            this.relationExhibition_Exhibit_Exhibition = new global::System.Data.DataRelation("Exhibition_Exhibit_Exhibition", new global::System.Data.DataColumn[] {
+                        this.tableExhibition.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibit_Exhibition.ExhibitionIDColumn}, false);
+            this.Relations.Add(this.relationExhibition_Exhibit_Exhibition);
+            this.relationExhibit_Exhibit_Exhibition = new global::System.Data.DataRelation("Exhibit_Exhibit_Exhibition", new global::System.Data.DataColumn[] {
+                        this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibit_Exhibition.ExhibitIDColumn}, false);
+            this.Relations.Add(this.relationExhibit_Exhibit_Exhibition);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeMeacenas() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeMuseum() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeCategory() {
+        private bool ShouldSerializeExhibit() {
             return false;
         }
         
@@ -557,19 +545,13 @@ namespace MuseumObserverLogic {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeExhibit() {
+        private bool ShouldSerializeCategory() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeExhibition() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerialize_Exhibit_Exhibition() {
+        private bool ShouldSerializeMuseum() {
             return false;
         }
         
@@ -581,19 +563,37 @@ namespace MuseumObserverLogic {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeRestoration() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeRestorer() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeRestoration() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeMaecenas() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeShowroom() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeExhibition() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeExhibit_Exhibition() {
             return false;
         }
         
@@ -653,325 +653,65 @@ namespace MuseumObserverLogic {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void MeacenasRowChangeEventHandler(object sender, MeacenasRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void MuseumRowChangeEventHandler(object sender, MuseumRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void CategoryRowChangeEventHandler(object sender, CategoryRowChangeEvent e);
+        public delegate void ExhibitRowChangeEventHandler(object sender, ExhibitRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CrutchRowChangeEventHandler(object sender, CrutchRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ExhibitRowChangeEventHandler(object sender, ExhibitRowChangeEvent e);
+        public delegate void CategoryRowChangeEventHandler(object sender, CategoryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ExhibitionRowChangeEventHandler(object sender, ExhibitionRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void _Exhibit_ExhibitionRowChangeEventHandler(object sender, _Exhibit_ExhibitionRowChangeEvent e);
+        public delegate void MuseumRowChangeEventHandler(object sender, MuseumRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void RentRowChangeEventHandler(object sender, RentRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void RestorerRowChangeEventHandler(object sender, RestorerRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void RestorationRowChangeEventHandler(object sender, RestorationRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void RestorerRowChangeEventHandler(object sender, RestorerRowChangeEvent e);
+        public delegate void MaecenasRowChangeEventHandler(object sender, MaecenasRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void ShowroomRowChangeEventHandler(object sender, ShowroomRowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MeacenasDataTable : global::System.Data.TypedTableBase<MeacenasRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasDataTable() {
-                this.TableName = "Meacenas";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal MeacenasDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected MeacenasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasRow this[int index] {
-                get {
-                    return ((MeacenasRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MeacenasRowChangeEventHandler MeacenasRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MeacenasRowChangeEventHandler MeacenasRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MeacenasRowChangeEventHandler MeacenasRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MeacenasRowChangeEventHandler MeacenasRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddMeacenasRow(MeacenasRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasRow AddMeacenasRow(int ID, string Name) {
-                MeacenasRow rowMeacenasRow = ((MeacenasRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ID,
-                        Name};
-                rowMeacenasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMeacenasRow);
-                return rowMeacenasRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasRow FindByID(int ID) {
-                return ((MeacenasRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                MeacenasDataTable cln = ((MeacenasDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new MeacenasDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnName = base.Columns["Name"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("MeacenasKey", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasRow NewMeacenasRow() {
-                return ((MeacenasRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MeacenasRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(MeacenasRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.MeacenasRowChanged != null)) {
-                    this.MeacenasRowChanged(this, new MeacenasRowChangeEvent(((MeacenasRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.MeacenasRowChanging != null)) {
-                    this.MeacenasRowChanging(this, new MeacenasRowChangeEvent(((MeacenasRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.MeacenasRowDeleted != null)) {
-                    this.MeacenasRowDeleted(this, new MeacenasRowChangeEvent(((MeacenasRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.MeacenasRowDeleting != null)) {
-                    this.MeacenasRowDeleting(this, new MeacenasRowChangeEvent(((MeacenasRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveMeacenasRow(MeacenasRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetMuseum ds = new DataSetMuseum();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MeacenasDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void ExhibitionRowChangeEventHandler(object sender, ExhibitionRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Exhibit_ExhibitionRowChangeEventHandler(object sender, Exhibit_ExhibitionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MuseumDataTable : global::System.Data.TypedTableBase<MuseumRow> {
+        public partial class ExhibitDataTable : global::System.Data.TypedTableBase<ExhibitRow> {
             
             private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnName;
             
+            private global::System.Data.DataColumn columnCategoryID;
+            
+            private global::System.Data.DataColumn columnCreatedDate;
+            
+            private global::System.Data.DataColumn columnApperanceDate;
+            
+            private global::System.Data.DataColumn columnPhoto;
+            
+            private global::System.Data.DataColumn columnDescription;
+            
+            private global::System.Data.DataColumn columnCrutchID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumDataTable() {
-                this.TableName = "Museum";
+            public ExhibitDataTable() {
+                this.TableName = "Exhibit";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -979,7 +719,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal MuseumDataTable(global::System.Data.DataTable table) {
+            internal ExhibitDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -996,7 +736,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected MuseumDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ExhibitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1019,6 +759,54 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CategoryIDColumn {
+                get {
+                    return this.columnCategoryID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CreatedDateColumn {
+                get {
+                    return this.columnCreatedDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ApperanceDateColumn {
+                get {
+                    return this.columnApperanceDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PhotoColumn {
+                get {
+                    return this.columnPhoto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CrutchIDColumn {
+                get {
+                    return this.columnCrutchID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1028,53 +816,65 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow this[int index] {
+            public ExhibitRow this[int index] {
                 get {
-                    return ((MuseumRow)(this.Rows[index]));
+                    return ((ExhibitRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MuseumRowChangeEventHandler MuseumRowChanging;
+            public event ExhibitRowChangeEventHandler ExhibitRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MuseumRowChangeEventHandler MuseumRowChanged;
+            public event ExhibitRowChangeEventHandler ExhibitRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MuseumRowChangeEventHandler MuseumRowDeleting;
+            public event ExhibitRowChangeEventHandler ExhibitRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MuseumRowChangeEventHandler MuseumRowDeleted;
+            public event ExhibitRowChangeEventHandler ExhibitRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddMuseumRow(MuseumRow row) {
+            public void AddExhibitRow(ExhibitRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow AddMuseumRow(int ID, string Name) {
-                MuseumRow rowMuseumRow = ((MuseumRow)(this.NewRow()));
+            public ExhibitRow AddExhibitRow(int ID, string Name, CategoryRow parentCategoryRowByCategory_Exhibit, System.DateTime CreatedDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
+                ExhibitRow rowExhibitRow = ((ExhibitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
-                        Name};
-                rowMuseumRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMuseumRow);
-                return rowMuseumRow;
+                        Name,
+                        null,
+                        CreatedDate,
+                        ApperanceDate,
+                        Photo,
+                        Description,
+                        null};
+                if ((parentCategoryRowByCategory_Exhibit != null)) {
+                    columnValuesArray[2] = parentCategoryRowByCategory_Exhibit[0];
+                }
+                if ((parentCrutchRowByCrutch_Exhibit != null)) {
+                    columnValuesArray[7] = parentCrutchRowByCrutch_Exhibit[0];
+                }
+                rowExhibitRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowExhibitRow);
+                return rowExhibitRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow FindByID(int ID) {
-                return ((MuseumRow)(this.Rows.Find(new object[] {
+            public ExhibitRow FindByID(int ID) {
+                return ((ExhibitRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MuseumDataTable cln = ((MuseumDataTable)(base.Clone()));
+                ExhibitDataTable cln = ((ExhibitDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1082,7 +882,7 @@ namespace MuseumObserverLogic {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MuseumDataTable();
+                return new ExhibitDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1090,6 +890,12 @@ namespace MuseumObserverLogic {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnName = base.Columns["Name"];
+                this.columnCategoryID = base.Columns["CategoryID"];
+                this.columnCreatedDate = base.Columns["CreatedDate"];
+                this.columnApperanceDate = base.Columns["ApperanceDate"];
+                this.columnPhoto = base.Columns["Photo"];
+                this.columnDescription = base.Columns["Description"];
+                this.columnCrutchID = base.Columns["CrutchID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1099,36 +905,51 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("MuseumKey", new global::System.Data.DataColumn[] {
+                this.columnCategoryID = new global::System.Data.DataColumn("CategoryID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoryID);
+                this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCreatedDate);
+                this.columnApperanceDate = new global::System.Data.DataColumn("ApperanceDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApperanceDate);
+                this.columnPhoto = new global::System.Data.DataColumn("Photo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhoto);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.columnCrutchID = new global::System.Data.DataColumn("CrutchID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCrutchID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("ExhibitKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnName.MaxLength = 50;
+                this.columnPhoto.MaxLength = 255;
+                this.columnDescription.MaxLength = 10000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow NewMuseumRow() {
-                return ((MuseumRow)(this.NewRow()));
+            public ExhibitRow NewExhibitRow() {
+                return ((ExhibitRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MuseumRow(builder);
+                return new ExhibitRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MuseumRow);
+                return typeof(ExhibitRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MuseumRowChanged != null)) {
-                    this.MuseumRowChanged(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
+                if ((this.ExhibitRowChanged != null)) {
+                    this.ExhibitRowChanged(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1136,8 +957,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MuseumRowChanging != null)) {
-                    this.MuseumRowChanging(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
+                if ((this.ExhibitRowChanging != null)) {
+                    this.ExhibitRowChanging(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1145,8 +966,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MuseumRowDeleted != null)) {
-                    this.MuseumRowDeleted(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
+                if ((this.ExhibitRowDeleted != null)) {
+                    this.ExhibitRowDeleted(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1154,14 +975,14 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MuseumRowDeleting != null)) {
-                    this.MuseumRowDeleting(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
+                if ((this.ExhibitRowDeleting != null)) {
+                    this.ExhibitRowDeleting(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveMuseumRow(MuseumRow row) {
+            public void RemoveExhibitRow(ExhibitRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1188,279 +1009,7 @@ namespace MuseumObserverLogic {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MuseumDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CategoryDataTable : global::System.Data.TypedTableBase<CategoryRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryDataTable() {
-                this.TableName = "Category";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CategoryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected CategoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRow this[int index] {
-                get {
-                    return ((CategoryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoryRowChangeEventHandler CategoryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoryRowChangeEventHandler CategoryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoryRowChangeEventHandler CategoryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event CategoryRowChangeEventHandler CategoryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddCategoryRow(CategoryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRow AddCategoryRow(int ID, string Name) {
-                CategoryRow rowCategoryRow = ((CategoryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        ID,
-                        Name};
-                rowCategoryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCategoryRow);
-                return rowCategoryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRow FindByID(int ID) {
-                return ((CategoryRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                CategoryDataTable cln = ((CategoryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new CategoryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnName = base.Columns["Name"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("CategoryKey", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRow NewCategoryRow() {
-                return ((CategoryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CategoryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(CategoryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.CategoryRowChanged != null)) {
-                    this.CategoryRowChanged(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.CategoryRowChanging != null)) {
-                    this.CategoryRowChanging(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.CategoryRowDeleted != null)) {
-                    this.CategoryRowDeleted(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.CategoryRowDeleting != null)) {
-                    this.CategoryRowDeleting(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveCategoryRow(CategoryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetMuseum ds = new DataSetMuseum();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CategoryDataTable";
+                attribute2.FixedValue = "ExhibitDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1663,6 +1212,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this._column_From_.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1794,28 +1344,16 @@ namespace MuseumObserverLogic {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ExhibitDataTable : global::System.Data.TypedTableBase<ExhibitRow> {
+        public partial class CategoryDataTable : global::System.Data.TypedTableBase<CategoryRow> {
             
             private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnCategoryID;
-            
-            private global::System.Data.DataColumn columnCreateDate;
-            
-            private global::System.Data.DataColumn columnApperanceDate;
-            
-            private global::System.Data.DataColumn columnPhoto;
-            
-            private global::System.Data.DataColumn columnDescription;
-            
-            private global::System.Data.DataColumn columnCrutchID;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitDataTable() {
-                this.TableName = "Exhibit";
+            public CategoryDataTable() {
+                this.TableName = "Category";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1823,7 +1361,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ExhibitDataTable(global::System.Data.DataTable table) {
+            internal CategoryDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1840,7 +1378,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ExhibitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CategoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1863,54 +1401,6 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CategoryIDColumn {
-                get {
-                    return this.columnCategoryID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CreateDateColumn {
-                get {
-                    return this.columnCreateDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ApperanceDateColumn {
-                get {
-                    return this.columnApperanceDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PhotoColumn {
-                get {
-                    return this.columnPhoto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CrutchIDColumn {
-                get {
-                    return this.columnCrutchID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1920,65 +1410,53 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow this[int index] {
+            public CategoryRow this[int index] {
                 get {
-                    return ((ExhibitRow)(this.Rows[index]));
+                    return ((CategoryRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitRowChangeEventHandler ExhibitRowChanging;
+            public event CategoryRowChangeEventHandler CategoryRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitRowChangeEventHandler ExhibitRowChanged;
+            public event CategoryRowChangeEventHandler CategoryRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitRowChangeEventHandler ExhibitRowDeleting;
+            public event CategoryRowChangeEventHandler CategoryRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitRowChangeEventHandler ExhibitRowDeleted;
+            public event CategoryRowChangeEventHandler CategoryRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddExhibitRow(ExhibitRow row) {
+            public void AddCategoryRow(CategoryRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow AddExhibitRow(int ID, string Name, CategoryRow parentCategoryRowByCategory_Exhibit, System.DateTime CreateDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
-                ExhibitRow rowExhibitRow = ((ExhibitRow)(this.NewRow()));
+            public CategoryRow AddCategoryRow(int ID, string Name) {
+                CategoryRow rowCategoryRow = ((CategoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
-                        Name,
-                        null,
-                        CreateDate,
-                        ApperanceDate,
-                        Photo,
-                        Description,
-                        null};
-                if ((parentCategoryRowByCategory_Exhibit != null)) {
-                    columnValuesArray[2] = parentCategoryRowByCategory_Exhibit[0];
-                }
-                if ((parentCrutchRowByCrutch_Exhibit != null)) {
-                    columnValuesArray[7] = parentCrutchRowByCrutch_Exhibit[0];
-                }
-                rowExhibitRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowExhibitRow);
-                return rowExhibitRow;
+                        Name};
+                rowCategoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCategoryRow);
+                return rowCategoryRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow FindByID(int ID) {
-                return ((ExhibitRow)(this.Rows.Find(new object[] {
+            public CategoryRow FindByID(int ID) {
+                return ((CategoryRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ExhibitDataTable cln = ((ExhibitDataTable)(base.Clone()));
+                CategoryDataTable cln = ((CategoryDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1986,7 +1464,7 @@ namespace MuseumObserverLogic {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ExhibitDataTable();
+                return new CategoryDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1994,12 +1472,6 @@ namespace MuseumObserverLogic {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnName = base.Columns["Name"];
-                this.columnCategoryID = base.Columns["CategoryID"];
-                this.columnCreateDate = base.Columns["CreateDate"];
-                this.columnApperanceDate = base.Columns["ApperanceDate"];
-                this.columnPhoto = base.Columns["Photo"];
-                this.columnDescription = base.Columns["Description"];
-                this.columnCrutchID = base.Columns["CrutchID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2009,50 +1481,38 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnCategoryID = new global::System.Data.DataColumn("CategoryID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategoryID);
-                this.columnCreateDate = new global::System.Data.DataColumn("CreateDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreateDate);
-                this.columnApperanceDate = new global::System.Data.DataColumn("ApperanceDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApperanceDate);
-                this.columnPhoto = new global::System.Data.DataColumn("Photo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoto);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.columnCrutchID = new global::System.Data.DataColumn("CrutchID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCrutchID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("ExhibitKey", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("CategoryKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.Caption = "[From]";
-                this.columnCategoryID.Caption = "InstanceID";
+                this.columnName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow NewExhibitRow() {
-                return ((ExhibitRow)(this.NewRow()));
+            public CategoryRow NewCategoryRow() {
+                return ((CategoryRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ExhibitRow(builder);
+                return new CategoryRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ExhibitRow);
+                return typeof(CategoryRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ExhibitRowChanged != null)) {
-                    this.ExhibitRowChanged(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
+                if ((this.CategoryRowChanged != null)) {
+                    this.CategoryRowChanged(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2060,8 +1520,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ExhibitRowChanging != null)) {
-                    this.ExhibitRowChanging(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
+                if ((this.CategoryRowChanging != null)) {
+                    this.CategoryRowChanging(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2069,8 +1529,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ExhibitRowDeleted != null)) {
-                    this.ExhibitRowDeleted(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
+                if ((this.CategoryRowDeleted != null)) {
+                    this.CategoryRowDeleted(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2078,14 +1538,14 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ExhibitRowDeleting != null)) {
-                    this.ExhibitRowDeleting(this, new ExhibitRowChangeEvent(((ExhibitRow)(e.Row)), e.Action));
+                if ((this.CategoryRowDeleting != null)) {
+                    this.CategoryRowDeleting(this, new CategoryRowChangeEvent(((CategoryRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveExhibitRow(ExhibitRow row) {
+            public void RemoveCategoryRow(CategoryRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2112,7 +1572,7 @@ namespace MuseumObserverLogic {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ExhibitDataTable";
+                attribute2.FixedValue = "CategoryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2158,22 +1618,16 @@ namespace MuseumObserverLogic {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ExhibitionDataTable : global::System.Data.TypedTableBase<ExhibitionRow> {
+        public partial class MuseumDataTable : global::System.Data.TypedTableBase<MuseumRow> {
             
             private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnStart;
-            
-            private global::System.Data.DataColumn _column_End_;
-            
-            private global::System.Data.DataColumn columnShowroomID;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionDataTable() {
-                this.TableName = "Exhibition";
+            public MuseumDataTable() {
+                this.TableName = "Museum";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2181,7 +1635,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ExhibitionDataTable(global::System.Data.DataTable table) {
+            internal MuseumDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2198,7 +1652,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ExhibitionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MuseumDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2221,30 +1675,6 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn StartColumn {
-                get {
-                    return this.columnStart;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn @__End_Column {
-                get {
-                    return this._column_End_;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ShowroomIDColumn {
-                get {
-                    return this.columnShowroomID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2254,59 +1684,53 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow this[int index] {
+            public MuseumRow this[int index] {
                 get {
-                    return ((ExhibitionRow)(this.Rows[index]));
+                    return ((MuseumRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitionRowChangeEventHandler ExhibitionRowChanging;
+            public event MuseumRowChangeEventHandler MuseumRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitionRowChangeEventHandler ExhibitionRowChanged;
+            public event MuseumRowChangeEventHandler MuseumRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitionRowChangeEventHandler ExhibitionRowDeleting;
+            public event MuseumRowChangeEventHandler MuseumRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ExhibitionRowChangeEventHandler ExhibitionRowDeleted;
+            public event MuseumRowChangeEventHandler MuseumRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddExhibitionRow(ExhibitionRow row) {
+            public void AddMuseumRow(MuseumRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow AddExhibitionRow(int ID, string Name, System.DateTime Start, System.DateTime @__End_, ShowroomRow parentShowroomRowByShowroom_Exhibition) {
-                ExhibitionRow rowExhibitionRow = ((ExhibitionRow)(this.NewRow()));
+            public MuseumRow AddMuseumRow(int ID, string Name) {
+                MuseumRow rowMuseumRow = ((MuseumRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
-                        Name,
-                        Start,
-                        @__End_,
-                        null};
-                if ((parentShowroomRowByShowroom_Exhibition != null)) {
-                    columnValuesArray[4] = parentShowroomRowByShowroom_Exhibition[0];
-                }
-                rowExhibitionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowExhibitionRow);
-                return rowExhibitionRow;
+                        Name};
+                rowMuseumRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMuseumRow);
+                return rowMuseumRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow FindByID(int ID) {
-                return ((ExhibitionRow)(this.Rows.Find(new object[] {
+            public MuseumRow FindByID(int ID) {
+                return ((MuseumRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ExhibitionDataTable cln = ((ExhibitionDataTable)(base.Clone()));
+                MuseumDataTable cln = ((MuseumDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2314,7 +1738,7 @@ namespace MuseumObserverLogic {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ExhibitionDataTable();
+                return new MuseumDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2322,9 +1746,6 @@ namespace MuseumObserverLogic {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnName = base.Columns["Name"];
-                this.columnStart = base.Columns["Start"];
-                this._column_End_ = base.Columns["[End]"];
-                this.columnShowroomID = base.Columns["ShowroomID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2334,44 +1755,38 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnStart = new global::System.Data.DataColumn("Start", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStart);
-                this._column_End_ = new global::System.Data.DataColumn("[End]", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                this._column_End_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_End_");
-                this._column_End_.ExtendedProperties.Add("Generator_UserColumnName", "[End]");
-                base.Columns.Add(this._column_End_);
-                this.columnShowroomID = new global::System.Data.DataColumn("ShowroomID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShowroomID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("ExhibitionKey", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("MuseumKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnName.Caption = "[From]";
+                this.columnName.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow NewExhibitionRow() {
-                return ((ExhibitionRow)(this.NewRow()));
+            public MuseumRow NewMuseumRow() {
+                return ((MuseumRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ExhibitionRow(builder);
+                return new MuseumRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ExhibitionRow);
+                return typeof(MuseumRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ExhibitionRowChanged != null)) {
-                    this.ExhibitionRowChanged(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                if ((this.MuseumRowChanged != null)) {
+                    this.MuseumRowChanged(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2379,8 +1794,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ExhibitionRowChanging != null)) {
-                    this.ExhibitionRowChanging(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                if ((this.MuseumRowChanging != null)) {
+                    this.MuseumRowChanging(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2388,8 +1803,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ExhibitionRowDeleted != null)) {
-                    this.ExhibitionRowDeleted(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                if ((this.MuseumRowDeleted != null)) {
+                    this.MuseumRowDeleted(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2397,14 +1812,14 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ExhibitionRowDeleting != null)) {
-                    this.ExhibitionRowDeleting(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                if ((this.MuseumRowDeleting != null)) {
+                    this.MuseumRowDeleting(this, new MuseumRowChangeEvent(((MuseumRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveExhibitionRow(ExhibitionRow row) {
+            public void RemoveMuseumRow(MuseumRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2431,279 +1846,7 @@ namespace MuseumObserverLogic {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ExhibitionDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class _Exhibit_ExhibitionDataTable : global::System.Data.TypedTableBase<_Exhibit_ExhibitionRow> {
-            
-            private global::System.Data.DataColumn columnExhibitID;
-            
-            private global::System.Data.DataColumn columnExhibitionID;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionDataTable() {
-                this.TableName = "Exhibit-Exhibition";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal _Exhibit_ExhibitionDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected _Exhibit_ExhibitionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ExhibitIDColumn {
-                get {
-                    return this.columnExhibitID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ExhibitionIDColumn {
-                get {
-                    return this.columnExhibitionID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow this[int index] {
-                get {
-                    return ((_Exhibit_ExhibitionRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event _Exhibit_ExhibitionRowChangeEventHandler _Exhibit_ExhibitionRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event _Exhibit_ExhibitionRowChangeEventHandler _Exhibit_ExhibitionRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event _Exhibit_ExhibitionRowChangeEventHandler _Exhibit_ExhibitionRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event _Exhibit_ExhibitionRowChangeEventHandler _Exhibit_ExhibitionRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Add_Exhibit_ExhibitionRow(_Exhibit_ExhibitionRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow Add_Exhibit_ExhibitionRow(ExhibitRow _parentExhibitRowByExhibit_Exhibit_Exhibition, ExhibitionRow _parentExhibitionRowByExhibition_Exhibit_Exhibition) {
-                _Exhibit_ExhibitionRow row_Exhibit_ExhibitionRow = ((_Exhibit_ExhibitionRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null};
-                if ((_parentExhibitRowByExhibit_Exhibit_Exhibition != null)) {
-                    columnValuesArray[0] = _parentExhibitRowByExhibit_Exhibit_Exhibition[0];
-                }
-                if ((_parentExhibitionRowByExhibition_Exhibit_Exhibition != null)) {
-                    columnValuesArray[1] = _parentExhibitionRowByExhibition_Exhibit_Exhibition[0];
-                }
-                row_Exhibit_ExhibitionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(row_Exhibit_ExhibitionRow);
-                return row_Exhibit_ExhibitionRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                _Exhibit_ExhibitionDataTable cln = ((_Exhibit_ExhibitionDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new _Exhibit_ExhibitionDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnExhibitID = base.Columns["ExhibitID"];
-                this.columnExhibitionID = base.Columns["ExhibitionID"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnExhibitID = new global::System.Data.DataColumn("ExhibitID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExhibitID);
-                this.columnExhibitionID = new global::System.Data.DataColumn("ExhibitionID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExhibitionID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Exhibit-ExhibitionKey", new global::System.Data.DataColumn[] {
-                                this.columnExhibitID,
-                                this.columnExhibitionID}, false));
-                this.ExtendedProperties.Add("Generator_TableVarName", "_tableExhibit_Exhibition");
-                this.ExtendedProperties.Add("Generator_UserTableName", "Exhibit-Exhibition");
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow New_Exhibit_ExhibitionRow() {
-                return ((_Exhibit_ExhibitionRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new _Exhibit_ExhibitionRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(_Exhibit_ExhibitionRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this._Exhibit_ExhibitionRowChanged != null)) {
-                    this._Exhibit_ExhibitionRowChanged(this, new _Exhibit_ExhibitionRowChangeEvent(((_Exhibit_ExhibitionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this._Exhibit_ExhibitionRowChanging != null)) {
-                    this._Exhibit_ExhibitionRowChanging(this, new _Exhibit_ExhibitionRowChangeEvent(((_Exhibit_ExhibitionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this._Exhibit_ExhibitionRowDeleted != null)) {
-                    this._Exhibit_ExhibitionRowDeleted(this, new _Exhibit_ExhibitionRowChangeEvent(((_Exhibit_ExhibitionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this._Exhibit_ExhibitionRowDeleting != null)) {
-                    this._Exhibit_ExhibitionRowDeleting(this, new _Exhibit_ExhibitionRowChangeEvent(((_Exhibit_ExhibitionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Remove_Exhibit_ExhibitionRow(_Exhibit_ExhibitionRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetMuseum ds = new DataSetMuseum();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "_Exhibit_ExhibitionDataTable";
+                attribute2.FixedValue = "MuseumDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2940,6 +2083,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnExhibitID.Caption = "[From]";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3026,6 +2170,279 @@ namespace MuseumObserverLogic {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "RentDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class RestorerDataTable : global::System.Data.TypedTableBase<RestorerRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorerDataTable() {
+                this.TableName = "Restorer";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal RestorerDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected RestorerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorerRow this[int index] {
+                get {
+                    return ((RestorerRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event RestorerRowChangeEventHandler RestorerRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event RestorerRowChangeEventHandler RestorerRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event RestorerRowChangeEventHandler RestorerRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event RestorerRowChangeEventHandler RestorerRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddRestorerRow(RestorerRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorerRow AddRestorerRow(int ID, string Name) {
+                RestorerRow rowRestorerRow = ((RestorerRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        Name};
+                rowRestorerRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRestorerRow);
+                return rowRestorerRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorerRow FindByID(int ID) {
+                return ((RestorerRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                RestorerDataTable cln = ((RestorerDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new RestorerDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnName = base.Columns["Name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("RestorerKey", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
+                this.columnName.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorerRow NewRestorerRow() {
+                return ((RestorerRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new RestorerRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(RestorerRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.RestorerRowChanged != null)) {
+                    this.RestorerRowChanged(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.RestorerRowChanging != null)) {
+                    this.RestorerRowChanging(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.RestorerRowDeleted != null)) {
+                    this.RestorerRowDeleted(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.RestorerRowDeleting != null)) {
+                    this.RestorerRowDeleting(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveRestorerRow(RestorerRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetMuseum ds = new DataSetMuseum();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "RestorerDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3290,6 +2707,8 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnPhoto.MaxLength = 255;
+                this.columnDescription.MaxLength = 10000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3421,7 +2840,7 @@ namespace MuseumObserverLogic {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RestorerDataTable : global::System.Data.TypedTableBase<RestorerRow> {
+        public partial class MaecenasDataTable : global::System.Data.TypedTableBase<MaecenasRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -3429,8 +2848,8 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorerDataTable() {
-                this.TableName = "Restorer";
+            public MaecenasDataTable() {
+                this.TableName = "Maecenas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3438,7 +2857,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RestorerDataTable(global::System.Data.DataTable table) {
+            internal MaecenasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3455,7 +2874,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected RestorerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MaecenasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3487,53 +2906,53 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorerRow this[int index] {
+            public MaecenasRow this[int index] {
                 get {
-                    return ((RestorerRow)(this.Rows[index]));
+                    return ((MaecenasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RestorerRowChangeEventHandler RestorerRowChanging;
+            public event MaecenasRowChangeEventHandler MaecenasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RestorerRowChangeEventHandler RestorerRowChanged;
+            public event MaecenasRowChangeEventHandler MaecenasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RestorerRowChangeEventHandler RestorerRowDeleting;
+            public event MaecenasRowChangeEventHandler MaecenasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RestorerRowChangeEventHandler RestorerRowDeleted;
+            public event MaecenasRowChangeEventHandler MaecenasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddRestorerRow(RestorerRow row) {
+            public void AddMaecenasRow(MaecenasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorerRow AddRestorerRow(int ID, string Name) {
-                RestorerRow rowRestorerRow = ((RestorerRow)(this.NewRow()));
+            public MaecenasRow AddMaecenasRow(int ID, string Name) {
+                MaecenasRow rowMaecenasRow = ((MaecenasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         Name};
-                rowRestorerRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRestorerRow);
-                return rowRestorerRow;
+                rowMaecenasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMaecenasRow);
+                return rowMaecenasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorerRow FindByID(int ID) {
-                return ((RestorerRow)(this.Rows.Find(new object[] {
+            public MaecenasRow FindByID(int ID) {
+                return ((MaecenasRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                RestorerDataTable cln = ((RestorerDataTable)(base.Clone()));
+                MaecenasDataTable cln = ((MaecenasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3541,7 +2960,7 @@ namespace MuseumObserverLogic {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new RestorerDataTable();
+                return new MaecenasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3558,36 +2977,37 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("RestorerKey", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("MaecenasKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnName.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorerRow NewRestorerRow() {
-                return ((RestorerRow)(this.NewRow()));
+            public MaecenasRow NewMaecenasRow() {
+                return ((MaecenasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RestorerRow(builder);
+                return new MaecenasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(RestorerRow);
+                return typeof(MaecenasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.RestorerRowChanged != null)) {
-                    this.RestorerRowChanged(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                if ((this.MaecenasRowChanged != null)) {
+                    this.MaecenasRowChanged(this, new MaecenasRowChangeEvent(((MaecenasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3595,8 +3015,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.RestorerRowChanging != null)) {
-                    this.RestorerRowChanging(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                if ((this.MaecenasRowChanging != null)) {
+                    this.MaecenasRowChanging(this, new MaecenasRowChangeEvent(((MaecenasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3604,8 +3024,8 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.RestorerRowDeleted != null)) {
-                    this.RestorerRowDeleted(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                if ((this.MaecenasRowDeleted != null)) {
+                    this.MaecenasRowDeleted(this, new MaecenasRowChangeEvent(((MaecenasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3613,14 +3033,14 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.RestorerRowDeleting != null)) {
-                    this.RestorerRowDeleting(this, new RestorerRowChangeEvent(((RestorerRow)(e.Row)), e.Action));
+                if ((this.MaecenasRowDeleting != null)) {
+                    this.MaecenasRowDeleting(this, new MaecenasRowChangeEvent(((MaecenasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveRestorerRow(RestorerRow row) {
+            public void RemoveMaecenasRow(MaecenasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3647,7 +3067,7 @@ namespace MuseumObserverLogic {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RestorerDataTable";
+                attribute2.FixedValue = "MaecenasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3834,6 +3254,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
+                this.columnName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3961,279 +3382,592 @@ namespace MuseumObserverLogic {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class MeacenasRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ExhibitionDataTable : global::System.Data.TypedTableBase<ExhibitionRow> {
             
-            private MeacenasDataTable tableMeacenas;
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnStart;
+            
+            private global::System.Data.DataColumn _column_End_;
+            
+            private global::System.Data.DataColumn columnShowroomID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal MeacenasRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableMeacenas = ((MeacenasDataTable)(this.Table));
+            public ExhibitionDataTable() {
+                this.TableName = "Exhibition";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableMeacenas.IDColumn]));
+            internal ExhibitionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
                 }
-                set {
-                    this[this.tableMeacenas.IDColumn] = value;
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected ExhibitionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Name {
+            public global::System.Data.DataColumn NameColumn {
                 get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StartColumn {
+                get {
+                    return this.columnStart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn @__End_Column {
+                get {
+                    return this._column_End_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ShowroomIDColumn {
+                get {
+                    return this.columnShowroomID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRow this[int index] {
+                get {
+                    return ((ExhibitionRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ExhibitionRowChangeEventHandler ExhibitionRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ExhibitionRowChangeEventHandler ExhibitionRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ExhibitionRowChangeEventHandler ExhibitionRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ExhibitionRowChangeEventHandler ExhibitionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddExhibitionRow(ExhibitionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRow AddExhibitionRow(int ID, string Name, System.DateTime Start, System.DateTime @__End_, ShowroomRow parentShowroomRowByShowroom_Exhibition) {
+                ExhibitionRow rowExhibitionRow = ((ExhibitionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        Name,
+                        Start,
+                        @__End_,
+                        null};
+                if ((parentShowroomRowByShowroom_Exhibition != null)) {
+                    columnValuesArray[4] = parentShowroomRowByShowroom_Exhibition[0];
+                }
+                rowExhibitionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowExhibitionRow);
+                return rowExhibitionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRow FindByID(int ID) {
+                return ((ExhibitionRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ExhibitionDataTable cln = ((ExhibitionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ExhibitionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnName = base.Columns["Name"];
+                this.columnStart = base.Columns["Start"];
+                this._column_End_ = base.Columns["[End]"];
+                this.columnShowroomID = base.Columns["ShowroomID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnStart = new global::System.Data.DataColumn("Start", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStart);
+                this._column_End_ = new global::System.Data.DataColumn("[End]", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this._column_End_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_End_");
+                this._column_End_.ExtendedProperties.Add("Generator_UserColumnName", "[End]");
+                base.Columns.Add(this._column_End_);
+                this.columnShowroomID = new global::System.Data.DataColumn("ShowroomID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShowroomID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("ExhibitionKey", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
+                this.columnName.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRow NewExhibitionRow() {
+                return ((ExhibitionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ExhibitionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ExhibitionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ExhibitionRowChanged != null)) {
+                    this.ExhibitionRowChanged(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ExhibitionRowChanging != null)) {
+                    this.ExhibitionRowChanging(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ExhibitionRowDeleted != null)) {
+                    this.ExhibitionRowDeleted(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ExhibitionRowDeleting != null)) {
+                    this.ExhibitionRowDeleting(this, new ExhibitionRowChangeEvent(((ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveExhibitionRow(ExhibitionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetMuseum ds = new DataSetMuseum();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ExhibitionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableMeacenas.NameColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Meacenas\' равно DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableMeacenas.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableMeacenas.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableMeacenas.NameColumn] = global::System.Convert.DBNull;
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class MuseumRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Exhibit_ExhibitionDataTable : global::System.Data.TypedTableBase<Exhibit_ExhibitionRow> {
             
-            private MuseumDataTable tableMuseum;
+            private global::System.Data.DataColumn columnExhibitID;
+            
+            private global::System.Data.DataColumn columnExhibitionID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal MuseumRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableMuseum = ((MuseumDataTable)(this.Table));
+            public Exhibit_ExhibitionDataTable() {
+                this.TableName = "Exhibit_Exhibition";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableMuseum.IDColumn]));
+            internal Exhibit_ExhibitionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
                 }
-                set {
-                    this[this.tableMuseum.IDColumn] = value;
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Exhibit_ExhibitionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ExhibitIDColumn {
+                get {
+                    return this.columnExhibitID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Name {
+            public global::System.Data.DataColumn ExhibitionIDColumn {
                 get {
+                    return this.columnExhibitionID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Exhibit_ExhibitionRow this[int index] {
+                get {
+                    return ((Exhibit_ExhibitionRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Exhibit_ExhibitionRowChangeEventHandler Exhibit_ExhibitionRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Exhibit_ExhibitionRowChangeEventHandler Exhibit_ExhibitionRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Exhibit_ExhibitionRowChangeEventHandler Exhibit_ExhibitionRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Exhibit_ExhibitionRowChangeEventHandler Exhibit_ExhibitionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddExhibit_ExhibitionRow(Exhibit_ExhibitionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Exhibit_ExhibitionRow AddExhibit_ExhibitionRow(ExhibitRow parentExhibitRowByExhibit_Exhibit_Exhibition, ExhibitionRow parentExhibitionRowByExhibition_Exhibit_Exhibition) {
+                Exhibit_ExhibitionRow rowExhibit_ExhibitionRow = ((Exhibit_ExhibitionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null};
+                if ((parentExhibitRowByExhibit_Exhibit_Exhibition != null)) {
+                    columnValuesArray[0] = parentExhibitRowByExhibit_Exhibit_Exhibition[0];
+                }
+                if ((parentExhibitionRowByExhibition_Exhibit_Exhibition != null)) {
+                    columnValuesArray[1] = parentExhibitionRowByExhibition_Exhibit_Exhibition[0];
+                }
+                rowExhibit_ExhibitionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowExhibit_ExhibitionRow);
+                return rowExhibit_ExhibitionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Exhibit_ExhibitionDataTable cln = ((Exhibit_ExhibitionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Exhibit_ExhibitionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnExhibitID = base.Columns["ExhibitID"];
+                this.columnExhibitionID = base.Columns["ExhibitionID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnExhibitID = new global::System.Data.DataColumn("ExhibitID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExhibitID);
+                this.columnExhibitionID = new global::System.Data.DataColumn("ExhibitionID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExhibitionID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Exhibit_ExhibitionKey", new global::System.Data.DataColumn[] {
+                                this.columnExhibitID,
+                                this.columnExhibitionID}, false));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Exhibit_ExhibitionRow NewExhibit_ExhibitionRow() {
+                return ((Exhibit_ExhibitionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Exhibit_ExhibitionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Exhibit_ExhibitionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Exhibit_ExhibitionRowChanged != null)) {
+                    this.Exhibit_ExhibitionRowChanged(this, new Exhibit_ExhibitionRowChangeEvent(((Exhibit_ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Exhibit_ExhibitionRowChanging != null)) {
+                    this.Exhibit_ExhibitionRowChanging(this, new Exhibit_ExhibitionRowChangeEvent(((Exhibit_ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Exhibit_ExhibitionRowDeleted != null)) {
+                    this.Exhibit_ExhibitionRowDeleted(this, new Exhibit_ExhibitionRowChangeEvent(((Exhibit_ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Exhibit_ExhibitionRowDeleting != null)) {
+                    this.Exhibit_ExhibitionRowDeleting(this, new Exhibit_ExhibitionRowChangeEvent(((Exhibit_ExhibitionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveExhibit_ExhibitionRow(Exhibit_ExhibitionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetMuseum ds = new DataSetMuseum();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Exhibit_ExhibitionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableMuseum.NameColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Museum\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMuseum.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableMuseum.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableMuseum.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RentRow[] GetRentRows() {
-                if ((this.Table.ChildRelations["Museum_Rent"] == null)) {
-                    return new RentRow[0];
-                }
-                else {
-                    return ((RentRow[])(base.GetChildRows(this.Table.ChildRelations["Museum_Rent"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class CategoryRow : global::System.Data.DataRow {
-            
-            private CategoryDataTable tableCategory;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CategoryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableCategory = ((CategoryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableCategory.IDColumn]));
-                }
-                set {
-                    this[this.tableCategory.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableCategory.NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Category\' равно DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableCategory.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableCategory.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableCategory.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow[] GetExhibitRows() {
-                if ((this.Table.ChildRelations["Category_Exhibit"] == null)) {
-                    return new ExhibitRow[0];
-                }
-                else {
-                    return ((ExhibitRow[])(base.GetChildRows(this.Table.ChildRelations["Category_Exhibit"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class CrutchRow : global::System.Data.DataRow {
-            
-            private CrutchDataTable tableCrutch;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal CrutchRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableCrutch = ((CrutchDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableCrutch.IDColumn]));
-                }
-                set {
-                    this[this.tableCrutch.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string @__From_ {
-                get {
-                    try {
-                        return ((string)(this[this.tableCrutch.@__From_Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'[From]\' в таблице \'Crutch\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCrutch.@__From_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int InstanceID {
-                get {
-                    try {
-                        return ((int)(this[this.tableCrutch.InstanceIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'InstanceID\' в таблице \'Crutch\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCrutch.InstanceIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is__From_Null() {
-                return this.IsNull(this.tableCrutch.@__From_Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set__From_Null() {
-                this[this.tableCrutch.@__From_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInstanceIDNull() {
-                return this.IsNull(this.tableCrutch.InstanceIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInstanceIDNull() {
-                this[this.tableCrutch.InstanceIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow[] GetExhibitRows() {
-                if ((this.Table.ChildRelations["Crutch_Exhibit"] == null)) {
-                    return new ExhibitRow[0];
-                }
-                else {
-                    return ((ExhibitRow[])(base.GetChildRows(this.Table.ChildRelations["Crutch_Exhibit"])));
-                }
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -4296,17 +4030,17 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime CreateDate {
+            public System.DateTime CreatedDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableExhibit.CreateDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableExhibit.CreatedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CreateDate\' в таблице \'Exhibit\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CreatedDate\' в таблице \'Exhibit\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableExhibit.CreateDateColumn] = value;
+                    this[this.tableExhibit.CreatedDateColumn] = value;
                 }
             }
             
@@ -4422,14 +4156,14 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCreateDateNull() {
-                return this.IsNull(this.tableExhibit.CreateDateColumn);
+            public bool IsCreatedDateNull() {
+                return this.IsNull(this.tableExhibit.CreatedDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCreateDateNull() {
-                this[this.tableExhibit.CreateDateColumn] = global::System.Convert.DBNull;
+            public void SetCreatedDateNull() {
+                this[this.tableExhibit.CreatedDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4482,12 +4216,12 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow[] _GetExhibit_ExhibitionRows() {
-                if ((this.Table.ChildRelations["Exhibit_Exhibit-Exhibition"] == null)) {
-                    return new _Exhibit_ExhibitionRow[0];
+            public RentRow[] GetRentRows() {
+                if ((this.Table.ChildRelations["Exhibit_Rent"] == null)) {
+                    return new RentRow[0];
                 }
                 else {
-                    return ((_Exhibit_ExhibitionRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Exhibit-Exhibition"])));
+                    return ((RentRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Rent"])));
                 }
             }
             
@@ -4504,12 +4238,12 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RentRow[] GetRentRows() {
-                if ((this.Table.ChildRelations["Exhibit_Rent"] == null)) {
-                    return new RentRow[0];
+            public Exhibit_ExhibitionRow[] GetExhibit_ExhibitionRows() {
+                if ((this.Table.ChildRelations["Exhibit_Exhibit_Exhibition"] == null)) {
+                    return new Exhibit_ExhibitionRow[0];
                 }
                 else {
-                    return ((RentRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Rent"])));
+                    return ((Exhibit_ExhibitionRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibit_Exhibit_Exhibition"])));
                 }
             }
         }
@@ -4517,25 +4251,118 @@ namespace MuseumObserverLogic {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ExhibitionRow : global::System.Data.DataRow {
+        public partial class CrutchRow : global::System.Data.DataRow {
             
-            private ExhibitionDataTable tableExhibition;
+            private CrutchDataTable tableCrutch;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ExhibitionRow(global::System.Data.DataRowBuilder rb) : 
+            internal CrutchRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableExhibition = ((ExhibitionDataTable)(this.Table));
+                this.tableCrutch = ((CrutchDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tableExhibition.IDColumn]));
+                    return ((int)(this[this.tableCrutch.IDColumn]));
                 }
                 set {
-                    this[this.tableExhibition.IDColumn] = value;
+                    this[this.tableCrutch.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string @__From_ {
+                get {
+                    try {
+                        return ((string)(this[this.tableCrutch.@__From_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'[From]\' в таблице \'Crutch\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCrutch.@__From_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int InstanceID {
+                get {
+                    try {
+                        return ((int)(this[this.tableCrutch.InstanceIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'InstanceID\' в таблице \'Crutch\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCrutch.InstanceIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is__From_Null() {
+                return this.IsNull(this.tableCrutch.@__From_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set__From_Null() {
+                this[this.tableCrutch.@__From_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsInstanceIDNull() {
+                return this.IsNull(this.tableCrutch.InstanceIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetInstanceIDNull() {
+                this[this.tableCrutch.InstanceIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitRow[] GetExhibitRows() {
+                if ((this.Table.ChildRelations["Crutch_Exhibit"] == null)) {
+                    return new ExhibitRow[0];
+                }
+                else {
+                    return ((ExhibitRow[])(base.GetChildRows(this.Table.ChildRelations["Crutch_Exhibit"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CategoryRow : global::System.Data.DataRow {
+            
+            private CategoryDataTable tableCategory;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CategoryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCategory = ((CategoryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableCategory.IDColumn]));
+                }
+                set {
+                    this[this.tableCategory.IDColumn] = value;
                 }
             }
             
@@ -4544,132 +4371,37 @@ namespace MuseumObserverLogic {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableExhibition.NameColumn]));
+                        return ((string)(this[this.tableCategory.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Exhibition\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Category\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableExhibition.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Start {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableExhibition.StartColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Start\' в таблице \'Exhibition\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableExhibition.StartColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime @__End_ {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableExhibition.@__End_Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'[End]\' в таблице \'Exhibition\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableExhibition.@__End_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ShowroomID {
-                get {
-                    try {
-                        return ((int)(this[this.tableExhibition.ShowroomIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ShowroomID\' в таблице \'Exhibition\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableExhibition.ShowroomIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ShowroomRow ShowroomRow {
-                get {
-                    return ((ShowroomRow)(this.GetParentRow(this.Table.ParentRelations["Showroom_Exhibition"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Showroom_Exhibition"]);
+                    this[this.tableCategory.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableExhibition.NameColumn);
+                return this.IsNull(this.tableCategory.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
-                this[this.tableExhibition.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableCategory.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsStartNull() {
-                return this.IsNull(this.tableExhibition.StartColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetStartNull() {
-                this[this.tableExhibition.StartColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is__End_Null() {
-                return this.IsNull(this.tableExhibition.@__End_Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set__End_Null() {
-                this[this.tableExhibition.@__End_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsShowroomIDNull() {
-                return this.IsNull(this.tableExhibition.ShowroomIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetShowroomIDNull() {
-                this[this.tableExhibition.ShowroomIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow[] _GetExhibit_ExhibitionRows() {
-                if ((this.Table.ChildRelations["Exhibition_Exhibit-Exhibition"] == null)) {
-                    return new _Exhibit_ExhibitionRow[0];
+            public ExhibitRow[] GetExhibitRows() {
+                if ((this.Table.ChildRelations["Category_Exhibit"] == null)) {
+                    return new ExhibitRow[0];
                 }
                 else {
-                    return ((_Exhibit_ExhibitionRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibition_Exhibit-Exhibition"])));
+                    return ((ExhibitRow[])(base.GetChildRows(this.Table.ChildRelations["Category_Exhibit"])));
                 }
             }
         }
@@ -4677,93 +4409,65 @@ namespace MuseumObserverLogic {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class _Exhibit_ExhibitionRow : global::System.Data.DataRow {
+        public partial class MuseumRow : global::System.Data.DataRow {
             
-            private _Exhibit_ExhibitionDataTable _tableExhibit_Exhibition;
+            private MuseumDataTable tableMuseum;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal _Exhibit_ExhibitionRow(global::System.Data.DataRowBuilder rb) : 
+            internal MuseumRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this._tableExhibit_Exhibition = ((_Exhibit_ExhibitionDataTable)(this.Table));
+                this.tableMuseum = ((MuseumDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ExhibitID {
+            public int ID {
+                get {
+                    return ((int)(this[this.tableMuseum.IDColumn]));
+                }
+                set {
+                    this[this.tableMuseum.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
                 get {
                     try {
-                        return ((int)(this[this._tableExhibit_Exhibition.ExhibitIDColumn]));
+                        return ((string)(this[this.tableMuseum.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ExhibitID\' в таблице \'Exhibit-Exhibition\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Museum\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this._tableExhibit_Exhibition.ExhibitIDColumn] = value;
+                    this[this.tableMuseum.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ExhibitionID {
-                get {
-                    try {
-                        return ((int)(this[this._tableExhibit_Exhibition.ExhibitionIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ExhibitionID\' в таблице \'Exhibit-Exhibition\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._tableExhibit_Exhibition.ExhibitionIDColumn] = value;
-                }
+            public bool IsNameNull() {
+                return this.IsNull(this.tableMuseum.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow ExhibitRow {
-                get {
-                    return ((ExhibitRow)(this.GetParentRow(this.Table.ParentRelations["Exhibit_Exhibit-Exhibition"])));
+            public void SetNameNull() {
+                this[this.tableMuseum.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RentRow[] GetRentRows() {
+                if ((this.Table.ChildRelations["Museum_Rent"] == null)) {
+                    return new RentRow[0];
                 }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Exhibit_Exhibit-Exhibition"]);
+                else {
+                    return ((RentRow[])(base.GetChildRows(this.Table.ChildRelations["Museum_Rent"])));
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow ExhibitionRow {
-                get {
-                    return ((ExhibitionRow)(this.GetParentRow(this.Table.ParentRelations["Exhibition_Exhibit-Exhibition"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Exhibition_Exhibit-Exhibition"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsExhibitIDNull() {
-                return this.IsNull(this._tableExhibit_Exhibition.ExhibitIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetExhibitIDNull() {
-                this[this._tableExhibit_Exhibition.ExhibitIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsExhibitionIDNull() {
-                return this.IsNull(this._tableExhibit_Exhibition.ExhibitionIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetExhibitionIDNull() {
-                this[this._tableExhibit_Exhibition.ExhibitionIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4858,23 +4562,23 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow ExhibitRow {
-                get {
-                    return ((ExhibitRow)(this.GetParentRow(this.Table.ParentRelations["Exhibit_Rent"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Exhibit_Rent"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MuseumRow MuseumRow {
                 get {
                     return ((MuseumRow)(this.GetParentRow(this.Table.ParentRelations["Museum_Rent"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Museum_Rent"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitRow ExhibitRow {
+                get {
+                    return ((ExhibitRow)(this.GetParentRow(this.Table.ParentRelations["Exhibit_Rent"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Exhibit_Rent"]);
                 }
             }
             
@@ -4924,6 +4628,71 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set__End_Null() {
                 this[this.tableRent.@__End_Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class RestorerRow : global::System.Data.DataRow {
+            
+            private RestorerDataTable tableRestorer;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal RestorerRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRestorer = ((RestorerDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableRestorer.IDColumn]));
+                }
+                set {
+                    this[this.tableRestorer.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableRestorer.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Restorer\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRestorer.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableRestorer.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableRestorer.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorationRow[] GetRestorationRows() {
+                if ((this.Table.ChildRelations["Restorer_Restoration"] == null)) {
+                    return new RestorationRow[0];
+                }
+                else {
+                    return ((RestorationRow[])(base.GetChildRows(this.Table.ChildRelations["Restorer_Restoration"])));
+                }
             }
         }
         
@@ -5146,25 +4915,25 @@ namespace MuseumObserverLogic {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class RestorerRow : global::System.Data.DataRow {
+        public partial class MaecenasRow : global::System.Data.DataRow {
             
-            private RestorerDataTable tableRestorer;
+            private MaecenasDataTable tableMaecenas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RestorerRow(global::System.Data.DataRowBuilder rb) : 
+            internal MaecenasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableRestorer = ((RestorerDataTable)(this.Table));
+                this.tableMaecenas = ((MaecenasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tableRestorer.IDColumn]));
+                    return ((int)(this[this.tableMaecenas.IDColumn]));
                 }
                 set {
-                    this[this.tableRestorer.IDColumn] = value;
+                    this[this.tableMaecenas.IDColumn] = value;
                 }
             }
             
@@ -5173,38 +4942,27 @@ namespace MuseumObserverLogic {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableRestorer.NameColumn]));
+                        return ((string)(this[this.tableMaecenas.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Restorer\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Maecenas\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRestorer.NameColumn] = value;
+                    this[this.tableMaecenas.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableRestorer.NameColumn);
+                return this.IsNull(this.tableMaecenas.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
-                this[this.tableRestorer.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorationRow[] GetRestorationRows() {
-                if ((this.Table.ChildRelations["Restorer_Restoration"] == null)) {
-                    return new RestorationRow[0];
-                }
-                else {
-                    return ((RestorationRow[])(base.GetChildRows(this.Table.ChildRelations["Restorer_Restoration"])));
-                }
+                this[this.tableMaecenas.NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5274,36 +5032,255 @@ namespace MuseumObserverLogic {
         }
         
         /// <summary>
-        ///Row event argument class
+        ///Represents strongly named DataRow class.
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class MeacenasRowChangeEvent : global::System.EventArgs {
+        public partial class ExhibitionRow : global::System.Data.DataRow {
             
-            private MeacenasRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
+            private ExhibitionDataTable tableExhibition;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasRowChangeEvent(MeacenasRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
+            internal ExhibitionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableExhibition = ((ExhibitionDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MeacenasRow Row {
+            public int ID {
                 get {
-                    return this.eventRow;
+                    return ((int)(this[this.tableExhibition.IDColumn]));
+                }
+                set {
+                    this[this.tableExhibition.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
+            public string Name {
                 get {
-                    return this.eventAction;
+                    try {
+                        return ((string)(this[this.tableExhibition.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Exhibition\' равно DBNull.", e);
+                    }
                 }
+                set {
+                    this[this.tableExhibition.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Start {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableExhibition.StartColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Start\' в таблице \'Exhibition\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExhibition.StartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime @__End_ {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableExhibition.@__End_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'[End]\' в таблице \'Exhibition\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExhibition.@__End_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ShowroomID {
+                get {
+                    try {
+                        return ((int)(this[this.tableExhibition.ShowroomIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ShowroomID\' в таблице \'Exhibition\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExhibition.ShowroomIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ShowroomRow ShowroomRow {
+                get {
+                    return ((ShowroomRow)(this.GetParentRow(this.Table.ParentRelations["Showroom_Exhibition"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Showroom_Exhibition"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableExhibition.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableExhibition.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStartNull() {
+                return this.IsNull(this.tableExhibition.StartColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStartNull() {
+                this[this.tableExhibition.StartColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is__End_Null() {
+                return this.IsNull(this.tableExhibition.@__End_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set__End_Null() {
+                this[this.tableExhibition.@__End_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsShowroomIDNull() {
+                return this.IsNull(this.tableExhibition.ShowroomIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetShowroomIDNull() {
+                this[this.tableExhibition.ShowroomIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Exhibit_ExhibitionRow[] GetExhibit_ExhibitionRows() {
+                if ((this.Table.ChildRelations["Exhibition_Exhibit_Exhibition"] == null)) {
+                    return new Exhibit_ExhibitionRow[0];
+                }
+                else {
+                    return ((Exhibit_ExhibitionRow[])(base.GetChildRows(this.Table.ChildRelations["Exhibition_Exhibit_Exhibition"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Exhibit_ExhibitionRow : global::System.Data.DataRow {
+            
+            private Exhibit_ExhibitionDataTable tableExhibit_Exhibition;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Exhibit_ExhibitionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableExhibit_Exhibition = ((Exhibit_ExhibitionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ExhibitID {
+                get {
+                    try {
+                        return ((int)(this[this.tableExhibit_Exhibition.ExhibitIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ExhibitID\' в таблице \'Exhibit_Exhibition\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExhibit_Exhibition.ExhibitIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ExhibitionID {
+                get {
+                    try {
+                        return ((int)(this[this.tableExhibit_Exhibition.ExhibitionIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ExhibitionID\' в таблице \'Exhibit_Exhibition\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExhibit_Exhibition.ExhibitionIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRow ExhibitionRow {
+                get {
+                    return ((ExhibitionRow)(this.GetParentRow(this.Table.ParentRelations["Exhibition_Exhibit_Exhibition"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Exhibition_Exhibit_Exhibition"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitRow ExhibitRow {
+                get {
+                    return ((ExhibitRow)(this.GetParentRow(this.Table.ParentRelations["Exhibit_Exhibit_Exhibition"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Exhibit_Exhibit_Exhibition"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExhibitIDNull() {
+                return this.IsNull(this.tableExhibit_Exhibition.ExhibitIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExhibitIDNull() {
+                this[this.tableExhibit_Exhibition.ExhibitIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExhibitionIDNull() {
+                return this.IsNull(this.tableExhibit_Exhibition.ExhibitionIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExhibitionIDNull() {
+                this[this.tableExhibit_Exhibition.ExhibitionIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5311,56 +5288,22 @@ namespace MuseumObserverLogic {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class MuseumRowChangeEvent : global::System.EventArgs {
+        public class ExhibitRowChangeEvent : global::System.EventArgs {
             
-            private MuseumRow eventRow;
+            private ExhibitRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRowChangeEvent(MuseumRow row, global::System.Data.DataRowAction action) {
+            public ExhibitRowChangeEvent(ExhibitRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class CategoryRowChangeEvent : global::System.EventArgs {
-            
-            private CategoryRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRowChangeEvent(CategoryRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRow Row {
+            public ExhibitRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5413,22 +5356,22 @@ namespace MuseumObserverLogic {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ExhibitRowChangeEvent : global::System.EventArgs {
+        public class CategoryRowChangeEvent : global::System.EventArgs {
             
-            private ExhibitRow eventRow;
+            private CategoryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRowChangeEvent(ExhibitRow row, global::System.Data.DataRowAction action) {
+            public CategoryRowChangeEvent(CategoryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow Row {
+            public CategoryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5447,56 +5390,22 @@ namespace MuseumObserverLogic {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ExhibitionRowChangeEvent : global::System.EventArgs {
+        public class MuseumRowChangeEvent : global::System.EventArgs {
             
-            private ExhibitionRow eventRow;
+            private MuseumRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRowChangeEvent(ExhibitionRow row, global::System.Data.DataRowAction action) {
+            public MuseumRowChangeEvent(MuseumRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class _Exhibit_ExhibitionRowChangeEvent : global::System.EventArgs {
-            
-            private _Exhibit_ExhibitionRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRowChangeEvent(_Exhibit_ExhibitionRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public _Exhibit_ExhibitionRow Row {
+            public MuseumRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5549,40 +5458,6 @@ namespace MuseumObserverLogic {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class RestorationRowChangeEvent : global::System.EventArgs {
-            
-            private RestorationRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorationRowChangeEvent(RestorationRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorationRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class RestorerRowChangeEvent : global::System.EventArgs {
             
             private RestorerRow eventRow;
@@ -5617,6 +5492,74 @@ namespace MuseumObserverLogic {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class RestorationRowChangeEvent : global::System.EventArgs {
+            
+            private RestorationRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorationRowChangeEvent(RestorationRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public RestorationRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class MaecenasRowChangeEvent : global::System.EventArgs {
+            
+            private MaecenasRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MaecenasRowChangeEvent(MaecenasRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MaecenasRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class ShowroomRowChangeEvent : global::System.EventArgs {
             
             private ShowroomRow eventRow;
@@ -5633,6 +5576,74 @@ namespace MuseumObserverLogic {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ShowroomRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class ExhibitionRowChangeEvent : global::System.EventArgs {
+            
+            private ExhibitionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRowChangeEvent(ExhibitionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ExhibitionRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Exhibit_ExhibitionRowChangeEvent : global::System.EventArgs {
+            
+            private Exhibit_ExhibitionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Exhibit_ExhibitionRowChangeEvent(Exhibit_ExhibitionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Exhibit_ExhibitionRow Row {
                 get {
                     return this.eventRow;
                 }

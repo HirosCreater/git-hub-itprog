@@ -1,8 +1,9 @@
-E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserver.exe.config
-E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserver.exe
-E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserver.pdb
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csprojAssemblyReference.cache
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Properties.Resources.resources
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csproj.GenerateResource.cache
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.exe
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.pdb
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\bin\Debug\MuseumObserver.exe.config
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\bin\Debug\MuseumObserver.exe
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\bin\Debug\MuseumObserver.pdb
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csprojAssemblyReference.cache
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Properties.Resources.resources
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csproj.GenerateResource.cache
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csproj.CoreCompileInputs.cache
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.exe
+C:\Users\olegi\source\repos\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.pdb
