@@ -16,8 +16,11 @@ namespace MuseumObserver
         {
             InitializeComponent();
 
-            Exhibit exhibit = new Exhibit();
-            exhibit.Show();
+            Exhibition exhibition = new Exhibition();
+            exhibition.Show();
+
+            /*Exhibit exhibit = new Exhibit();
+            exhibit.Show();*/
         }
     }
 }

@@ -26,27 +26,10 @@ namespace MuseumObserver
             exhibitionListBox.DisplayMember = "Name";
             exhibitionListBox.ValueMember = "ID";
 
-            //exhibitListBox.Items.Insert(0, exhibitionListBox.SelectedValue);
-            /*EnumerableRowCollection<DataRow> query = from exhibition in (dataset.Exhibition as DataTable).AsEnumerable()
-                                                     where exhibition.Field<Int32>("ShowroomID") > 3
-                                                     select exhibition;
-
-            exhibitionListBox.DataSource = query.AsDataView();
-            exhibitionListBox.DisplayMember = "Name";
-            exhibitionListBox.ValueMember = "ID";*/
-
-            /*EnumerableRowCollection<DataRow> query = from e in (dataset.Exhibit_Exhibition as DataTable).AsEnumerable()
-                                                     where e.Field<Int32>("ExhibitionID") > 3
-                                                     select e;
-
-            exhibitListBox.DataSource = query.AsDataView();
-            exhibitListBox.DisplayMember = "ExhibitionID";
-            exhibitListBox.ValueMember = "ExhibitionID"; */
-
-
-
-
-
+            setExhibitListBox();
+            setNameTextBox();
+            setStartDate();
+            setEndDate();
         }
 
         private void loadDataFromBase()
@@ -56,11 +39,77 @@ namespace MuseumObserver
             dataset.Merge(logic.getExhibit());
             dataset.Merge(logic.getExhibit_Exhibition());
         }
+        private void setExhibitListBox()
+        {
+            try
+            {
+                DataTable exhibitions = dataset.Exhibition;
+                DataTable exhibits = dataset.Exhibit;
+                EnumerableRowCollection<DataRow> query = from e_ex in (dataset.Exhibit_Exhibition as DataTable).AsEnumerable()
+                                                         where e_ex.Field<Int32>("ExhibitionID") == (int)exhibitionListBox.SelectedValue
+                                                         select e_ex;
+                string getExhibitsFilter = "[ID] IN (";
+                for (int i = 0; i < query.Count(); i++)
+                {
+                    getExhibitsFilter += "'" + query.ElementAt(i).Field<Int32>("ExhibitID") + "'";
+                    if (i + 1 != query.Count())
+                        getExhibitsFilter += ",";
+                }
+                getExhibitsFilter += ")";
+                DataView exhibitView = new DataView(dataset.Exhibit);
+                exhibitView.RowFilter = getExhibitsFilter;
+
+                exhibitListBox.DataSource = exhibitView;
+                exhibitListBox.DisplayMember = "Name";
+                exhibitListBox.ValueMember = "ID";
+            }
+            catch { }
+        }
+
+        private void setNameTextBox()
+        {
+            nameTextBox.Text = (exhibitionListBox.SelectedItem as DataRowView)["Name"].ToString();
+        }
 
         private void exhibitionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*exhibitListBox.Items.Clear();
-            exhibitListBox.Items.Insert(0, exhibitionListBox.SelectedValue);*/
+            setExhibitListBox();
+            setNameTextBox();
+        }
+
+        private void setStartDate()
+        {
+
+        }
+        
+        private void setEndDate()
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
