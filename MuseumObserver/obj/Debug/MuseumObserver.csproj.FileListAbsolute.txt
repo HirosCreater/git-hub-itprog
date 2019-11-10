@@ -21,3 +21,4 @@ E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserverLogic.pdb
 E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserverLogic.exe.config
 E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csproj.CopyComplete
 E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Exhibit.resources
+E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Restoration.resources
