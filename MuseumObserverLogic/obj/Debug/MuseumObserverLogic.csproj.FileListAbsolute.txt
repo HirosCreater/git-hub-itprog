@@ -1,0 +1,6 @@
+E:\IT_Project\MuseumObserverLogic\bin\Debug\MuseumObserverLogic.exe.config
+E:\IT_Project\MuseumObserverLogic\bin\Debug\MuseumObserverLogic.exe
+E:\IT_Project\MuseumObserverLogic\bin\Debug\MuseumObserverLogic.pdb
+E:\IT_Project\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.csprojAssemblyReference.cache
+E:\IT_Project\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.exe
+E:\IT_Project\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.pdb

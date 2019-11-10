@@ -15,6 +15,8 @@ namespace MuseumObserver
         public Form1()
         {
             InitializeComponent();
+            Exhibition exhibition = new Exhibition();
+            exhibition.Show();
         }
     }
 }

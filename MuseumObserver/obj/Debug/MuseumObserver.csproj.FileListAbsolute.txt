@@ -16,3 +16,7 @@ E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Properties.Resources.resou
 E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csproj.GenerateResource.cache
 E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.exe
 E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.pdb
+E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserverLogic.exe
+E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserverLogic.pdb
+E:\IT_Project\MuseumObserver\bin\Debug\MuseumObserverLogic.exe.config
+E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.csproj.CopyComplete

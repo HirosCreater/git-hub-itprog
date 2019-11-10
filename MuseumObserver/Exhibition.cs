@@ -21,12 +21,25 @@ namespace MuseumObserver
             InitializeComponent();
             dataset = new DataSetMuseum();
             loadDataFromBase();
+
+            exhibitionListBox.DataSource = dataset.Exhibition;
+            exhibitionListBox.DisplayMember = "Name";
+            exhibitionListBox.ValueMember = "ID";
+
+            exhibitListBox.Items.Insert(0, exhibitionListBox.SelectedValue);
+
         }
 
         private void loadDataFromBase()
         {
             dataset = new DataSetMuseum();
             dataset.Merge(logic.getExhibition());
+        }
+
+        private void exhibitionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*exhibitListBox.Items.Clear();
+            exhibitListBox.Items.Insert(0, exhibitionListBox.SelectedValue);*/
         }
     }
 }
