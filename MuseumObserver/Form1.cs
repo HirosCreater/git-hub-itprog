@@ -16,10 +16,10 @@ namespace MuseumObserver
         {
             InitializeComponent();
 
-            Rent rent = new Rent();
+            /*Rent rent = new Rent();
             rent.Show();
 
-            /*Showroom showroom = new Showroom();
+            Showroom showroom = new Showroom();
             showroom.Show();
 
             Restoration restoration = new Restoration();
@@ -30,6 +30,11 @@ namespace MuseumObserver
 
             Exhibit exhibit = new Exhibit();
             exhibit.Show();*/
+
+            Maecenas maecenas = new Maecenas();
+            maecenas.Show();
+            Museum museum = new Museum();
+            museum.Show();
         }
     }
 }

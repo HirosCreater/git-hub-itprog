@@ -44,5 +44,10 @@ namespace MuseumObserver
         {
             setNameTextBox();
         }
+
+        private void Showroom_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
