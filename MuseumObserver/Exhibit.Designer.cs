@@ -56,248 +56,289 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(97, 12);
+            this.categoryComboBox.Location = new System.Drawing.Point(101, 6);
+            this.categoryComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.categoryComboBox.Size = new System.Drawing.Size(160, 24);
             this.categoryComboBox.TabIndex = 0;
             this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
-            this.categoryLabel.Location = new System.Drawing.Point(31, 15);
+            this.categoryLabel.Location = new System.Drawing.Point(13, 9);
+            this.categoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(60, 13);
+            this.categoryLabel.Size = new System.Drawing.Size(77, 17);
             this.categoryLabel.TabIndex = 1;
             this.categoryLabel.Text = "Категория";
-            this.categoryLabel.Click += new System.EventHandler(this.categoryLabel_Click);
             // 
             // appearanceDateLabel
             // 
             this.appearanceDateLabel.AutoSize = true;
-            this.appearanceDateLabel.Location = new System.Drawing.Point(58, 47);
+            this.appearanceDateLabel.Location = new System.Drawing.Point(49, 49);
+            this.appearanceDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.appearanceDateLabel.Name = "appearanceDateLabel";
-            this.appearanceDateLabel.Size = new System.Drawing.Size(133, 13);
+            this.appearanceDateLabel.Size = new System.Drawing.Size(171, 17);
             this.appearanceDateLabel.TabIndex = 2;
             this.appearanceDateLabel.Text = "Дата появления в музее";
             // 
             // createdDateLabel
             // 
             this.createdDateLabel.AutoSize = true;
-            this.createdDateLabel.Location = new System.Drawing.Point(58, 137);
+            this.createdDateLabel.Location = new System.Drawing.Point(49, 160);
+            this.createdDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.createdDateLabel.Name = "createdDateLabel";
-            this.createdDateLabel.Size = new System.Drawing.Size(84, 13);
+            this.createdDateLabel.Size = new System.Drawing.Size(108, 17);
             this.createdDateLabel.TabIndex = 3;
             this.createdDateLabel.Text = "Дата создания";
-            this.createdDateLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // appearanceDateFrom
             // 
-            this.appearanceDateFrom.Location = new System.Drawing.Point(61, 72);
+            this.appearanceDateFrom.Location = new System.Drawing.Point(53, 80);
+            this.appearanceDateFrom.Margin = new System.Windows.Forms.Padding(4);
             this.appearanceDateFrom.Name = "appearanceDateFrom";
-            this.appearanceDateFrom.Size = new System.Drawing.Size(130, 20);
+            this.appearanceDateFrom.Size = new System.Drawing.Size(172, 22);
             this.appearanceDateFrom.TabIndex = 4;
             // 
             // appearanceDateTo
             // 
-            this.appearanceDateTo.Location = new System.Drawing.Point(61, 98);
+            this.appearanceDateTo.Location = new System.Drawing.Point(53, 112);
+            this.appearanceDateTo.Margin = new System.Windows.Forms.Padding(4);
             this.appearanceDateTo.Name = "appearanceDateTo";
-            this.appearanceDateTo.Size = new System.Drawing.Size(130, 20);
+            this.appearanceDateTo.Size = new System.Drawing.Size(172, 22);
             this.appearanceDateTo.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 72);
+            this.label1.Location = new System.Drawing.Point(21, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(23, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "от";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 98);
+            this.label2.Location = new System.Drawing.Point(21, 112);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.Size = new System.Drawing.Size(24, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "до";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 188);
+            this.label3.Location = new System.Drawing.Point(21, 222);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 13);
+            this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "до";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 162);
+            this.label4.Location = new System.Drawing.Point(21, 190);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
+            this.label4.Size = new System.Drawing.Size(23, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "от";
             // 
             // createdDateTo
             // 
-            this.createdDateTo.Location = new System.Drawing.Point(61, 188);
+            this.createdDateTo.Location = new System.Drawing.Point(53, 222);
+            this.createdDateTo.Margin = new System.Windows.Forms.Padding(4);
             this.createdDateTo.Name = "createdDateTo";
-            this.createdDateTo.Size = new System.Drawing.Size(130, 20);
+            this.createdDateTo.Size = new System.Drawing.Size(172, 22);
             this.createdDateTo.TabIndex = 9;
             // 
             // createdDateFrom
             // 
-            this.createdDateFrom.Location = new System.Drawing.Point(61, 162);
+            this.createdDateFrom.Location = new System.Drawing.Point(53, 190);
+            this.createdDateFrom.Margin = new System.Windows.Forms.Padding(4);
             this.createdDateFrom.Name = "createdDateFrom";
-            this.createdDateFrom.Size = new System.Drawing.Size(130, 20);
+            this.createdDateFrom.Size = new System.Drawing.Size(172, 22);
             this.createdDateFrom.TabIndex = 8;
             // 
             // exhibitListBox
             // 
             this.exhibitListBox.FormattingEnabled = true;
-            this.exhibitListBox.Location = new System.Drawing.Point(34, 227);
+            this.exhibitListBox.ItemHeight = 16;
+            this.exhibitListBox.Location = new System.Drawing.Point(17, 270);
+            this.exhibitListBox.Margin = new System.Windows.Forms.Padding(4);
             this.exhibitListBox.Name = "exhibitListBox";
-            this.exhibitListBox.Size = new System.Drawing.Size(184, 147);
+            this.exhibitListBox.Size = new System.Drawing.Size(244, 180);
             this.exhibitListBox.TabIndex = 12;
             this.exhibitListBox.SelectedIndexChanged += new System.EventHandler(this.exhibitListBox_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(557, 20);
+            this.label5.Location = new System.Drawing.Point(592, 13);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 13);
+            this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "Название экспоната";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(557, 72);
+            this.label6.Location = new System.Drawing.Point(592, 77);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 13);
+            this.label6.Size = new System.Drawing.Size(171, 17);
             this.label6.TabIndex = 14;
             this.label6.Text = "Дата появления в музее";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(557, 103);
+            this.label7.Location = new System.Drawing.Point(592, 115);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.Size = new System.Drawing.Size(108, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Дата создания";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(676, 20);
+            this.nameTextBox.Location = new System.Drawing.Point(750, 13);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(172, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(228, 22);
             this.nameTextBox.TabIndex = 16;
             // 
             // appearanceDate
             // 
-            this.appearanceDate.Location = new System.Drawing.Point(718, 72);
+            this.appearanceDate.Location = new System.Drawing.Point(806, 77);
+            this.appearanceDate.Margin = new System.Windows.Forms.Padding(4);
             this.appearanceDate.Name = "appearanceDate";
-            this.appearanceDate.Size = new System.Drawing.Size(130, 20);
+            this.appearanceDate.Size = new System.Drawing.Size(172, 22);
             this.appearanceDate.TabIndex = 17;
             // 
             // createdDate
             // 
-            this.createdDate.Location = new System.Drawing.Point(718, 103);
+            this.createdDate.Location = new System.Drawing.Point(806, 115);
+            this.createdDate.Margin = new System.Windows.Forms.Padding(4);
             this.createdDate.Name = "createdDate";
-            this.createdDate.Size = new System.Drawing.Size(130, 20);
+            this.createdDate.Size = new System.Drawing.Size(172, 22);
             this.createdDate.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(557, 137);
+            this.label8.Location = new System.Drawing.Point(592, 157);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 13);
+            this.label8.Size = new System.Drawing.Size(148, 17);
             this.label8.TabIndex = 19;
             this.label8.Text = "Экспонат получен от";
             // 
             // crutchTextBox
             // 
-            this.crutchTextBox.Location = new System.Drawing.Point(676, 137);
+            this.crutchTextBox.Location = new System.Drawing.Point(750, 157);
+            this.crutchTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.crutchTextBox.Name = "crutchTextBox";
-            this.crutchTextBox.Size = new System.Drawing.Size(172, 20);
+            this.crutchTextBox.Size = new System.Drawing.Size(228, 22);
             this.crutchTextBox.TabIndex = 20;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(558, 169);
+            this.label9.Location = new System.Drawing.Point(593, 196);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.Size = new System.Drawing.Size(77, 17);
             this.label9.TabIndex = 21;
             this.label9.Text = "Категория";
             // 
             // categoryTextBox
             // 
-            this.categoryTextBox.Location = new System.Drawing.Point(676, 169);
+            this.categoryTextBox.Location = new System.Drawing.Point(750, 196);
+            this.categoryTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.categoryTextBox.Name = "categoryTextBox";
-            this.categoryTextBox.Size = new System.Drawing.Size(172, 20);
+            this.categoryTextBox.Size = new System.Drawing.Size(228, 22);
             this.categoryTextBox.TabIndex = 22;
             // 
             // setPhotoButton
             // 
-            this.setPhotoButton.Location = new System.Drawing.Point(560, 195);
+            this.setPhotoButton.Location = new System.Drawing.Point(596, 228);
+            this.setPhotoButton.Margin = new System.Windows.Forms.Padding(4);
             this.setPhotoButton.Name = "setPhotoButton";
-            this.setPhotoButton.Size = new System.Drawing.Size(129, 23);
+            this.setPhotoButton.Size = new System.Drawing.Size(172, 28);
             this.setPhotoButton.TabIndex = 23;
             this.setPhotoButton.Text = "Добавить фото";
             this.setPhotoButton.UseVisualStyleBackColor = true;
+            this.setPhotoButton.Click += new System.EventHandler(this.SetPhotoButton_Click);
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(243, 227);
+            this.descriptionTextBox.Location = new System.Drawing.Point(296, 270);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(605, 211);
+            this.descriptionTextBox.Size = new System.Drawing.Size(682, 259);
             this.descriptionTextBox.TabIndex = 24;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(34, 380);
+            this.saveButton.Location = new System.Drawing.Point(17, 459);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(184, 23);
+            this.saveButton.Size = new System.Drawing.Size(245, 28);
             this.saveButton.TabIndex = 25;
             this.saveButton.Text = "Сохранить изменения";
             this.saveButton.UseVisualStyleBackColor = true;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(34, 409);
+            this.addButton.Location = new System.Drawing.Point(17, 494);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(89, 23);
+            this.addButton.Size = new System.Drawing.Size(119, 28);
             this.addButton.TabIndex = 26;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(129, 409);
+            this.deleteButton.Location = new System.Drawing.Point(144, 494);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(89, 23);
+            this.deleteButton.Size = new System.Drawing.Size(119, 28);
             this.deleteButton.TabIndex = 27;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(296, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 255);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // Exhibit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 450);
+            this.ClientSize = new System.Drawing.Size(998, 544);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.saveButton);
@@ -326,8 +367,10 @@
             this.Controls.Add(this.appearanceDateLabel);
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.categoryComboBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Exhibit";
             this.Text = "Экспонаты";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +406,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

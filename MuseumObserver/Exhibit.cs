@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace MuseumObserver
     {
         DataSetMuseum dataset;
         Logic logic = new Logic();
+        bool canChooseListBox = false;
+        bool canChooseCombo = false;
+        int selectCombo = -1;
+        int selectList = -1;
         public Exhibit()
         {
             InitializeComponent();
@@ -26,11 +31,16 @@ namespace MuseumObserver
             categoryComboBox.DisplayMember = "Name";
             categoryComboBox.ValueMember = "ID";
 
-            setExhibitListBox();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = Image.FromFile("Pictures/DefaultImage.jpg");
+            canChooseListBox = true;
+            canChooseCombo = true;
+
+            /*setExhibitListBox();
             setNameTextBox();
             setCategoryTextBox();
             setDescriptionTextBox();
-            setAppearanceDate();
+            setAppearanceDate();*/
         }
 
         private void loadDataFromBase()
@@ -42,64 +52,67 @@ namespace MuseumObserver
 
         private void setExhibitListBox()
         {
-            EnumerableRowCollection<DataRow> query = from ex in (dataset.Exhibit as DataTable).AsEnumerable()
-                                                     where ex.Field<Int32>("CategoryID") == (int)categoryComboBox.SelectedValue
-                                                     select ex;
+            canChooseListBox = false;
+            DataView exhibitView = new DataView(dataset.Exhibit);
+            exhibitView.RowFilter = "[CategoryID] = " + categoryComboBox.SelectedValue;
 
-            exhibitListBox.DataSource = query.AsDataView();
+            exhibitListBox.DataSource = exhibitView;
             exhibitListBox.DisplayMember = "Name";
             exhibitListBox.ValueMember = "ID";
+            canChooseListBox = true;
         }
 
-        private void setNameTextBox()
+        private void setExhibitData()
         {
-            nameTextBox.Text = (exhibitListBox.SelectedItem as DataRowView)["Name"].ToString();
-        }
-
-        private void setCategoryTextBox()
-        {
-            categoryTextBox.Text = (categoryComboBox.SelectedItem as DataRowView)["Name"].ToString();
-        }
-
-        private void setDescriptionTextBox()
-        {
-            descriptionTextBox.Text = (exhibitListBox.SelectedItem as DataRowView)["Description"].ToString();
-        }
-
-        private void setAppearanceDate()
-        {
-
-        }
-
-        private void categoryLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            //Вывод названия экспоната
+            {
+                nameTextBox.Text = dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Name"].ToString();
+            }
+            //Вывод категории экспоната
+            {
+                categoryTextBox.Text = dataset.Category.Rows.Find(categoryComboBox.SelectedValue)["Name"].ToString();
+            }
+            //Вывод картинки экспоната
+            {
+                string str = dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString();
+                if (File.Exists(str))
+                {
+                    pictureBox1.Image = Image.FromFile(str);
+                }
+                else
+                {
+                    pictureBox1.Image = Image.FromFile("Pictures/DefaultImage.jpg");
+                }
+            }
+            //Вывод дат экспоната
+            { }
 
         }
-
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try 
+            if (canChooseCombo)
             {
-                setExhibitListBox();
-                setCategoryTextBox();
+                try
+                {
+                    setExhibitListBox();
+                }
+                catch { }
             }
-            catch { }
         }
-
         private void exhibitListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (canChooseListBox)
             {
-                setNameTextBox();
-                setDescriptionTextBox();
-                setAppearanceDate();
+                try
+                {
+                    setExhibitData();
+                }
+                catch { }
             }
-            catch { }
+        }
+        private void SetPhotoButton_Click(object sender, EventArgs e)
+        {
+            //getAndCopyPicture();
         }
     }
 }

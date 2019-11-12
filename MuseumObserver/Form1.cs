@@ -27,14 +27,14 @@ namespace MuseumObserver
 
             Exhibition exhibition = new Exhibition();
             exhibition.Show();
-
+            */
             Exhibit exhibit = new Exhibit();
-            exhibit.Show();*/
+            exhibit.Show();/*
 
             Maecenas maecenas = new Maecenas();
             maecenas.Show();
             Museum museum = new Museum();
-            museum.Show();
+            museum.Show();*/
         }
     }
 }
