@@ -16,26 +16,26 @@ namespace MuseumObserver
         {
             InitializeComponent();
 
-            Maecenas maecenas = new Maecenas();
+            /*Maecenas maecenas = new Maecenas();
             maecenas.Show();
 
             Showroom showroom = new Showroom();
             showroom.Show();
+            */
+            Restoration restoration = new Restoration();
+            restoration.Show();
+
+            Exhibit exhibit = new Exhibit();
+            exhibit.Show();
 
             /*Rent rent = new Rent();
             rent.Show();
 
-            Showroom showroom = new Showroom();
-            showroom.Show();
-
-            Restoration restoration = new Restoration();
-            restoration.Show();
-
             Exhibition exhibition = new Exhibition();
             exhibition.Show();
-            */
-            /*Exhibit exhibit = new Exhibit();
-            exhibit.Show();/*
+            
+            Exhibit exhibit = new Exhibit();
+            exhibit.Show();
 
             Maecenas maecenas = new Maecenas();
             maecenas.Show();

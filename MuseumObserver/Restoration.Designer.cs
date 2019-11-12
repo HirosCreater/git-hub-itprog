@@ -47,6 +47,8 @@
             this.appearanceDateLabel = new System.Windows.Forms.Label();
             this.categoryLabel = new System.Windows.Forms.Label();
             this.restorerComboBox = new System.Windows.Forms.ComboBox();
+            this.photoPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteButton
@@ -206,12 +208,24 @@
             this.restorerComboBox.Name = "restorerComboBox";
             this.restorerComboBox.Size = new System.Drawing.Size(194, 21);
             this.restorerComboBox.TabIndex = 28;
+            this.restorerComboBox.SelectedIndexChanged += new System.EventHandler(this.restorerComboBox_SelectedIndexChanged);
+            // 
+            // photoPictureBox
+            // 
+            this.photoPictureBox.Location = new System.Drawing.Point(304, 11);
+            this.photoPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.photoPictureBox.Name = "photoPictureBox";
+            this.photoPictureBox.Size = new System.Drawing.Size(210, 207);
+            this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.photoPictureBox.TabIndex = 56;
+            this.photoPictureBox.TabStop = false;
             // 
             // Restoration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 522);
+            this.Controls.Add(this.photoPictureBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.saveButton);
@@ -233,6 +247,7 @@
             this.Controls.Add(this.restorerComboBox);
             this.Name = "Restoration";
             this.Text = "Реставрации";
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +274,6 @@
         private System.Windows.Forms.Label appearanceDateLabel;
         private System.Windows.Forms.Label categoryLabel;
         private System.Windows.Forms.ComboBox restorerComboBox;
+        private System.Windows.Forms.PictureBox photoPictureBox;
     }
 }
