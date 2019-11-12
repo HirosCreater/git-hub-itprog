@@ -44,3 +44,5 @@ C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObs
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.pdb
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Maecenas.resources
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Museum.resources
+E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Maecenas.resources
+E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Museum.resources
