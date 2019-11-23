@@ -18,14 +18,19 @@ namespace MuseumObserver
         Logic logic = new Logic();
         bool canChooseListBox = false;
         bool canChooseCombo = false;
-        int selectCombo = -1;
-        int selectList = -1;
+        DataView exhibitsCategor;
+        DataView tempViewDaritel;
+        string tableNameDaritel;
+        int tempIDDaritel;
         public Exhibit()
         {
             InitializeComponent();
 
             dataset = new DataSetMuseum();
             loadDataFromBase();
+
+            exhibitsCategor = new DataView(dataset.Category);
+            comboBoxExhibitCategor.DataSource = null;
 
             categoryComboBox.DataSource = dataset.Category;
             categoryComboBox.DisplayMember = "Name";
@@ -48,29 +53,78 @@ namespace MuseumObserver
             dataset = new DataSetMuseum();
             dataset.Merge(logic.getCategory());
             dataset.Merge(logic.getExhibit());
+            dataset.Merge(logic.getCrutch());
+            dataset.Merge(logic.getMuseum());
+            dataset.Merge(logic.getMaecenas());
         }
 
         private void setExhibitListBox()
         {
             canChooseListBox = false;
+
+            comboBoxExhibitCategor.DataSource = null;
+
             DataView exhibitView = new DataView(dataset.Exhibit);
-            exhibitView.RowFilter = "[CategoryID] = " + categoryComboBox.SelectedValue;
+            //DateTime timeFrom = new DateTime(appearanceDateFrom.Value.Year, appearanceDateFrom.Value.Month, appearanceDateFrom.Value.Day, 0, 0, 0);
+            //DateTime timeTo = new DateTime(appearanceDateFrom.Value.Year, appearanceDateFrom.Value.Month, appearanceDateFrom.Value.Day, 0, 0, 0);
+            //DateTime tempdate = dataset.Exhibit[1]["AppearanceDate"];
+            exhibitView.RowFilter = "AppearanceDate >= #" + appearanceDateFrom.Value.Year + "-" + appearanceDateFrom.Value.Month + "-" +appearanceDateFrom.Value.Day
+                                    + "#AND AppearanceDate <= #" + +appearanceDateTo.Value.Year + "-" + appearanceDateTo.Value.Month + "-" + appearanceDateTo.Value.Day
+                                    + "#AND CategoryID = " + categoryComboBox.SelectedValue;
+            comboBoxExhibitCategor.DisplayMember = "Name";
+            comboBoxExhibitCategor.ValueMember = "ID";
 
             exhibitListBox.DataSource = exhibitView;
             exhibitListBox.DisplayMember = "Name";
             exhibitListBox.ValueMember = "ID";
+            
+
+            comboBoxGetFrom.DisplayMember = "Name";
+            comboBoxGetFrom.ValueMember = "ID";
+
             canChooseListBox = true;
         }
 
         private void setExhibitData()
         {
+            DataRow tempRow = dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue);
             //Вывод названия экспоната
             {
-                nameTextBox.Text = dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Name"].ToString();
+                nameTextBox.Text = tempRow["Name"].ToString();
+            }
+            //Вывод дарителя экспоната
+            {
+                tableNameDaritel = (string)dataset.Crutch.Rows.Find(tempRow["CrutchID"])["FROM"];
+                tempIDDaritel = (int)dataset.Crutch.Rows.Find(tempRow["CrutchID"])["InstanceID"];
+                if (tableNameDaritel == "Museum")
+                {
+                    radioMuseum.Checked = true;
+                    tempViewDaritel = new DataView(dataset.Museum);
+                    comboBoxGetFrom.DataSource = tempViewDaritel;
+                    comboBoxGetFrom.SelectedValue = tempIDDaritel;
+                }
+                else
+                {
+                    if (tableNameDaritel == "Maecenas")
+                    {
+                        radioMecenat.Checked = true;
+                        tempViewDaritel = new DataView(dataset.Maecenas);
+                        comboBoxGetFrom.DataSource = tempViewDaritel;
+                        comboBoxGetFrom.SelectedValue = tempIDDaritel;
+                    }
+                    else
+                    {
+                        radioMuseum.Checked = false;
+                        radioMecenat.Checked = false;
+                        tempViewDaritel = null;
+                    }
+                }
+                
             }
             //Вывод категории экспоната
             {
-                categoryTextBox.Text = dataset.Category.Rows.Find(categoryComboBox.SelectedValue)["Name"].ToString();
+                comboBoxExhibitCategor.DataSource = exhibitsCategor;
+                comboBoxExhibitCategor.SelectedValue = categoryComboBox.SelectedValue;
             }
             //Вывод картинки экспоната
             {
@@ -84,35 +138,74 @@ namespace MuseumObserver
                     pictureBox1.Image = Image.FromFile("Pictures/DefaultImage.jpg");
                 }
             }
-            //Вывод дат экспоната
-            { }
+            //Вывод дат появления экспоната в музее
+            {
+                appearanceDate.Value = (DateTime)tempRow["AppearanceDate"];
+            }
+            //Вывод описания экспоната
+            {
+                descriptionTextBox.Text = (string)tempRow["Description"];
+            }
 
         }
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (canChooseCombo)
             {
-                try
-                {
+               
                     setExhibitListBox();
-                }
-                catch { }
+                
             }
         }
         private void exhibitListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (canChooseListBox)
             {
-                try
-                {
-                    setExhibitData();
-                }
-                catch { }
+                setExhibitData();
             }
         }
         private void SetPhotoButton_Click(object sender, EventArgs e)
         {
-            //getAndCopyPicture();
+            getAndCopyPicture();
+        }
+        private void getAndCopyPicture()
+        {
+
+        }
+        private void RadioMecenat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioMecenat.Checked == true)
+            {
+                tempViewDaritel = new DataView(dataset.Maecenas);
+                comboBoxGetFrom.DataSource = tempViewDaritel;
+                if (tableNameDaritel == "Maecenas")
+                {
+                    comboBoxGetFrom.SelectedValue = tempIDDaritel;
+                }
+            }
+        }
+
+        private void RadioMuseum_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioMuseum.Checked == true)
+            {
+                tempViewDaritel = new DataView(dataset.Museum);
+                comboBoxGetFrom.DataSource = tempViewDaritel;
+                if (tableNameDaritel == "Museum")
+                {
+                    comboBoxGetFrom.SelectedValue = tempIDDaritel;
+                }
+            }
+        }
+
+        private void AppearanceDateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            setExhibitListBox();
+        }
+
+        private void AppearanceDateTo_ValueChanged(object sender, EventArgs e)
+        {
+            setExhibitListBox();
         }
     }
 }
