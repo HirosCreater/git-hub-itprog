@@ -4,5 +4,8 @@
 
     partial class DataSetMuseum
     {
+        partial class CrutchDataTable
+        {
+        }
     }
 }

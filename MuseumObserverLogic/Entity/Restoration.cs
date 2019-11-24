@@ -13,8 +13,8 @@ namespace MuseumObserverLogic.Entity
         public bool Save(DataSetMuseum dataSet, Connection conn, Transaction tr)
         {
             dataAdapter = new System.Data.SqlClient.SqlDataAdapter();
-            dataAdapter.InsertCommand = new System.Data.SqlClient.SqlCommand(string.Format("INSERT INTO Restoration (ID, ExhibitID, RestorerID, Start, [End], Photo, Description) " +
-                                                                                                        "VALUES (@ID, @ExhibitID, @RestorerID, @Start, @[End], @Photo, @Description);"),
+            dataAdapter.InsertCommand = new System.Data.SqlClient.SqlCommand(string.Format("INSERT INTO Restoration (ExhibitID, RestorerID, Start, [End], Photo, Description) " +
+                                                                                                        "VALUES (@ExhibitID, @RestorerID, @Start, @[End], @Photo, @Description);"),
                                                                                                         conn.getConnection(), tr.getTransaction());
             dataAdapter.InsertCommand.Parameters.Add("@ID", SqlDbType.Int, 11, "ID");
             dataAdapter.InsertCommand.Parameters.Add("@ExhibitID", SqlDbType.Int, 11, "ExhibitID");

@@ -59,7 +59,9 @@
             this.comboBoxGetFrom = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioMuseum = new System.Windows.Forms.RadioButton();
-            this.radioMecenat = new System.Windows.Forms.RadioButton();
+            this.radioMaecenas = new System.Windows.Forms.RadioButton();
+            this.checkBoxTimeFilter = new System.Windows.Forms.CheckBox();
+            this.buttonRememberChenged = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +90,7 @@
             // appearanceDateLabel
             // 
             this.appearanceDateLabel.AutoSize = true;
-            this.appearanceDateLabel.Location = new System.Drawing.Point(49, 49);
+            this.appearanceDateLabel.Location = new System.Drawing.Point(54, 43);
             this.appearanceDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.appearanceDateLabel.Name = "appearanceDateLabel";
             this.appearanceDateLabel.Size = new System.Drawing.Size(171, 17);
@@ -107,7 +109,7 @@
             // 
             // appearanceDateFrom
             // 
-            this.appearanceDateFrom.Location = new System.Drawing.Point(53, 80);
+            this.appearanceDateFrom.Location = new System.Drawing.Point(58, 74);
             this.appearanceDateFrom.Margin = new System.Windows.Forms.Padding(4);
             this.appearanceDateFrom.Name = "appearanceDateFrom";
             this.appearanceDateFrom.Size = new System.Drawing.Size(172, 22);
@@ -116,7 +118,7 @@
             // 
             // appearanceDateTo
             // 
-            this.appearanceDateTo.Location = new System.Drawing.Point(53, 112);
+            this.appearanceDateTo.Location = new System.Drawing.Point(58, 106);
             this.appearanceDateTo.Margin = new System.Windows.Forms.Padding(4);
             this.appearanceDateTo.Name = "appearanceDateTo";
             this.appearanceDateTo.Size = new System.Drawing.Size(172, 22);
@@ -126,7 +128,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 80);
+            this.label1.Location = new System.Drawing.Point(26, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 17);
@@ -136,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 112);
+            this.label2.Location = new System.Drawing.Point(26, 106);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 17);
@@ -266,7 +268,7 @@
             // 
             // setPhotoButton
             // 
-            this.setPhotoButton.Location = new System.Drawing.Point(696, 247);
+            this.setPhotoButton.Location = new System.Drawing.Point(595, 247);
             this.setPhotoButton.Margin = new System.Windows.Forms.Padding(4);
             this.setPhotoButton.Name = "setPhotoButton";
             this.setPhotoButton.Size = new System.Drawing.Size(172, 28);
@@ -283,6 +285,7 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(682, 246);
             this.descriptionTextBox.TabIndex = 24;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_TextChanged);
             // 
             // saveButton
             // 
@@ -303,6 +306,7 @@
             this.addButton.TabIndex = 26;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // deleteButton
             // 
@@ -313,6 +317,7 @@
             this.deleteButton.TabIndex = 27;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // pictureBox1
             // 
@@ -332,6 +337,7 @@
             this.comboBoxExhibitCategor.Name = "comboBoxExhibitCategor";
             this.comboBoxExhibitCategor.Size = new System.Drawing.Size(300, 24);
             this.comboBoxExhibitCategor.TabIndex = 29;
+            this.comboBoxExhibitCategor.SelectedIndexChanged += new System.EventHandler(this.ComboBoxExhibitCategor_SelectedIndexChanged);
             // 
             // comboBoxGetFrom
             // 
@@ -342,11 +348,12 @@
             this.comboBoxGetFrom.Name = "comboBoxGetFrom";
             this.comboBoxGetFrom.Size = new System.Drawing.Size(383, 24);
             this.comboBoxGetFrom.TabIndex = 30;
+            this.comboBoxGetFrom.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGetFrom_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioMuseum);
-            this.groupBox1.Controls.Add(this.radioMecenat);
+            this.groupBox1.Controls.Add(this.radioMaecenas);
             this.groupBox1.Location = new System.Drawing.Point(678, 154);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 54);
@@ -365,24 +372,48 @@
             this.radioMuseum.UseVisualStyleBackColor = true;
             this.radioMuseum.CheckedChanged += new System.EventHandler(this.RadioMuseum_CheckedChanged);
             // 
-            // radioMecenat
+            // radioMaecenas
             // 
-            this.radioMecenat.AutoSize = true;
-            this.radioMecenat.Checked = true;
-            this.radioMecenat.Location = new System.Drawing.Point(18, 21);
-            this.radioMecenat.Name = "radioMecenat";
-            this.radioMecenat.Size = new System.Drawing.Size(87, 21);
-            this.radioMecenat.TabIndex = 0;
-            this.radioMecenat.TabStop = true;
-            this.radioMecenat.Text = "Меценат";
-            this.radioMecenat.UseVisualStyleBackColor = true;
-            this.radioMecenat.CheckedChanged += new System.EventHandler(this.RadioMecenat_CheckedChanged);
+            this.radioMaecenas.AutoSize = true;
+            this.radioMaecenas.Checked = true;
+            this.radioMaecenas.Location = new System.Drawing.Point(18, 21);
+            this.radioMaecenas.Name = "radioMaecenas";
+            this.radioMaecenas.Size = new System.Drawing.Size(87, 21);
+            this.radioMaecenas.TabIndex = 0;
+            this.radioMaecenas.TabStop = true;
+            this.radioMaecenas.Text = "Меценат";
+            this.radioMaecenas.UseVisualStyleBackColor = true;
+            this.radioMaecenas.CheckedChanged += new System.EventHandler(this.RadioMecenat_CheckedChanged);
+            // 
+            // checkBoxTimeFilter
+            // 
+            this.checkBoxTimeFilter.AutoSize = true;
+            this.checkBoxTimeFilter.Location = new System.Drawing.Point(29, 136);
+            this.checkBoxTimeFilter.Name = "checkBoxTimeFilter";
+            this.checkBoxTimeFilter.Size = new System.Drawing.Size(201, 21);
+            this.checkBoxTimeFilter.TabIndex = 32;
+            this.checkBoxTimeFilter.Text = "Фильтрацния по времени";
+            this.checkBoxTimeFilter.UseVisualStyleBackColor = true;
+            this.checkBoxTimeFilter.CheckedChanged += new System.EventHandler(this.CheckBoxTimeFilter_CheckedChanged);
+            // 
+            // buttonRememberChenged
+            // 
+            this.buttonRememberChenged.Location = new System.Drawing.Point(806, 247);
+            this.buttonRememberChenged.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRememberChenged.Name = "buttonRememberChenged";
+            this.buttonRememberChenged.Size = new System.Drawing.Size(172, 28);
+            this.buttonRememberChenged.TabIndex = 33;
+            this.buttonRememberChenged.Text = "Запомнить изменения";
+            this.buttonRememberChenged.UseVisualStyleBackColor = true;
+            this.buttonRememberChenged.Click += new System.EventHandler(this.ButtonRememberChenged_Click);
             // 
             // Exhibit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 544);
+            this.Controls.Add(this.buttonRememberChenged);
+            this.Controls.Add(this.checkBoxTimeFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBoxGetFrom);
             this.Controls.Add(this.comboBoxExhibitCategor);
@@ -457,6 +488,8 @@
         private System.Windows.Forms.ComboBox comboBoxGetFrom;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioMuseum;
-        private System.Windows.Forms.RadioButton radioMecenat;
+        private System.Windows.Forms.RadioButton radioMaecenas;
+        private System.Windows.Forms.CheckBox checkBoxTimeFilter;
+        private System.Windows.Forms.Button buttonRememberChenged;
     }
 }

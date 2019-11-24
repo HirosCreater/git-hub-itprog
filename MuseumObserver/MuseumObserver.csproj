@@ -52,6 +52,12 @@
     <Compile Include="Exhibit.Designer.cs">
       <DependentUpon>Exhibit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExhibitAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExhibitAdd.Designer.cs">
+      <DependentUpon>ExhibitAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exhibition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Exhibit.resx">
       <DependentUpon>Exhibit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExhibitAdd.resx">
+      <DependentUpon>ExhibitAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exhibition.resx">
       <DependentUpon>Exhibition.cs</DependentUpon>

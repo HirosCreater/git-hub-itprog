@@ -78,7 +78,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setShowroom(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -133,7 +132,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setRestorer(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -188,7 +186,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setRestoration(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -243,7 +240,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setRent(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -298,7 +294,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setMuseum(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -353,7 +348,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setMaecenas(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -408,7 +402,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setExhibition(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -463,7 +456,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setExhibit_Exhibition(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -517,7 +509,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setExhibit(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -572,7 +563,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setCrutch(DataSetMuseum dataSet)
         {
             bool result = false;
@@ -581,18 +571,18 @@ namespace MuseumObserverLogic
             try
             {
                 Transaction transaction = connection.BeginTransaction();
-                try
+                //try
                 {
                     crutch = new Crutch();
                     crutch.Save(dataSet, connection, transaction);
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                /*catch
                 {
                     transaction.Rollback();
                     result = false;
-                }
+                }*/
             }
             finally
             {
@@ -627,7 +617,6 @@ namespace MuseumObserverLogic
             }
             return result;
         }
-
         public bool setCategory(DataSetMuseum dataSet)
         {
             bool result = false;

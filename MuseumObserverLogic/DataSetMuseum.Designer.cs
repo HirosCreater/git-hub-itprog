@@ -842,10 +842,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow AddExhibitRow(int ID, string Name, CategoryRow parentCategoryRowByCategory_Exhibit, System.DateTime CreatedDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
+            public ExhibitRow AddExhibitRow(string Name, CategoryRow parentCategoryRowByCategory_Exhibit, System.DateTime CreatedDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
                 ExhibitRow rowExhibitRow = ((ExhibitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name,
                         null,
                         CreatedDate,
@@ -917,8 +917,10 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnDescription);
                 this.columnCrutchID = new global::System.Data.DataColumn("CrutchID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCrutchID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("ExhibitKey", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("ID", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
@@ -1157,10 +1159,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CrutchRow AddCrutchRow(int ID, string @__From_, int InstanceID) {
+            public CrutchRow AddCrutchRow(string @__From_, int InstanceID) {
                 CrutchRow rowCrutchRow = ((CrutchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         @__From_,
                         InstanceID};
                 rowCrutchRow.ItemArray = columnValuesArray;
@@ -1210,6 +1212,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnInstanceID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("CrutchKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this._column_From_.MaxLength = 50;
@@ -1436,10 +1440,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CategoryRow AddCategoryRow(int ID, string Name) {
+            public CategoryRow AddCategoryRow(string Name) {
                 CategoryRow rowCategoryRow = ((CategoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name};
                 rowCategoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCategoryRow);
@@ -1483,6 +1487,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("CategoryKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.Caption = "[From]";
@@ -1710,10 +1716,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MuseumRow AddMuseumRow(int ID, string Name) {
+            public MuseumRow AddMuseumRow(string Name) {
                 MuseumRow rowMuseumRow = ((MuseumRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name};
                 rowMuseumRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMuseumRow);
@@ -1757,6 +1763,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("MuseumKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.Caption = "[From]";
@@ -2014,10 +2022,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RentRow AddRentRow(int ID, ExhibitRow parentExhibitRowByExhibit_Rent, MuseumRow parentMuseumRowByMuseum_Rent, System.DateTime Start, System.DateTime @__End_) {
+            public RentRow AddRentRow(ExhibitRow parentExhibitRowByExhibit_Rent, MuseumRow parentMuseumRowByMuseum_Rent, System.DateTime Start, System.DateTime @__End_) {
                 RentRow rowRentRow = ((RentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         null,
                         null,
                         Start,
@@ -2081,6 +2089,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this._column_End_);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("RentKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnExhibitID.Caption = "[From]";
@@ -2307,10 +2317,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorerRow AddRestorerRow(int ID, string Name) {
+            public RestorerRow AddRestorerRow(string Name) {
                 RestorerRow rowRestorerRow = ((RestorerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name};
                 rowRestorerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRestorerRow);
@@ -2354,6 +2364,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("RestorerKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
@@ -2630,10 +2642,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorationRow AddRestorationRow(int ID, ExhibitRow parentExhibitRowByExhibit_Restoration, RestorerRow parentRestorerRowByRestorer_Restoration, System.DateTime Start, System.DateTime @__End_, string Photo, string Description) {
+            public RestorationRow AddRestorationRow(ExhibitRow parentExhibitRowByExhibit_Restoration, RestorerRow parentRestorerRowByRestorer_Restoration, System.DateTime Start, System.DateTime @__End_, string Photo, string Description) {
                 RestorationRow rowRestorationRow = ((RestorationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         null,
                         null,
                         Start,
@@ -2705,6 +2717,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("RestorationKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnPhoto.MaxLength = 255;
@@ -2932,10 +2946,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MaecenasRow AddMaecenasRow(int ID, string Name) {
+            public MaecenasRow AddMaecenasRow(string Name) {
                 MaecenasRow rowMaecenasRow = ((MaecenasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name};
                 rowMaecenasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMaecenasRow);
@@ -2979,6 +2993,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("MaecenasKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 100;
@@ -3205,10 +3221,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ShowroomRow AddShowroomRow(int ID, string Name) {
+            public ShowroomRow AddShowroomRow(string Name) {
                 ShowroomRow rowShowroomRow = ((ShowroomRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name};
                 rowShowroomRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowShowroomRow);
@@ -3252,6 +3268,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("ShowroomKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
@@ -3508,10 +3526,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitionRow AddExhibitionRow(int ID, string Name, System.DateTime Start, System.DateTime @__End_, ShowroomRow parentShowroomRowByShowroom_Exhibition) {
+            public ExhibitionRow AddExhibitionRow(string Name, System.DateTime Start, System.DateTime @__End_, ShowroomRow parentShowroomRowByShowroom_Exhibition) {
                 ExhibitionRow rowExhibitionRow = ((ExhibitionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Name,
                         Start,
                         @__End_,
@@ -3572,6 +3590,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnShowroomID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("ExhibitionKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 255;
