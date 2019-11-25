@@ -15,7 +15,7 @@
         <xs:element name="Exhibit" msprop:Generator_TableClassName="ExhibitDataTable" msprop:Generator_TableVarName="tableExhibit" msprop:Generator_RowChangedName="ExhibitRowChanged" msprop:Generator_TablePropName="Exhibit" msprop:Generator_RowDeletingName="ExhibitRowDeleting" msprop:Generator_RowChangingName="ExhibitRowChanging" msprop:Generator_RowEvHandlerName="ExhibitRowChangeEventHandler" msprop:Generator_RowDeletedName="ExhibitRowDeleted" msprop:Generator_RowClassName="ExhibitRow" msprop:Generator_UserTableName="Exhibit" msprop:Generator_RowEvArgName="ExhibitRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -47,7 +47,7 @@
         <xs:element name="Crutch" msprop:Generator_TableClassName="CrutchDataTable" msprop:Generator_TableVarName="tableCrutch" msprop:Generator_RowChangedName="CrutchRowChanged" msprop:Generator_TablePropName="Crutch" msprop:Generator_RowDeletingName="CrutchRowDeleting" msprop:Generator_RowChangingName="CrutchRowChanging" msprop:Generator_RowEvHandlerName="CrutchRowChangeEventHandler" msprop:Generator_RowDeletedName="CrutchRowDeleted" msprop:Generator_RowClassName="CrutchRow" msprop:Generator_UserTableName="Crutch" msprop:Generator_RowEvArgName="CrutchRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="_x005B_From_x005D_" msprop:Generator_ColumnVarNameInTable="_column_From_" msprop:Generator_ColumnPropNameInRow="__From_" msprop:Generator_ColumnPropNameInTable="__From_Column" msprop:Generator_UserColumnName="[From]" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -62,7 +62,7 @@
         <xs:element name="Category" msprop:Generator_TableClassName="CategoryDataTable" msprop:Generator_TableVarName="tableCategory" msprop:Generator_RowChangedName="CategoryRowChanged" msprop:Generator_TablePropName="Category" msprop:Generator_RowDeletingName="CategoryRowDeleting" msprop:Generator_RowChangingName="CategoryRowChanging" msprop:Generator_RowEvHandlerName="CategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoryRowDeleted" msprop:Generator_RowClassName="CategoryRow" msprop:Generator_UserTableName="Category" msprop:Generator_RowEvArgName="CategoryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msdata:Caption="[From]" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -76,7 +76,7 @@
         <xs:element name="Museum" msprop:Generator_TableClassName="MuseumDataTable" msprop:Generator_TableVarName="tableMuseum" msprop:Generator_RowChangedName="MuseumRowChanged" msprop:Generator_TablePropName="Museum" msprop:Generator_RowDeletingName="MuseumRowDeleting" msprop:Generator_RowChangingName="MuseumRowChanging" msprop:Generator_RowEvHandlerName="MuseumRowChangeEventHandler" msprop:Generator_RowDeletedName="MuseumRowDeleted" msprop:Generator_RowClassName="MuseumRow" msprop:Generator_UserTableName="Museum" msprop:Generator_RowEvArgName="MuseumRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msdata:Caption="[From]" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -90,7 +90,7 @@
         <xs:element name="Rent" msprop:Generator_TableClassName="RentDataTable" msprop:Generator_TableVarName="tableRent" msprop:Generator_RowChangedName="RentRowChanged" msprop:Generator_TablePropName="Rent" msprop:Generator_RowDeletingName="RentRowDeleting" msprop:Generator_RowChangingName="RentRowChanging" msprop:Generator_RowEvHandlerName="RentRowChangeEventHandler" msprop:Generator_RowDeletedName="RentRowDeleted" msprop:Generator_RowClassName="RentRow" msprop:Generator_UserTableName="Rent" msprop:Generator_RowEvArgName="RentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="ExhibitID" msdata:Caption="[From]" msprop:Generator_ColumnVarNameInTable="columnExhibitID" msprop:Generator_ColumnPropNameInRow="ExhibitID" msprop:Generator_ColumnPropNameInTable="ExhibitIDColumn" msprop:Generator_UserColumnName="ExhibitID" type="xs:int" minOccurs="0" />
               <xs:element name="MuseumID" msprop:Generator_ColumnVarNameInTable="columnMuseumID" msprop:Generator_ColumnPropNameInRow="MuseumID" msprop:Generator_ColumnPropNameInTable="MuseumIDColumn" msprop:Generator_UserColumnName="MuseumID" type="xs:int" minOccurs="0" />
               <xs:element name="Start" msprop:Generator_ColumnVarNameInTable="columnStart" msprop:Generator_ColumnPropNameInRow="Start" msprop:Generator_ColumnPropNameInTable="StartColumn" msprop:Generator_UserColumnName="Start" type="xs:dateTime" minOccurs="0" />
@@ -101,7 +101,7 @@
         <xs:element name="Restorer" msprop:Generator_TableClassName="RestorerDataTable" msprop:Generator_TableVarName="tableRestorer" msprop:Generator_RowChangedName="RestorerRowChanged" msprop:Generator_TablePropName="Restorer" msprop:Generator_RowDeletingName="RestorerRowDeleting" msprop:Generator_RowChangingName="RestorerRowChanging" msprop:Generator_RowEvHandlerName="RestorerRowChangeEventHandler" msprop:Generator_RowDeletedName="RestorerRowDeleted" msprop:Generator_RowClassName="RestorerRow" msprop:Generator_UserTableName="Restorer" msprop:Generator_RowEvArgName="RestorerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -115,7 +115,7 @@
         <xs:element name="Restoration" msprop:Generator_TableClassName="RestorationDataTable" msprop:Generator_TableVarName="tableRestoration" msprop:Generator_RowChangedName="RestorationRowChanged" msprop:Generator_TablePropName="Restoration" msprop:Generator_RowDeletingName="RestorationRowDeleting" msprop:Generator_RowChangingName="RestorationRowChanging" msprop:Generator_RowEvHandlerName="RestorationRowChangeEventHandler" msprop:Generator_RowDeletedName="RestorationRowDeleted" msprop:Generator_RowClassName="RestorationRow" msprop:Generator_UserTableName="Restoration" msprop:Generator_RowEvArgName="RestorationRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="ExhibitID" msprop:Generator_ColumnVarNameInTable="columnExhibitID" msprop:Generator_ColumnPropNameInRow="ExhibitID" msprop:Generator_ColumnPropNameInTable="ExhibitIDColumn" msprop:Generator_UserColumnName="ExhibitID" type="xs:int" minOccurs="0" />
               <xs:element name="RestorerID" msprop:Generator_ColumnVarNameInTable="columnRestorerID" msprop:Generator_ColumnPropNameInRow="RestorerID" msprop:Generator_ColumnPropNameInTable="RestorerIDColumn" msprop:Generator_UserColumnName="RestorerID" type="xs:int" minOccurs="0" />
               <xs:element name="Start" msprop:Generator_ColumnVarNameInTable="columnStart" msprop:Generator_ColumnPropNameInRow="Start" msprop:Generator_ColumnPropNameInTable="StartColumn" msprop:Generator_UserColumnName="Start" type="xs:dateTime" minOccurs="0" />
@@ -140,7 +140,7 @@
         <xs:element name="Maecenas" msprop:Generator_TableClassName="MaecenasDataTable" msprop:Generator_TableVarName="tableMaecenas" msprop:Generator_RowChangedName="MaecenasRowChanged" msprop:Generator_TablePropName="Maecenas" msprop:Generator_RowDeletingName="MaecenasRowDeleting" msprop:Generator_RowChangingName="MaecenasRowChanging" msprop:Generator_RowEvHandlerName="MaecenasRowChangeEventHandler" msprop:Generator_RowDeletedName="MaecenasRowDeleted" msprop:Generator_RowClassName="MaecenasRow" msprop:Generator_UserTableName="Maecenas" msprop:Generator_RowEvArgName="MaecenasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -154,7 +154,7 @@
         <xs:element name="Showroom" msprop:Generator_TableClassName="ShowroomDataTable" msprop:Generator_TableVarName="tableShowroom" msprop:Generator_RowChangedName="ShowroomRowChanged" msprop:Generator_TablePropName="Showroom" msprop:Generator_RowDeletingName="ShowroomRowDeleting" msprop:Generator_RowChangingName="ShowroomRowChanging" msprop:Generator_RowEvHandlerName="ShowroomRowChangeEventHandler" msprop:Generator_RowDeletedName="ShowroomRowDeleted" msprop:Generator_RowClassName="ShowroomRow" msprop:Generator_UserTableName="Showroom" msprop:Generator_RowEvArgName="ShowroomRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -168,7 +168,7 @@
         <xs:element name="Exhibition" msprop:Generator_TableClassName="ExhibitionDataTable" msprop:Generator_TableVarName="tableExhibition" msprop:Generator_RowChangedName="ExhibitionRowChanged" msprop:Generator_TablePropName="Exhibition" msprop:Generator_RowDeletingName="ExhibitionRowDeleting" msprop:Generator_RowChangingName="ExhibitionRowChanging" msprop:Generator_RowEvHandlerName="ExhibitionRowChangeEventHandler" msprop:Generator_RowDeletedName="ExhibitionRowDeleted" msprop:Generator_RowClassName="ExhibitionRow" msprop:Generator_UserTableName="Exhibition" msprop:Generator_RowEvArgName="ExhibitionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -240,7 +240,6 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Crutch_Exhibit" msdata:parent="Crutch" msdata:child="Exhibit" msdata:parentkey="ID" msdata:childkey="CrutchID" msprop:Generator_UserChildTable="Exhibit" msprop:Generator_ChildPropName="GetExhibitRows" msprop:Generator_UserRelationName="Crutch_Exhibit" msprop:Generator_ParentPropName="CrutchRow" msprop:Generator_RelationVarName="relationCrutch_Exhibit" msprop:Generator_UserParentTable="Crutch" />
       <msdata:Relationship name="Category_Exhibit" msdata:parent="Category" msdata:child="Exhibit" msdata:parentkey="ID" msdata:childkey="CategoryID" msprop:Generator_UserChildTable="Exhibit" msprop:Generator_ChildPropName="GetExhibitRows" msprop:Generator_UserRelationName="Category_Exhibit" msprop:Generator_ParentPropName="CategoryRow" msprop:Generator_RelationVarName="relationCategory_Exhibit" msprop:Generator_UserParentTable="Category" />
       <msdata:Relationship name="Museum_Rent" msdata:parent="Museum" msdata:child="Rent" msdata:parentkey="ID" msdata:childkey="MuseumID" msprop:Generator_UserChildTable="Rent" msprop:Generator_ChildPropName="GetRentRows" msprop:Generator_UserRelationName="Museum_Rent" msprop:Generator_RelationVarName="relationMuseum_Rent" msprop:Generator_UserParentTable="Museum" msprop:Generator_ParentPropName="MuseumRow" />
       <msdata:Relationship name="Exhibit_Rent" msdata:parent="Exhibit" msdata:child="Rent" msdata:parentkey="ID" msdata:childkey="ExhibitID" msprop:Generator_UserChildTable="Rent" msprop:Generator_ChildPropName="GetRentRows" msprop:Generator_UserRelationName="Exhibit_Rent" msprop:Generator_RelationVarName="relationExhibit_Rent" msprop:Generator_UserParentTable="Exhibit" msprop:Generator_ParentPropName="ExhibitRow" />
@@ -249,6 +248,7 @@
       <msdata:Relationship name="Showroom_Exhibition" msdata:parent="Showroom" msdata:child="Exhibition" msdata:parentkey="ID" msdata:childkey="ShowroomID" msprop:Generator_UserChildTable="Exhibition" msprop:Generator_ChildPropName="GetExhibitionRows" msprop:Generator_UserRelationName="Showroom_Exhibition" msprop:Generator_RelationVarName="relationShowroom_Exhibition" msprop:Generator_UserParentTable="Showroom" msprop:Generator_ParentPropName="ShowroomRow" />
       <msdata:Relationship name="Exhibition_Exhibit_Exhibition" msdata:parent="Exhibition" msdata:child="Exhibit_Exhibition" msdata:parentkey="ID" msdata:childkey="ExhibitionID" msprop:Generator_UserChildTable="Exhibit_Exhibition" msprop:Generator_ChildPropName="GetExhibit_ExhibitionRows" msprop:Generator_UserRelationName="Exhibition_Exhibit_Exhibition" msprop:Generator_RelationVarName="relationExhibition_Exhibit_Exhibition" msprop:Generator_UserParentTable="Exhibition" msprop:Generator_ParentPropName="ExhibitionRow" />
       <msdata:Relationship name="Exhibit_Exhibit_Exhibition" msdata:parent="Exhibit" msdata:child="Exhibit_Exhibition" msdata:parentkey="ID" msdata:childkey="ExhibitID" msprop:Generator_UserChildTable="Exhibit_Exhibition" msprop:Generator_ChildPropName="GetExhibit_ExhibitionRows" msprop:Generator_UserRelationName="Exhibit_Exhibit_Exhibition" msprop:Generator_RelationVarName="relationExhibit_Exhibit_Exhibition" msprop:Generator_UserParentTable="Exhibit" msprop:Generator_ParentPropName="ExhibitRow" />
+      <msdata:Relationship name="Crutch_Exhibit" msdata:parent="Crutch" msdata:child="Exhibit" msdata:parentkey="ID" msdata:childkey="CrutchID" msprop:Generator_UserChildTable="Exhibit" msprop:Generator_ChildPropName="GetExhibitRows" msprop:Generator_UserRelationName="Crutch_Exhibit" msprop:Generator_RelationVarName="relationCrutch_Exhibit" msprop:Generator_UserParentTable="Crutch" msprop:Generator_ParentPropName="CrutchRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

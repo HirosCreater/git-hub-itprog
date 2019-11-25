@@ -571,18 +571,18 @@ namespace MuseumObserverLogic
             try
             {
                 Transaction transaction = connection.BeginTransaction();
-                //try
+                try
                 {
                     crutch = new Crutch();
                     crutch.Save(dataSet, connection, transaction);
                     transaction.Commit();
                     result = true;
                 }
-                /*catch
+                catch
                 {
                     transaction.Rollback();
                     result = false;
-                }*/
+                }
             }
             finally
             {

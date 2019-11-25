@@ -44,3 +44,34 @@ namespace MuseumObserver
         }
     }
 }
+/*
+            DataView tempCrutch = new DataView(dataset.Crutch);
+            DataView tempTable = new DataView(dataset.Maecenas);
+            for (int i = 0; i<dataset.Maecenas.Rows.Count; i++)
+            {
+                tempCrutch.RowFilter = "[From] = 'Maecenas' AND InstanceID = " + dataset.Maecenas.Rows[i]["ID"];
+                if (tempCrutch.Count == 0)
+                {
+                    var newRow = dataset.Crutch.NewRow();
+                    //int newID = (int)dataset.Crutch.Max(row => row.ID) + 1;
+                    //newRow["ID"] = newID;
+                    newRow["From"] = "Maecenas";
+                    newRow["InstanceID"] = dataset.Maecenas.Rows[i]["ID"];
+                    dataset.Crutch.Rows.Add(newRow);
+                }
+            }
+            for (int i = 0; i<dataset.Museum.Rows.Count; i++)
+            {
+                tempCrutch.RowFilter = "[From] = 'Museum' AND InstanceID = " + dataset.Museum.Rows[i]["ID"];
+                if (tempCrutch.Count == 0)
+                {
+                    var newRow = dataset.Crutch.NewRow();
+                    //int newID = (int)dataset.Crutch.Max(row => row.ID) + 1;
+                    //newRow["ID"] = newID;
+                    newRow["From"] = "Museum";
+                    newRow["InstanceID"] = dataset.Museum.Rows[i]["ID"];
+                    dataset.Crutch.Rows.Add(newRow);
+                }
+            }
+            SaveToDataBase();
+            */

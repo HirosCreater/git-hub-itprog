@@ -46,8 +46,6 @@ namespace MuseumObserverLogic {
         
         private Exhibit_ExhibitionDataTable tableExhibit_Exhibition;
         
-        private global::System.Data.DataRelation relationCrutch_Exhibit;
-        
         private global::System.Data.DataRelation relationCategory_Exhibit;
         
         private global::System.Data.DataRelation relationMuseum_Rent;
@@ -63,6 +61,8 @@ namespace MuseumObserverLogic {
         private global::System.Data.DataRelation relationExhibition_Exhibit_Exhibition;
         
         private global::System.Data.DataRelation relationExhibit_Exhibit_Exhibition;
+        
+        private global::System.Data.DataRelation relationCrutch_Exhibit;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -452,7 +452,6 @@ namespace MuseumObserverLogic {
                     this.tableExhibit_Exhibition.InitVars();
                 }
             }
-            this.relationCrutch_Exhibit = this.Relations["Crutch_Exhibit"];
             this.relationCategory_Exhibit = this.Relations["Category_Exhibit"];
             this.relationMuseum_Rent = this.Relations["Museum_Rent"];
             this.relationExhibit_Rent = this.Relations["Exhibit_Rent"];
@@ -461,6 +460,7 @@ namespace MuseumObserverLogic {
             this.relationShowroom_Exhibition = this.Relations["Showroom_Exhibition"];
             this.relationExhibition_Exhibit_Exhibition = this.Relations["Exhibition_Exhibit_Exhibition"];
             this.relationExhibit_Exhibit_Exhibition = this.Relations["Exhibit_Exhibit_Exhibition"];
+            this.relationCrutch_Exhibit = this.Relations["Crutch_Exhibit"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -493,10 +493,6 @@ namespace MuseumObserverLogic {
             base.Tables.Add(this.tableExhibition);
             this.tableExhibit_Exhibition = new Exhibit_ExhibitionDataTable();
             base.Tables.Add(this.tableExhibit_Exhibition);
-            this.relationCrutch_Exhibit = new global::System.Data.DataRelation("Crutch_Exhibit", new global::System.Data.DataColumn[] {
-                        this.tableCrutch.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableExhibit.CrutchIDColumn}, false);
-            this.Relations.Add(this.relationCrutch_Exhibit);
             this.relationCategory_Exhibit = new global::System.Data.DataRelation("Category_Exhibit", new global::System.Data.DataColumn[] {
                         this.tableCategory.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableExhibit.CategoryIDColumn}, false);
@@ -529,6 +525,10 @@ namespace MuseumObserverLogic {
                         this.tableExhibit.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableExhibit_Exhibition.ExhibitIDColumn}, false);
             this.Relations.Add(this.relationExhibit_Exhibit_Exhibition);
+            this.relationCrutch_Exhibit = new global::System.Data.DataRelation("Crutch_Exhibit", new global::System.Data.DataColumn[] {
+                        this.tableCrutch.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExhibit.CrutchIDColumn}, false);
+            this.Relations.Add(this.relationCrutch_Exhibit);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -921,6 +921,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
@@ -1214,6 +1215,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this._column_From_.MaxLength = 50;
@@ -1489,6 +1491,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.Caption = "[From]";
@@ -1765,6 +1768,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.Caption = "[From]";
@@ -2091,6 +2095,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnExhibitID.Caption = "[From]";
@@ -2366,6 +2371,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
@@ -2719,6 +2725,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnPhoto.MaxLength = 255;
@@ -2995,6 +3002,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 100;
@@ -3270,6 +3278,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
@@ -3592,6 +3601,7 @@ namespace MuseumObserverLogic {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 255;
@@ -4130,23 +4140,23 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CrutchRow CrutchRow {
-                get {
-                    return ((CrutchRow)(this.GetParentRow(this.Table.ParentRelations["Crutch_Exhibit"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Crutch_Exhibit"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CategoryRow CategoryRow {
                 get {
                     return ((CategoryRow)(this.GetParentRow(this.Table.ParentRelations["Category_Exhibit"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Category_Exhibit"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CrutchRow CrutchRow {
+                get {
+                    return ((CrutchRow)(this.GetParentRow(this.Table.ParentRelations["Crutch_Exhibit"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Crutch_Exhibit"]);
                 }
             }
             

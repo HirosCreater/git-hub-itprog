@@ -7,31 +7,19 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Exhibit" ZOrder="20" X="706" Y="201" Height="217" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
-    <Shape ID="DesignTable:Crutch" ZOrder="15" X="904" Y="312" Height="102" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="98" />
-    <Shape ID="DesignTable:Category" ZOrder="14" X="905" Y="213" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
-    <Shape ID="DesignTable:Museum" ZOrder="8" X="505" Y="-30" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
-    <Shape ID="DesignTable:Rent" ZOrder="7" X="507" Y="95" Height="148" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
-    <Shape ID="DesignTable:Restorer" ZOrder="13" X="906" Y="-17" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
-    <Shape ID="DesignTable:Restoration" ZOrder="12" X="710" Y="-32" Height="194" Width="151" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="190" />
-    <Shape ID="DesignTable:Maecenas" ZOrder="9" X="906" Y="97" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
-    <Shape ID="DesignTable:Showroom" ZOrder="6" X="718" Y="482" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
-    <Shape ID="DesignTable:Exhibition" ZOrder="5" X="500" Y="434" Height="148" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
-    <Shape ID="DesignTable:Exhibit_Exhibition" ZOrder="1" X="460" Y="303" Height="79" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
+    <Shape ID="DesignTable:Crutch" ZOrder="16" X="904" Y="312" Height="102" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="98" />
+    <Shape ID="DesignTable:Category" ZOrder="15" X="905" Y="213" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
+    <Shape ID="DesignTable:Museum" ZOrder="9" X="505" Y="-30" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
+    <Shape ID="DesignTable:Rent" ZOrder="8" X="507" Y="95" Height="148" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
+    <Shape ID="DesignTable:Restorer" ZOrder="14" X="906" Y="-17" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
+    <Shape ID="DesignTable:Restoration" ZOrder="13" X="710" Y="-32" Height="194" Width="151" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="190" />
+    <Shape ID="DesignTable:Maecenas" ZOrder="10" X="906" Y="97" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
+    <Shape ID="DesignTable:Showroom" ZOrder="7" X="718" Y="482" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
+    <Shape ID="DesignTable:Exhibition" ZOrder="6" X="500" Y="434" Height="148" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
+    <Shape ID="DesignTable:Exhibit_Exhibition" ZOrder="2" X="460" Y="303" Height="79" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:Crutch_Exhibit" ZOrder="19" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>904</X>
-          <Y>357</Y>
-        </Point>
-        <Point>
-          <X>861</X>
-          <Y>357</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:Category_Exhibit" ZOrder="18" LineWidth="11">
+    <Connector ID="DesignRelation:Category_Exhibit" ZOrder="19" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>905</X>
@@ -43,7 +31,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Museum_Rent" ZOrder="17" LineWidth="11">
+    <Connector ID="DesignRelation:Museum_Rent" ZOrder="18" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>588</X>
@@ -55,7 +43,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Exhibit_Rent" ZOrder="16" LineWidth="11">
+    <Connector ID="DesignRelation:Exhibit_Rent" ZOrder="17" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>706</X>
@@ -67,7 +55,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Restorer_Restoration" ZOrder="11" LineWidth="11">
+    <Connector ID="DesignRelation:Restorer_Restoration" ZOrder="12" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>906</X>
@@ -79,7 +67,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Exhibit_Restoration" ZOrder="10" LineWidth="11">
+    <Connector ID="DesignRelation:Exhibit_Restoration" ZOrder="11" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>785</X>
@@ -91,7 +79,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Showroom_Exhibition" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:Showroom_Exhibition" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>718</X>
@@ -103,7 +91,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Exhibition_Exhibit_Exhibition" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:Exhibition_Exhibit_Exhibition" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>575</X>
@@ -115,7 +103,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Exhibit_Exhibit_Exhibition" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:Exhibit_Exhibit_Exhibition" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>706</X>
@@ -124,6 +112,18 @@
         <Point>
           <X>657</X>
           <Y>342</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:Crutch_Exhibit" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>904</X>
+          <Y>363</Y>
+        </Point>
+        <Point>
+          <X>861</X>
+          <Y>363</Y>
         </Point>
       </RoutePoints>
     </Connector>

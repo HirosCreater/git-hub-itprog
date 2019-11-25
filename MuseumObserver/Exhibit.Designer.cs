@@ -285,7 +285,6 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(682, 246);
             this.descriptionTextBox.TabIndex = 24;
-            this.descriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_TextChanged);
             // 
             // saveButton
             // 
@@ -296,6 +295,7 @@
             this.saveButton.TabIndex = 25;
             this.saveButton.Text = "Сохранить изменения";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // addButton
             // 
@@ -411,7 +411,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 544);
+            this.ClientSize = new System.Drawing.Size(992, 544);
             this.Controls.Add(this.buttonRememberChenged);
             this.Controls.Add(this.checkBoxTimeFilter);
             this.Controls.Add(this.groupBox1);

@@ -81,8 +81,9 @@ namespace MuseumObserver
         private void SaveToDataBase()
         {
             logic.setCategory(dataset);
-            logic.setExhibit(dataset);
             logic.setCrutch(dataset);
+            logic.setExhibit(dataset);
+            
             logic.setMuseum(dataset);
             logic.setMaecenas(dataset);
             LoadDataFromBase();
@@ -374,12 +375,25 @@ namespace MuseumObserver
             exhibitAdd.Show();
         }
 
-        private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (canChooseListBox)
+            {
+                canChooseListBox = false;
 
+                canChooseComboBoxGetFrom = false;
+                canChooseComboBoxExhibitCategor = false;
+
+                dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue).Delete();
+
+                canChooseComboBoxGetFrom = true;
+                canChooseComboBoxExhibitCategor = true;
+
+                canChooseListBox = true;
+            }
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             SaveToDataBase();
         }
