@@ -53,30 +53,32 @@ namespace MuseumObserver
         }
         private void getAndCopyPicture()
         {
-            string filename = "";
+            photoFilePath = "";
             int newFileName = 0;
 
             if (OPF.ShowDialog() == DialogResult.Cancel)
                 return;
-            filename = ComyPath + "\\" + Path.GetFileName(OPF.FileName);
-            while (true)
+            photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName);
+            if (!File.Exists("C:\\Pictures\\" + Path.GetFileName(OPF.FileName).Split('.')))
             {
-                if (System.IO.File.Exists(filename))
+                while (true)
                 {
-                    newFileName++;
-                    filename = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
+                    if (System.IO.File.Exists(photoFilePath))
+                    {
+                        newFileName++;
+                        photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
+                    }
+                    else
+                        break;
                 }
-                else
-                    break;
+
+                File.Copy(OPF.FileName, photoFilePath);
             }
-            File.Copy(OPF.FileName, filename);
-            photoFilePath = filename;
             pictureBox1.Image = Image.FromFile(photoFilePath);
         }
         private void CreateNewExhibit()
         {
             var newExhibit = dataset.Exhibit.NewRow();
-
 
             DateTime temp = appearanceDate.Value;
 
@@ -90,28 +92,10 @@ namespace MuseumObserver
 
             int getFromID = (int)comboBoxGetFrom.SelectedValue;
             string crutchFilter = "[From] = '" + tableNameDaritel + "' " + "AND InstanceID = " + getFromID;
-
             DataView tempCrutch = new DataView(dataset.Crutch);
             tempCrutch.RowFilter = crutchFilter;
-            if (tempCrutch.Count == 0)
-            {
-                var newRow = dataset.Crutch.NewRow();
-                //int newID = (int)dataset.Crutch.Max(row => row.ID) + 1;
-                //newRow["ID"] = newID;
-                newRow["From"] = tableNameDaritel;
-                newRow["InstanceID"] = getFromID;
-                dataset.Crutch.Rows.Add(newRow);
+            newExhibit["CrutchID"] = (int)tempCrutch[0][0];
 
-                tempCrutch = new DataView(dataset.Crutch);
-                tempCrutch.RowFilter = "[From] = '" + tableNameDaritel + "' " + "AND InstanceID = " + getFromID; ;
-
-
-                newExhibit["CrutchID"] = (int)tempCrutch[0][0];
-            }
-            else
-            {
-                newExhibit["CrutchID"] = (int)tempCrutch[0][0];
-            }
             dataset.Exhibit.Rows.Add(newExhibit);
         }
         private void SaveToDataset_Click(object sender, EventArgs e)
@@ -130,7 +114,6 @@ namespace MuseumObserver
             EW.Enabled = true;
             this.Close();
         }
-
         private void RadioMaecenas_CheckedChanged(object sender, EventArgs e)
         {
             if (radioMaecenas.Checked == true)
@@ -140,7 +123,6 @@ namespace MuseumObserver
                 tableNameDaritel = "Maecenas";
             }
         }
-
         private void RadioMuseum_CheckedChanged(object sender, EventArgs e)
         {
             if (radioMuseum.Checked == true)

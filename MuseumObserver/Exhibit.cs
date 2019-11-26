@@ -315,12 +315,9 @@ namespace MuseumObserver
             dataset.Exhibit.Rows.Find(exhibitID)["CategoryID"] = categorID;
             dataset.Exhibit.Rows.Find(exhibitID)["CreatedDate"] = createdDate.Value;
             dataset.Exhibit.Rows.Find(exhibitID)["AppearanceDate"] = appearanceDate.Value;
-
             if ((string)dataset.Exhibit.Rows.Find(exhibitID)["Photo"] != photoFilePath && photoFilePath != null)
                 dataset.Exhibit.Rows.Find(exhibitID)["Photo"] = photoFilePath;
-
             dataset.Exhibit.Rows.Find(exhibitID)["Description"] = descriptionTextBox.Text;
-
             if (radioMaecenas.Checked)
             {
                 dataset.Crutch.Rows.Find(crutchID)["From"] = "Maecenas";
@@ -336,24 +333,8 @@ namespace MuseumObserver
             crutchFilter += "AND InstanceID = " + getFromID;
             DataView tempCrutch = new DataView(dataset.Crutch);
             tempCrutch.RowFilter = crutchFilter;
-            if (tempCrutch.Count == 0)
-            {
-                var newRow = dataset.Crutch.NewRow();
-                int newID = (int)dataset.Crutch.Max(row => row.ID) + 1;
-                //newRow["ID"] = newID;
-                newRow["From"] = fromTable;
-                newRow["InstanceID"] = getFromID;
-                dataset.Crutch.Rows.Add(newRow);
-
-                tempCrutch = new DataView(dataset.Crutch);
-                tempCrutch.RowFilter = "From = '" + fromTable + "' " + "AND InstanceID = " + getFromID;
-
-                dataset.Exhibit.Rows.Find(exhibitID)["CrutchID"] = (int)tempCrutch[0][0];
-            }
-            else
-            {
-                dataset.Exhibit.Rows.Find(exhibitID)["CrutchID"] = (int)tempCrutch[0][0];
-            }
+            tempCrutch.RowFilter = "From = '" + fromTable + "' " + "AND InstanceID = " + getFromID;
+            dataset.Exhibit.Rows.Find(exhibitID)["CrutchID"] = (int)tempCrutch[0][0];
         }
 
         private void ComboBoxGetFrom_SelectedIndexChanged(object sender, EventArgs e)
@@ -361,20 +342,17 @@ namespace MuseumObserver
             if (canChooseComboBoxGetFrom)
                 getFromID = (int)comboBoxGetFrom.SelectedValue;
         }
-
         private void ComboBoxExhibitCategor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (canChooseComboBoxExhibitCategor)
                 categorID = (int)comboBoxExhibitCategor.SelectedValue;
         }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
             ExhibitAdd exhibitAdd = new ExhibitAdd(this, ref dataset);
             exhibitAdd.Show();
         }
-
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             if (canChooseListBox)
@@ -384,15 +362,16 @@ namespace MuseumObserver
                 canChooseComboBoxGetFrom = false;
                 canChooseComboBoxExhibitCategor = false;
 
+                if (File.Exists(dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString()))
+                    File.Delete(dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString());
                 dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue).Delete();
 
                 canChooseComboBoxGetFrom = true;
                 canChooseComboBoxExhibitCategor = true;
 
                 canChooseListBox = true;
-            }
+            } 
         }
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
             SaveToDataBase();
