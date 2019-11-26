@@ -109,6 +109,7 @@
             this.museumComboBox.Name = "museumComboBox";
             this.museumComboBox.Size = new System.Drawing.Size(121, 21);
             this.museumComboBox.TabIndex = 28;
+            this.museumComboBox.SelectedIndexChanged += new System.EventHandler(this.museumComboBox_SelectedIndexChanged);
             // 
             // label10
             // 

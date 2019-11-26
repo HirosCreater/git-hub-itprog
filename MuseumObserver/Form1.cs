@@ -28,10 +28,10 @@ namespace MuseumObserver
             Exhibit exhibit = new Exhibit();
             exhibit.Show();
 
-            /*Rent rent = new Rent();
+            Rent rent = new Rent();
             rent.Show();
 
-            Exhibition exhibition = new Exhibition();
+            /*Exhibition exhibition = new Exhibition();
             exhibition.Show();
             
             Exhibit exhibit = new Exhibit();
