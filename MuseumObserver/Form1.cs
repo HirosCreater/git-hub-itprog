@@ -20,8 +20,8 @@ namespace MuseumObserver
             maecenas.Show();
 
             Showroom showroom = new Showroom();
-            showroom.Show();
-            */
+            showroom.Show();*/
+            
             Restoration restoration = new Restoration();
             restoration.Show();
 

@@ -29,6 +29,7 @@ namespace MuseumObserver
             showroomListBox.ValueMember = "ID";
 
             setNameTextBox();
+            canChooseShowroom = true;
         }
 
         private void LoadDataFromBase()
@@ -73,7 +74,7 @@ namespace MuseumObserver
             if (canChooseShowroom)
             {
                 idListBox = (int)showroomListBox.SelectedValue;
-                nameTextBox.Text = dataset.Maecenas.Rows.Find(idListBox)["Name"].ToString();
+                nameTextBox.Text = dataset.Showroom.Rows.Find(idListBox)["Name"].ToString();
             }
         }
 
@@ -90,6 +91,7 @@ namespace MuseumObserver
                 dataset.Showroom.Rows.Find(idListBox)["Name"] = nameTextBox.Text;
                 canChooseShowroom = true;
                 showroomListBox.DataSource = dataset.Showroom;
+                SaveDataToBase();
             }
             else
             {
@@ -137,5 +139,15 @@ namespace MuseumObserver
             }
             canChooseShowroom = true;
         }
+        /*private void SaveToDataBase()
+        {
+            logic.setCategory(dataset);
+            logic.setCrutch(dataset);
+            logic.setExhibit(dataset);
+
+            logic.setMuseum(dataset);
+            logic.setMaecenas(dataset);
+            LoadDataFromBase();
+        }*/
     }
 }
