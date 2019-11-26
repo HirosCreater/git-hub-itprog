@@ -32,6 +32,8 @@ namespace MuseumObserver
         int categorID;
         bool canChooseComboBoxGetFrom = false;
         bool canChooseComboBoxExhibitCategor = false;
+
+        bool canRemember = false;
         public Exhibit()
         {
             InitializeComponent();
@@ -83,7 +85,7 @@ namespace MuseumObserver
             logic.setCategory(dataset);
             logic.setCrutch(dataset);
             logic.setExhibit(dataset);
-            
+
             logic.setMuseum(dataset);
             logic.setMaecenas(dataset);
             LoadDataFromBase();
@@ -91,6 +93,7 @@ namespace MuseumObserver
 
         private void setExhibitListBox()
         {
+            SetDefaultRestorationControls();
             canChooseListBox = false;
 
             comboBoxExhibitCategor.DataSource = null;
@@ -205,7 +208,7 @@ namespace MuseumObserver
             if (canChooseListBox)
             {
                 canChooseListBox = false;
-
+                canRemember = true;
                 canChooseComboBoxGetFrom = false;
                 canChooseComboBoxExhibitCategor = false;
                 setExhibitData();
@@ -295,13 +298,17 @@ namespace MuseumObserver
 
         private void ButtonRememberChenged_Click(object sender, EventArgs e)
         {
-            canChooseComboBoxGetFrom = false;
-            canChooseComboBoxExhibitCategor = false;
-            canChooseListBox = false;
-            RememberChenged();
-            canChooseListBox = true;
-            canChooseComboBoxGetFrom = true;
-            canChooseComboBoxExhibitCategor = true;
+            if (canRemember)
+            {
+                canChooseComboBoxGetFrom = false;
+                canChooseComboBoxExhibitCategor = false;
+                canChooseListBox = false;
+                canRemember = false;
+                RememberChenged();
+                canChooseListBox = true;
+                canChooseComboBoxGetFrom = true;
+                canChooseComboBoxExhibitCategor = true;
+            }
         }
         private void RememberChenged()
         {
@@ -362,19 +369,31 @@ namespace MuseumObserver
                 canChooseComboBoxGetFrom = false;
                 canChooseComboBoxExhibitCategor = false;
 
-                if (File.Exists(dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString()))
-                    File.Delete(dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString());
+                /*if (File.Exists(dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString()))
+                    File.Delete(dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"].ToString());*/
                 dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue).Delete();
 
                 canChooseComboBoxGetFrom = true;
                 canChooseComboBoxExhibitCategor = true;
 
                 canChooseListBox = true;
-            } 
+            }
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
             SaveToDataBase();
+        }
+        private void SetDefaultRestorationControls()
+        {
+            pictureBox1.Image = Image.FromFile("Pictures/DefaultImage.jpg");
+            nameTextBox.Text = "";
+            appearanceDate.Value = DateTime.Now;
+            createdDate.Value = DateTime.Now;
+            comboBoxGetFrom.DataSource = null;
+            radioMaecenas.Checked = false;
+            radioMuseum.Checked = false;
+            comboBoxExhibitCategor.DataSource = null;
+            descriptionTextBox.Text = "";
         }
     }
 }
