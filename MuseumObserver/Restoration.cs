@@ -277,10 +277,10 @@ namespace MuseumObserver
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            /*
+            
             this.Enabled = false;
-            RestorationAdd restorationAdd = new ExhibitAdd(this, ref dataset);
-            restorationAdd.Show();*/
+            RestorationAdd restorationAdd = new RestorationAdd(this, ref dataset);
+            restorationAdd.Show();
         }
     }
 }

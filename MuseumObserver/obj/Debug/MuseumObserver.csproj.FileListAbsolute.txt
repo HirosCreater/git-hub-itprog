@@ -72,3 +72,4 @@ C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csproj.CoreCompileInpu
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csproj.CopyComplete
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.exe
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.pdb
+C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.RestorationAdd.resources

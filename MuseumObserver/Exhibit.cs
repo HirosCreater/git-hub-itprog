@@ -23,26 +23,16 @@ namespace MuseumObserver
         string tableNameDaritel;
         int tempIDDaritel;
         bool getEnabledControl = false;
-
-        string ComyPath = "C:\\Pictures";
         string photoFilePath;
-        OpenFileDialog OPF;
-
         int getFromID;
         int categorID;
         bool canChooseComboBoxGetFrom = false;
         bool canChooseComboBoxExhibitCategor = false;
-
         bool canRemember = false;
+        ControlFunction CFunc = new ControlFunction();
         public Exhibit()
         {
             InitializeComponent();
-
-            OPF = new OpenFileDialog();
-            OPF.FilterIndex = 5;
-
-            OPF.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
-            OPF.InitialDirectory = "C:\\";
 
             ChangeActivityControl();
 
@@ -69,7 +59,6 @@ namespace MuseumObserver
             setDescriptionTextBox();
             setAppearanceDate();*/
         }
-
         private void LoadDataFromBase()
         {
             dataset = new DataSetMuseum();
@@ -79,7 +68,6 @@ namespace MuseumObserver
             dataset.Merge(logic.getMuseum());
             dataset.Merge(logic.getMaecenas());
         }
-
         private void SaveToDataBase()
         {
             logic.setCategory(dataset);
@@ -90,7 +78,6 @@ namespace MuseumObserver
             logic.setMaecenas(dataset);
             LoadDataFromBase();
         }
-
         private void setExhibitListBox()
         {
             SetDefaultRestorationControls();
@@ -122,7 +109,6 @@ namespace MuseumObserver
 
             canChooseListBox = true;
         }
-
         private void setExhibitData()
         {
 
@@ -224,25 +210,9 @@ namespace MuseumObserver
         }
         private void getAndCopyPicture()
         {
-            string filename = "";
-            int newFileName = 0;
-
-            if (OPF.ShowDialog() == DialogResult.Cancel)
-                return;
-            filename = ComyPath + "\\" + Path.GetFileName(OPF.FileName);
-            while (true)
-            {
-                if (System.IO.File.Exists(filename))
-                {
-                    newFileName++;
-                    filename = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
-                }
-                else
-                    break;
-            }
-            File.Copy(OPF.FileName, filename);
-            photoFilePath = filename;
-            dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"] = filename;
+            photoFilePath = CFunc.GetPicturePath();
+            pictureBox1.Image = Image.FromFile(photoFilePath);
+            dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"] = photoFilePath;
         }
         private void RadioMecenat_CheckedChanged(object sender, EventArgs e)
         {
@@ -256,7 +226,6 @@ namespace MuseumObserver
                 }
             }
         }
-
         private void RadioMuseum_CheckedChanged(object sender, EventArgs e)
         {
             if (radioMuseum.Checked == true)
@@ -269,22 +238,18 @@ namespace MuseumObserver
                 }
             }
         }
-
         private void AppearanceDateFrom_ValueChanged(object sender, EventArgs e)
         {
             setExhibitListBox();
         }
-
         private void AppearanceDateTo_ValueChanged(object sender, EventArgs e)
         {
             setExhibitListBox();
         }
-
         private void CheckBoxTimeFilter_CheckedChanged(object sender, EventArgs e)
         {
             setExhibitListBox();
         }
-
         private void ChangeActivityControl()
         {
             appearanceDate.Enabled = getEnabledControl;
@@ -295,7 +260,6 @@ namespace MuseumObserver
             setPhotoButton.Enabled = getEnabledControl;
             buttonRememberChenged.Enabled = getEnabledControl;
         }
-
         private void ButtonRememberChenged_Click(object sender, EventArgs e)
         {
             if (canRemember)
@@ -343,7 +307,6 @@ namespace MuseumObserver
             tempCrutch.RowFilter = "From = '" + fromTable + "' " + "AND InstanceID = " + getFromID;
             dataset.Exhibit.Rows.Find(exhibitID)["CrutchID"] = (int)tempCrutch[0][0];
         }
-
         private void ComboBoxGetFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (canChooseComboBoxGetFrom)

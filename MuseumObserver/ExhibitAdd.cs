@@ -18,11 +18,10 @@ namespace MuseumObserver
         DataSetMuseum dataset;
         Exhibit EW;
         bool exit = false;
-        string ComyPath = "C:\\Pictures";
         string photoFilePath;
-        OpenFileDialog OPF;
         DataView tempViewDaritel;
         string tableNameDaritel;
+        ControlFunction CFunc = new ControlFunction();
 
         public ExhibitAdd(Exhibit tempExhibitWindow, ref DataSetMuseum tempDtaset)
         {
@@ -37,12 +36,6 @@ namespace MuseumObserver
             comboBoxExhibitCategor.DisplayMember = "Name";
             comboBoxExhibitCategor.ValueMember = "ID";
 
-            OPF = new OpenFileDialog();
-            OPF.FilterIndex = 5;
-
-            OPF.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
-            OPF.InitialDirectory = "C:\\";
-
             radioMuseum.Checked = false;
             radioMaecenas.Checked = false;
         }
@@ -53,36 +46,15 @@ namespace MuseumObserver
         }
         private void getAndCopyPicture()
         {
-            photoFilePath = "";
-            int newFileName = 0;
-
-            if (OPF.ShowDialog() == DialogResult.Cancel)
-                return;
-            photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName);
-            if (!File.Exists("C:\\Pictures\\" + Path.GetFileName(OPF.FileName).Split('.')))
-            {
-                while (true)
-                {
-                    if (System.IO.File.Exists(photoFilePath))
-                    {
-                        newFileName++;
-                        photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
-                    }
-                    else
-                        break;
-                }
-
-                File.Copy(OPF.FileName, photoFilePath);
-            }
+            photoFilePath = CFunc.GetPicturePath();
             pictureBox1.Image = Image.FromFile(photoFilePath);
         }
+
         private void CreateNewExhibit()
         {
             var newExhibit = dataset.Exhibit.NewRow();
-
             DateTime temp = appearanceDate.Value;
 
-            newExhibit["ID"] = (int)dataset.Exhibit.Max(row => row.ID) + 1;
             newExhibit["Name"] = nameTextBox.Text;
             newExhibit["CategoryID"] = comboBoxExhibitCategor.SelectedValue;
             newExhibit["CreatedDate"] = createdDate.Value;

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlFunction.cs" />
     <Compile Include="Exhibit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +97,12 @@
     <Compile Include="Restoration.Designer.cs">
       <DependentUpon>Restoration.cs</DependentUpon>
     </Compile>
+    <Compile Include="RestorationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestorationAdd.Designer.cs">
+      <DependentUpon>RestorationAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Showroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Restoration.resx">
       <DependentUpon>Restoration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestorationAdd.resx">
+      <DependentUpon>RestorationAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Showroom.resx">
       <DependentUpon>Showroom.cs</DependentUpon>
