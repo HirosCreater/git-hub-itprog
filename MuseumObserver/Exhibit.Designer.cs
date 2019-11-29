@@ -183,6 +183,8 @@
             // 
             // exhibitListBox
             // 
+            this.exhibitListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.exhibitListBox.FormattingEnabled = true;
             this.exhibitListBox.ItemHeight = 16;
             this.exhibitListBox.Location = new System.Drawing.Point(17, 270);
@@ -279,6 +281,9 @@
             // 
             // descriptionTextBox
             // 
+            this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTextBox.Location = new System.Drawing.Point(296, 283);
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.descriptionTextBox.Multiline = true;
@@ -288,6 +293,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.Location = new System.Drawing.Point(17, 459);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
@@ -299,6 +305,7 @@
             // 
             // addButton
             // 
+            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addButton.Location = new System.Drawing.Point(17, 494);
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
@@ -310,6 +317,7 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteButton.Location = new System.Drawing.Point(144, 494);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
@@ -411,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 544);
+            this.ClientSize = new System.Drawing.Size(992, 543);
             this.Controls.Add(this.buttonRememberChenged);
             this.Controls.Add(this.checkBoxTimeFilter);
             this.Controls.Add(this.groupBox1);
@@ -445,6 +453,9 @@
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.categoryComboBox);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1010, 800);
+            this.MinimumSize = new System.Drawing.Size(1010, 590);
             this.Name = "Exhibit";
             this.Text = "Экспонаты";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

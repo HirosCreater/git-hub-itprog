@@ -60,7 +60,6 @@ C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csprojAssemblyReferenc
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Exhibit.resources
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.ExhibitAdd.resources
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Exhibition.resources
-C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Form1.resources
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Maecenas.resources
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Museum.resources
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.Properties.Resources.resources
