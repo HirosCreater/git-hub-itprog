@@ -345,7 +345,7 @@ namespace MuseumObserver
         private void AddButton_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            ExhibitAdd exhibitAdd = new ExhibitAdd(this, ref dataset);
+            ExhibitAdd exhibitAdd = new ExhibitAdd(this, ref dataset, ref CFunc);
             exhibitAdd.Show();
         }
         private void DeleteButton_Click(object sender, EventArgs e)

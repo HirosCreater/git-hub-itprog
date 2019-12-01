@@ -38,13 +38,13 @@
             this.setPhotoButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.createdDate = new System.Windows.Forms.DateTimePicker();
             this.appearanceDate = new System.Windows.Forms.DateTimePicker();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SaveToDataset = new System.Windows.Forms.Button();
+            this.dateCreationTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -153,14 +153,6 @@
             this.label8.TabIndex = 38;
             this.label8.Text = "Экспонат получен от";
             // 
-            // createdDate
-            // 
-            this.createdDate.Location = new System.Drawing.Point(522, 79);
-            this.createdDate.Margin = new System.Windows.Forms.Padding(4);
-            this.createdDate.Name = "createdDate";
-            this.createdDate.Size = new System.Drawing.Size(172, 22);
-            this.createdDate.TabIndex = 37;
-            // 
             // appearanceDate
             // 
             this.appearanceDate.Location = new System.Drawing.Point(522, 49);
@@ -218,11 +210,20 @@
             this.SaveToDataset.UseVisualStyleBackColor = true;
             this.SaveToDataset.Click += new System.EventHandler(this.SaveToDataset_Click);
             // 
+            // dateCreationTextBox
+            // 
+            this.dateCreationTextBox.Location = new System.Drawing.Point(424, 76);
+            this.dateCreationTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.dateCreationTextBox.Name = "dateCreationTextBox";
+            this.dateCreationTextBox.Size = new System.Drawing.Size(270, 22);
+            this.dateCreationTextBox.TabIndex = 47;
+            // 
             // ExhibitAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 548);
+            this.Controls.Add(this.dateCreationTextBox);
             this.Controls.Add(this.SaveToDataset);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBoxGetFrom);
@@ -232,7 +233,6 @@
             this.Controls.Add(this.setPhotoButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.createdDate);
             this.Controls.Add(this.appearanceDate);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label7);
@@ -261,12 +261,12 @@
         private System.Windows.Forms.Button setPhotoButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker createdDate;
         private System.Windows.Forms.DateTimePicker appearanceDate;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button SaveToDataset;
+        private System.Windows.Forms.TextBox dateCreationTextBox;
     }
 }

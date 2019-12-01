@@ -21,13 +21,16 @@ namespace MuseumObserver
         string photoFilePath;
         DataView tempViewDaritel;
         string tableNameDaritel;
-        ControlFunction CFunc = new ControlFunction();
+        ControlFunction CFunc;
 
-        public ExhibitAdd(Exhibit tempExhibitWindow, ref DataSetMuseum tempDtaset)
+        string EnterNameExhibit = "Введите имя экспоната!";
+        string EnterCreationDate = "Поля для возраста экспоната пустое!";
+        public ExhibitAdd(Exhibit tempExhibitWindow, ref DataSetMuseum tempDtaset, ref ControlFunction tempControlFunction)
         {
             InitializeComponent();
             EW = tempExhibitWindow;
             dataset = tempDtaset;
+            CFunc = tempControlFunction;
 
             comboBoxGetFrom.DisplayMember = "Name";
             comboBoxGetFrom.ValueMember = "ID";
@@ -47,7 +50,10 @@ namespace MuseumObserver
         private void getAndCopyPicture()
         {
             photoFilePath = CFunc.GetPicturePath();
-            pictureBox1.Image = Image.FromFile(photoFilePath);
+            if (photoFilePath != "NOTHING")
+            {
+                pictureBox1.Image = Image.FromFile(photoFilePath);
+            }
         }
 
         private void CreateNewExhibit()
@@ -55,9 +61,14 @@ namespace MuseumObserver
             var newExhibit = dataset.Exhibit.NewRow();
             DateTime temp = appearanceDate.Value;
 
-            newExhibit["Name"] = nameTextBox.Text;
+            string nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterNameExhibit);
+            if (nameText == "")
+                return;
             newExhibit["CategoryID"] = comboBoxExhibitCategor.SelectedValue;
-            newExhibit["CreatedDate"] = createdDate.Value;
+            nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterCreationDate);
+            if (nameText == "")
+                return;
+            newExhibit["CreatedDate"] = dateCreationTextBox.Text;
             newExhibit["AppearanceDate"] = appearanceDate.Value;
             newExhibit["Photo"] = photoFilePath;
             newExhibit["Description"] = descriptionTextBox.Text;
