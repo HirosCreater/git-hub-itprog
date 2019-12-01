@@ -15,6 +15,7 @@ namespace MuseumObserver
         Museum MusW;
         Maecenas MaecW;
         Showroom ShowW;
+        ExhibitAdd ExAddW;
         public ControlFunction()
         {
             OPF = new OpenFileDialog();
@@ -56,52 +57,74 @@ namespace MuseumObserver
         {
             string newSTR = "";
             //Для Exhibit
-            if (window.GetType() == typeof(Exhibit))
             {
-                ExW = (Exhibit)window;
-                ExW.Enabled = false;
-                if (checkStr.Trim() == "")
+                if (window.GetType() == typeof(Exhibit))
                 {
-                    ShowMessage(showSTR);
+                    ExW = (Exhibit)window;
+                    ExW.Enabled = false;
+                    if (checkStr.Trim() == "")
+                    {
+                        ShowMessage(showSTR);
+                    }
+                    ExW.Enabled = true;
+                    return checkStr;
                 }
-                ExW.Enabled = true;
-                return checkStr;
+            }
+            //Для ExhibitAdd
+            {
+                if (window.GetType() == typeof(ExhibitAdd))
+                {
+                    ExAddW = (ExhibitAdd)window;
+                    ExAddW.Enabled = false;
+                    if (checkStr.Trim() == "")
+                    {
+                        ShowMessage(showSTR);
+                    }
+                    ExAddW.Enabled = true;
+                    return checkStr;
+                }
             }
             //Для Museum
-            if (window.GetType() == typeof(Museum))
             {
-                MusW = (Museum)window;
-                MusW.Enabled = false;
-                if (checkStr.Trim() == "")
+                if (window.GetType() == typeof(Museum))
                 {
-                    ShowMessage(showSTR);
+                    MusW = (Museum)window;
+                    MusW.Enabled = false;
+                    if (checkStr.Trim() == "")
+                    {
+                        ShowMessage(showSTR);
+                    }
+                    MusW.Enabled = true;
+                    return checkStr;
                 }
-                MusW.Enabled = true;
-                return checkStr;
             }
             //Для Maecenas
-            if (window.GetType() == typeof(Maecenas))
             {
-                MaecW = (Maecenas)window;
-                MaecW.Enabled = false;
-                if (checkStr.Trim() == "")
+                if (window.GetType() == typeof(Maecenas))
                 {
-                    ShowMessage(showSTR);
+                    MaecW = (Maecenas)window;
+                    MaecW.Enabled = false;
+                    if (checkStr.Trim() == "")
+                    {
+                        ShowMessage(showSTR);
+                    }
+                    MaecW.Enabled = true;
+                    return checkStr;
                 }
-                MaecW.Enabled = true;
-                return checkStr;
             }
             //Для Showroom
-            if (window.GetType() == typeof(Showroom))
             {
-                ShowW = (Showroom)window;
-                ShowW.Enabled = false;
-                if (checkStr.Trim() == "")
+                if (window.GetType() == typeof(Showroom))
                 {
-                    ShowMessage(showSTR);
+                    ShowW = (Showroom)window;
+                    ShowW.Enabled = false;
+                    if (checkStr.Trim() == "")
+                    {
+                        ShowMessage(showSTR);
+                    }
+                    ShowW.Enabled = true;
+                    return checkStr;
                 }
-                ShowW.Enabled = true;
-                return checkStr;
             }
             return newSTR;
         }
