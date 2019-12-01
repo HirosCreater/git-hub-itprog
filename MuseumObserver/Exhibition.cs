@@ -15,12 +15,13 @@ namespace MuseumObserver
     {
         DataSetMuseum dataset;
         Logic logic = new Logic();
-
-        public Exhibition()
+        Exhibit ExW;
+        public Exhibition(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
-            dataset = new DataSetMuseum();
-            loadDataFromBase();
+
+            dataset = tempDataset;
+            ExW = tempExhibitWindow;
 
             exhibitionListBox.DataSource = dataset.Exhibition;
             exhibitionListBox.DisplayMember = "Name";
@@ -87,29 +88,12 @@ namespace MuseumObserver
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+
+
+
+        private void Exhibition_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            ExW.Enabled = true;
         }
     }
 }

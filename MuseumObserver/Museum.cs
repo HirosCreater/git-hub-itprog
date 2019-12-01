@@ -17,45 +17,17 @@ namespace MuseumObserver
         Logic logic = new Logic();
         protected int idListBox = -1;
         protected bool canChooseMuseum = false;
-        public Museum()
+        Exhibit ExW;
+        public Museum(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
-            LoadDataFromBase();
+            ExW = tempExhibitWindow; ExW.Enabled = false;
+            dataset = tempDataset;
             MuseumListBox.DataSource = dataset.Museum;
             MuseumListBox.DisplayMember = "Name";
             MuseumListBox.ValueMember = "ID";
 
             canChooseMuseum = true;
-        }
-        private void LoadDataFromBase()
-        {
-            dataset = new DataSetMuseum();
-            dataset.Merge(logic.getCategory());
-            dataset.Merge(logic.getCrutch());
-            dataset.Merge(logic.getExhibit());
-            dataset.Merge(logic.getExhibition());
-            dataset.Merge(logic.getExhibit_Exhibition());
-            dataset.Merge(logic.getMaecenas());
-            dataset.Merge(logic.getMuseum());
-            dataset.Merge(logic.getRent());
-            dataset.Merge(logic.getRestoration());
-            dataset.Merge(logic.getRestorer());
-            dataset.Merge(logic.getShowroom());
-        }
-        private void SaveDataToBase()
-        {
-            logic.setCategory(dataset);
-            logic.setCrutch(dataset);
-            logic.setExhibit(dataset);
-            logic.setExhibition(dataset);
-            logic.setExhibit_Exhibition(dataset);
-            logic.setMaecenas(dataset);
-            logic.setMuseum(dataset);
-            logic.setRent(dataset);
-            logic.setRestoration(dataset);
-            logic.setRestorer(dataset);
-            logic.setShowroom(dataset);
-            LoadDataFromBase();
         }
         private void MuseumListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -120,6 +92,11 @@ namespace MuseumObserver
                     MessageBoxOptions.DefaultDesktopOnly);
             }
             canChooseMuseum = true;
+        }
+
+        private void Museum_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ExW.Enabled = true;
         }
     }
 }

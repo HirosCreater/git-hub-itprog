@@ -11,6 +11,8 @@ namespace MuseumObserver
         private string ComyPath = "C:\\Pictures";
         private string nothing = "NOTHING";
         string photoFilePath;
+        Exhibit ExW;
+
         public ControlFunction()
         {
             OPF = new OpenFileDialog();
@@ -28,27 +30,51 @@ namespace MuseumObserver
             if (OPF.ShowDialog() == DialogResult.Cancel)
                 return nothing;
             photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName);
-            if (!File.Exists("C:\\Pictures\\" + Path.GetFileName(OPF.FileName).Split('.')))
-            {
-                while (true)
-                {
-                    if (System.IO.File.Exists(photoFilePath))
-                    {
-                        newFileName++;
-                        photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
-                    }
-                    else
-                        break;
-                }
 
-                File.Copy(OPF.FileName, photoFilePath);
-            }
+                if (!File.Exists("C:\\Pictures\\" + Path.GetFileName(OPF.FileName).Split('.')))
+                {
+                    while (true)
+                    {
+                        if (System.IO.File.Exists(photoFilePath))
+                        {
+                            newFileName++;
+                            photoFilePath = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
+                        }
+                        else
+                            break;
+                    }
+
+                    File.Copy(OPF.FileName, photoFilePath);
+                }
+            
             return photoFilePath;
         }
 
-        public void CreateNewRow(Restoration tempRestoration, ref DataSetMuseum dataset)
+        public string CheckTextBox(object window, string checkStr, string showSTR)
         {
-            
+            string newSTR = "";
+            //Для Exhibit
+            if (window.GetType() == typeof(Exhibit))
+            {
+                ExW = (Exhibit)window;
+                ExW.Enabled = false;
+                if (checkStr.Trim() == "")
+                {
+                    ShowMessage(showSTR);
+                }
+                ExW.Enabled = true;
+            }
+            return newSTR;
+        }
+        public void ShowMessage(string showSTR)
+        {
+            MessageBox.Show(
+                showSTR,
+                "Сообщение",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
         }
     }
 }

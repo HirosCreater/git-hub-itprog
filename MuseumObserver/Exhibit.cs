@@ -29,6 +29,9 @@ namespace MuseumObserver
         bool canChooseComboBoxGetFrom = false;
         bool canChooseComboBoxExhibitCategor = false;
         bool canRemember = false;
+
+        private string EnterNameExhibit = "Введите имя экспоната!!!";
+
         ControlFunction CFunc = new ControlFunction();
         public Exhibit()
         {
@@ -52,12 +55,6 @@ namespace MuseumObserver
             canChooseCombo = true;
             canChooseComboBoxGetFrom = true;
             canChooseComboBoxExhibitCategor = true;
-
-            /*setExhibitListBox();
-            setNameTextBox();
-            setCategoryTextBox();
-            setDescriptionTextBox();
-            setAppearanceDate();*/
         }
         private void LoadDataFromBase()
         {
@@ -211,8 +208,11 @@ namespace MuseumObserver
         private void getAndCopyPicture()
         {
             photoFilePath = CFunc.GetPicturePath();
-            pictureBox1.Image = Image.FromFile(photoFilePath);
-            dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"] = photoFilePath;
+            if (photoFilePath != "NOTHING")
+            {
+                pictureBox1.Image = Image.FromFile(photoFilePath);
+                dataset.Exhibit.Rows.Find(exhibitListBox.SelectedValue)["Photo"] = photoFilePath;
+            }
         }
         private void RadioMecenat_CheckedChanged(object sender, EventArgs e)
         {
@@ -240,6 +240,7 @@ namespace MuseumObserver
         }
         private void AppearanceDateFrom_ValueChanged(object sender, EventArgs e)
         {
+            appearanceDateTo.MinDate = appearanceDateFrom.Value;
             setExhibitListBox();
         }
         private void AppearanceDateTo_ValueChanged(object sender, EventArgs e)
@@ -253,7 +254,7 @@ namespace MuseumObserver
         private void ChangeActivityControl()
         {
             appearanceDate.Enabled = getEnabledControl;
-            createdDate.Enabled = getEnabledControl;
+            TimeTextBox.Enabled = getEnabledControl;
             comboBoxGetFrom.Enabled = getEnabledControl;
             groupBox1.Enabled = getEnabledControl;
             comboBoxExhibitCategor.Enabled = getEnabledControl;
@@ -269,6 +270,7 @@ namespace MuseumObserver
                 canChooseListBox = false;
                 canRemember = false;
                 RememberChenged();
+                canRemember = true;
                 canChooseListBox = true;
                 canChooseComboBoxGetFrom = true;
                 canChooseComboBoxExhibitCategor = true;
@@ -276,18 +278,30 @@ namespace MuseumObserver
         }
         private void RememberChenged()
         {
+            string nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterNameExhibit);
+
+            if (nameText == "")
+                return;
+
             int exhibitID = (int)exhibitListBox.SelectedValue;
             int crutchID = (int)dataset.Exhibit.Rows.Find(exhibitID)["CrutchID"];
 
             string crutchFilter = "From = ";
             string fromTable = "";
 
-            dataset.Exhibit.Rows.Find(exhibitID)["Name"] = nameTextBox.Text;
+            dataset.Exhibit.Rows.Find(exhibitID)["Name"] = nameText;
             dataset.Exhibit.Rows.Find(exhibitID)["CategoryID"] = categorID;
-            dataset.Exhibit.Rows.Find(exhibitID)["CreatedDate"] = createdDate.Value;
+
+            //В бд нужно текстовое поле!!!
+            //dataset.Exhibit.Rows.Find(exhibitID)["CreatedDate"] = createdDate.Value;
+
+
             dataset.Exhibit.Rows.Find(exhibitID)["AppearanceDate"] = appearanceDate.Value;
-            if ((string)dataset.Exhibit.Rows.Find(exhibitID)["Photo"] != photoFilePath && photoFilePath != null)
+            if (photoFilePath != "NOTHING" || photoFilePath != null)
+            {
                 dataset.Exhibit.Rows.Find(exhibitID)["Photo"] = photoFilePath;
+                photoFilePath = null;
+            }
             dataset.Exhibit.Rows.Find(exhibitID)["Description"] = descriptionTextBox.Text;
             if (radioMaecenas.Checked)
             {
@@ -351,12 +365,54 @@ namespace MuseumObserver
             pictureBox1.Image = Image.FromFile("Pictures/DefaultImage.jpg");
             nameTextBox.Text = "";
             appearanceDate.Value = DateTime.Now;
-            createdDate.Value = DateTime.Now;
+            TimeTextBox.Text = "";
             comboBoxGetFrom.DataSource = null;
             radioMaecenas.Checked = false;
             radioMuseum.Checked = false;
             comboBoxExhibitCategor.DataSource = null;
             descriptionTextBox.Text = "";
+        }
+
+        private void Museums_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Museum museumOpen = new Museum(this, ref dataset);
+            museumOpen.Show();
+        }
+
+        private void Maecenas_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Maecenas maecenasOpen = new Maecenas(this, ref dataset);
+            maecenasOpen.Show();
+        }
+
+        private void Rents_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Rent rentOpen = new Rent(this, ref dataset);
+            rentOpen.Show();
+        }
+
+        private void Restorations1_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Restoration restorationOpen = new Restoration(this, ref dataset);
+            restorationOpen.Show();
+        }
+
+        private void Exhibitions1_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Exhibition exhibitionOpen = new Exhibition(this, ref dataset);
+            exhibitionOpen.Show();
+        }
+
+        private void Showrooms_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Showroom showroomOpen = new Showroom(this, ref dataset);
+            showroomOpen.Show();
         }
     }
 }

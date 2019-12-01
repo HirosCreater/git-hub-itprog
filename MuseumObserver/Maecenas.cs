@@ -17,48 +17,18 @@ namespace MuseumObserver
         Logic logic = new Logic();
         protected int idListBox = -1;
         protected bool canChooseMaecenas = false;
-        public Maecenas()
+        Exhibit ExW;
+        public Maecenas(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
-            LoadDataFromBase();
+            ExW = tempExhibitWindow; ExW.Enabled = false;
+            dataset = tempDataset;
             MaecenasListBox.DataSource = dataset.Maecenas;
             MaecenasListBox.DisplayMember = "Name";
             MaecenasListBox.ValueMember = "ID";
 
             canChooseMaecenas = true;
         }
-
-        private void LoadDataFromBase()
-        {
-            dataset = new DataSetMuseum();
-            dataset.Merge(logic.getCategory());
-            dataset.Merge(logic.getCrutch());
-            dataset.Merge(logic.getExhibit());
-            dataset.Merge(logic.getExhibition());
-            dataset.Merge(logic.getExhibit_Exhibition());
-            dataset.Merge(logic.getMaecenas());
-            dataset.Merge(logic.getMuseum());
-            dataset.Merge(logic.getRent());
-            dataset.Merge(logic.getRestoration());
-            dataset.Merge(logic.getRestorer());
-            dataset.Merge(logic.getShowroom());
-        }
-        private void SaveDataToBase()
-        {
-            logic.setCategory(dataset);
-            logic.setCrutch(dataset);
-            logic.setExhibit(dataset);
-            logic.setExhibition(dataset);
-            logic.setExhibit_Exhibition(dataset);
-            logic.setMaecenas(dataset);
-            logic.setMuseum(dataset);
-            logic.setRent(dataset);
-            logic.setRestoration(dataset);
-            logic.setRestorer(dataset);
-            logic.setShowroom(dataset);
-            LoadDataFromBase();
-        }
-
         
         private void MaecenasListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,6 +93,11 @@ namespace MuseumObserver
                     MessageBoxOptions.DefaultDesktopOnly);
             }
             canChooseMaecenas = true;
+        }
+
+        private void Maecenas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ExW.Enabled = true;
         }
     }
 }

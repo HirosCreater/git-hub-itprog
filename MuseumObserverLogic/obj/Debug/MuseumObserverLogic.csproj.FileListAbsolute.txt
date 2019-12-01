@@ -11,3 +11,10 @@ C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObs
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.csproj.CoreCompileInputs.cache
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.exe
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.pdb
+C:\MuseumObserver\MuseumObserverLogic\bin\Debug\MuseumObserverLogic.exe.config
+C:\MuseumObserver\MuseumObserverLogic\bin\Debug\MuseumObserverLogic.exe
+C:\MuseumObserver\MuseumObserverLogic\bin\Debug\MuseumObserverLogic.pdb
+C:\MuseumObserver\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.csprojAssemblyReference.cache
+C:\MuseumObserver\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.csproj.CoreCompileInputs.cache
+C:\MuseumObserver\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.exe
+C:\MuseumObserver\MuseumObserverLogic\obj\Debug\MuseumObserverLogic.pdb

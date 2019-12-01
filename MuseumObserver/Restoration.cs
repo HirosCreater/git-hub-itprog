@@ -30,9 +30,15 @@ namespace MuseumObserver
         bool canChooseListRestorerExhibit = false;
 
         bool canRemember = false;
-        public Restoration()
+
+        Exhibit ExW;
+        public Restoration(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
+
+            dataset = tempDataset;
+            ExW = tempExhibitWindow;
+            LoadDataFromBase();
 
             photoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             photoPictureBox.Image = Image.FromFile("Pictures/DefaultImage.jpg");
@@ -42,9 +48,6 @@ namespace MuseumObserver
 
             OPF.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
             OPF.InitialDirectory = "C:\\";
-
-            dataset = new DataSetMuseum();
-            LoadDataFromBase();
 
             restorerComboBox.DataSource = getRestorerMainCombo();
             restorerComboBox.DisplayMember = "Name";
@@ -281,6 +284,11 @@ namespace MuseumObserver
             this.Enabled = false;
             RestorationAdd restorationAdd = new RestorationAdd(this, ref dataset);
             restorationAdd.Show();
+        }
+
+        private void Restoration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ExW.Enabled = true;
         }
     }
 }

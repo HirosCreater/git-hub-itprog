@@ -28,108 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MaecenasListBox = new System.Windows.Forms.ListBox();
-            this.ChangeMaecenas = new System.Windows.Forms.Button();
-            this.AddMaecenas = new System.Windows.Forms.Button();
-            this.DeleteMaecenas = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.NameMaecenas = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.DeleteMaecenas = new System.Windows.Forms.Button();
+            this.AddMaecenas = new System.Windows.Forms.Button();
+            this.ChangeMaecenas = new System.Windows.Forms.Button();
+            this.MaecenasListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // MaecenasListBox
+            // label3
             // 
-            this.MaecenasListBox.FormattingEnabled = true;
-            this.MaecenasListBox.ItemHeight = 16;
-            this.MaecenasListBox.Location = new System.Drawing.Point(16, 34);
-            this.MaecenasListBox.Margin = new System.Windows.Forms.Padding(4);
-            this.MaecenasListBox.Name = "MaecenasListBox";
-            this.MaecenasListBox.Size = new System.Drawing.Size(244, 244);
-            this.MaecenasListBox.TabIndex = 13;
-            this.MaecenasListBox.SelectedIndexChanged += new System.EventHandler(this.MaecenasListBox_SelectedIndexChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(133, 283);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 17);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Имя мецената";
             // 
-            // ChangeMaecenas
+            // label4
             // 
-            this.ChangeMaecenas.Location = new System.Drawing.Point(269, 66);
-            this.ChangeMaecenas.Name = "ChangeMaecenas";
-            this.ChangeMaecenas.Size = new System.Drawing.Size(248, 28);
-            this.ChangeMaecenas.TabIndex = 1;
-            this.ChangeMaecenas.Text = "Сохранить изменения";
-            this.ChangeMaecenas.UseVisualStyleBackColor = true;
-            this.ChangeMaecenas.Click += new System.EventHandler(this.ChangeMaecenas_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(129, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 17);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Выбор мецената";
             // 
-            // AddMaecenas
+            // NameMaecenas
             // 
-            this.AddMaecenas.Location = new System.Drawing.Point(269, 102);
-            this.AddMaecenas.Name = "AddMaecenas";
-            this.AddMaecenas.Size = new System.Drawing.Size(119, 28);
-            this.AddMaecenas.TabIndex = 2;
-            this.AddMaecenas.Text = "Добавить";
-            this.AddMaecenas.UseVisualStyleBackColor = true;
-            this.AddMaecenas.Click += new System.EventHandler(this.AddMaecenas_Click);
+            this.NameMaecenas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NameMaecenas.Location = new System.Drawing.Point(13, 303);
+            this.NameMaecenas.Name = "NameMaecenas";
+            this.NameMaecenas.Size = new System.Drawing.Size(358, 22);
+            this.NameMaecenas.TabIndex = 24;
             // 
             // DeleteMaecenas
             // 
-            this.DeleteMaecenas.Location = new System.Drawing.Point(398, 102);
+            this.DeleteMaecenas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteMaecenas.Location = new System.Drawing.Point(195, 365);
             this.DeleteMaecenas.Name = "DeleteMaecenas";
-            this.DeleteMaecenas.Size = new System.Drawing.Size(119, 28);
-            this.DeleteMaecenas.TabIndex = 3;
+            this.DeleteMaecenas.Size = new System.Drawing.Size(176, 28);
+            this.DeleteMaecenas.TabIndex = 23;
             this.DeleteMaecenas.Text = "Удалить";
             this.DeleteMaecenas.UseVisualStyleBackColor = true;
             this.DeleteMaecenas.Click += new System.EventHandler(this.DeleteMaecenas_Click);
             // 
-            // NameMaecenas
+            // AddMaecenas
             // 
-            this.NameMaecenas.Location = new System.Drawing.Point(269, 34);
-            this.NameMaecenas.Name = "NameMaecenas";
-            this.NameMaecenas.Size = new System.Drawing.Size(248, 22);
-            this.NameMaecenas.TabIndex = 4;
+            this.AddMaecenas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddMaecenas.Location = new System.Drawing.Point(13, 365);
+            this.AddMaecenas.Name = "AddMaecenas";
+            this.AddMaecenas.Size = new System.Drawing.Size(176, 28);
+            this.AddMaecenas.TabIndex = 22;
+            this.AddMaecenas.Text = "Добавить";
+            this.AddMaecenas.UseVisualStyleBackColor = true;
+            this.AddMaecenas.Click += new System.EventHandler(this.AddMaecenas_Click);
             // 
-            // label1
+            // ChangeMaecenas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Выбор мецената";
+            this.ChangeMaecenas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChangeMaecenas.Location = new System.Drawing.Point(13, 331);
+            this.ChangeMaecenas.Name = "ChangeMaecenas";
+            this.ChangeMaecenas.Size = new System.Drawing.Size(358, 28);
+            this.ChangeMaecenas.TabIndex = 21;
+            this.ChangeMaecenas.Text = "Сохранить изменения";
+            this.ChangeMaecenas.UseVisualStyleBackColor = true;
+            this.ChangeMaecenas.Click += new System.EventHandler(this.ChangeMaecenas_Click);
             // 
-            // label2
+            // MaecenasListBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Имя мецената";
+            this.MaecenasListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaecenasListBox.FormattingEnabled = true;
+            this.MaecenasListBox.ItemHeight = 16;
+            this.MaecenasListBox.Location = new System.Drawing.Point(13, 30);
+            this.MaecenasListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.MaecenasListBox.Name = "MaecenasListBox";
+            this.MaecenasListBox.Size = new System.Drawing.Size(358, 244);
+            this.MaecenasListBox.TabIndex = 27;
+            this.MaecenasListBox.SelectedIndexChanged += new System.EventHandler(this.MaecenasListBox_SelectedIndexChanged);
             // 
             // Maecenas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 308);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(382, 408);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.NameMaecenas);
             this.Controls.Add(this.DeleteMaecenas);
             this.Controls.Add(this.AddMaecenas);
             this.Controls.Add(this.ChangeMaecenas);
             this.Controls.Add(this.MaecenasListBox);
+            this.MaximumSize = new System.Drawing.Size(400, 900);
+            this.MinimumSize = new System.Drawing.Size(400, 455);
             this.Name = "Maecenas";
             this.Text = "Меценаты";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Maecenas_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox MaecenasListBox;
-        private System.Windows.Forms.Button ChangeMaecenas;
-        private System.Windows.Forms.Button AddMaecenas;
-        private System.Windows.Forms.Button DeleteMaecenas;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox NameMaecenas;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button DeleteMaecenas;
+        private System.Windows.Forms.Button AddMaecenas;
+        private System.Windows.Forms.Button ChangeMaecenas;
+        private System.Windows.Forms.ListBox MaecenasListBox;
     }
 }

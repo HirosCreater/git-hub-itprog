@@ -15,12 +15,13 @@ namespace MuseumObserver
     {
         DataSetMuseum dataset;
         Logic logic = new Logic();
-        public Rent()
+        Exhibit ExW;
+        public Rent(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
 
-            dataset = new DataSetMuseum();
-            loadDataFromBase();
+            dataset = tempDataset;
+            ExW = tempExhibitWindow;
 
             museumComboBox.DataSource = dataset.Museum;
             museumComboBox.DisplayMember = "Name";
@@ -33,14 +34,6 @@ namespace MuseumObserver
             exhibitComboBox.DataSource = dataset.Exhibit;
             exhibitComboBox.DisplayMember = "Name";
             exhibitComboBox.ValueMember = "ID";
-        }
-
-        private void loadDataFromBase()
-        {
-            dataset = new DataSetMuseum();
-            dataset.Merge(logic.getRent());
-            dataset.Merge(logic.getMuseum());
-            dataset.Merge(logic.getExhibit());
         }
 
         private void museumComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +77,11 @@ namespace MuseumObserver
             catch {
                 exhibitListBox.DataSource = null;
             }
+        }
+
+        private void Rent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ExW.Enabled = true;
         }
     }
 }

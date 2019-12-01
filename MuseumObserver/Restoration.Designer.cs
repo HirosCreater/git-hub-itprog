@@ -70,7 +70,7 @@
             // 
             this.comboBoxExhibit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExhibit.FormattingEnabled = true;
-            this.comboBoxExhibit.Location = new System.Drawing.Point(800, 157);
+            this.comboBoxExhibit.Location = new System.Drawing.Point(772, 154);
             this.comboBoxExhibit.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxExhibit.Name = "comboBoxExhibit";
             this.comboBoxExhibit.Size = new System.Drawing.Size(257, 24);
@@ -79,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(699, 157);
+            this.label3.Location = new System.Drawing.Point(672, 154);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 17);
@@ -88,7 +88,7 @@
             // 
             // RememberChangesButton
             // 
-            this.RememberChangesButton.Location = new System.Drawing.Point(885, 189);
+            this.RememberChangesButton.Location = new System.Drawing.Point(857, 186);
             this.RememberChangesButton.Margin = new System.Windows.Forms.Padding(4);
             this.RememberChangesButton.Name = "RememberChangesButton";
             this.RememberChangesButton.Size = new System.Drawing.Size(172, 28);
@@ -101,7 +101,7 @@
             // 
             this.RestorationRestorerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RestorationRestorerComboBox.FormattingEnabled = true;
-            this.RestorationRestorerComboBox.Location = new System.Drawing.Point(800, 48);
+            this.RestorationRestorerComboBox.Location = new System.Drawing.Point(772, 45);
             this.RestorationRestorerComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationRestorerComboBox.Name = "RestorationRestorerComboBox";
             this.RestorationRestorerComboBox.Size = new System.Drawing.Size(257, 24);
@@ -109,7 +109,7 @@
             // 
             // photoPictureBox
             // 
-            this.photoPictureBox.Location = new System.Drawing.Point(405, 14);
+            this.photoPictureBox.Location = new System.Drawing.Point(378, 11);
             this.photoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.photoPictureBox.Name = "photoPictureBox";
             this.photoPictureBox.Size = new System.Drawing.Size(280, 255);
@@ -119,7 +119,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(194, 507);
+            this.deleteButton.Location = new System.Drawing.Point(191, 512);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(119, 28);
@@ -130,7 +130,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(67, 507);
+            this.addButton.Location = new System.Drawing.Point(64, 512);
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(119, 28);
@@ -141,7 +141,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(67, 471);
+            this.saveButton.Location = new System.Drawing.Point(64, 476);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(245, 28);
@@ -152,16 +152,16 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(405, 276);
+            this.descriptionTextBox.Location = new System.Drawing.Point(374, 273);
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(652, 259);
+            this.descriptionTextBox.Size = new System.Drawing.Size(655, 267);
             this.descriptionTextBox.TabIndex = 76;
             // 
             // setPhotoButton
             // 
-            this.setPhotoButton.Location = new System.Drawing.Point(698, 189);
+            this.setPhotoButton.Location = new System.Drawing.Point(671, 186);
             this.setPhotoButton.Margin = new System.Windows.Forms.Padding(4);
             this.setPhotoButton.Name = "setPhotoButton";
             this.setPhotoButton.Size = new System.Drawing.Size(172, 28);
@@ -172,7 +172,7 @@
             // 
             // RestorationEnd
             // 
-            this.RestorationEnd.Location = new System.Drawing.Point(885, 127);
+            this.RestorationEnd.Location = new System.Drawing.Point(857, 124);
             this.RestorationEnd.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationEnd.Name = "RestorationEnd";
             this.RestorationEnd.Size = new System.Drawing.Size(172, 22);
@@ -180,7 +180,7 @@
             // 
             // RestorationStart
             // 
-            this.RestorationStart.Location = new System.Drawing.Point(885, 89);
+            this.RestorationStart.Location = new System.Drawing.Point(857, 86);
             this.RestorationStart.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationStart.Name = "RestorationStart";
             this.RestorationStart.Size = new System.Drawing.Size(172, 22);
@@ -189,7 +189,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(699, 127);
+            this.label7.Location = new System.Drawing.Point(672, 124);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 17);
@@ -199,7 +199,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(699, 89);
+            this.label6.Location = new System.Drawing.Point(672, 86);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 17);
@@ -209,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(699, 48);
+            this.label5.Location = new System.Drawing.Point(672, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 17);
@@ -223,7 +223,7 @@
             this.RestorationListBox.Location = new System.Drawing.Point(13, 145);
             this.RestorationListBox.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationListBox.Name = "RestorationListBox";
-            this.RestorationListBox.Size = new System.Drawing.Size(358, 308);
+            this.RestorationListBox.Size = new System.Drawing.Size(358, 324);
             this.RestorationListBox.TabIndex = 69;
             this.RestorationListBox.SelectedIndexChanged += new System.EventHandler(this.ExhibitListBox_SelectedIndexChanged);
             // 
@@ -298,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1073, 551);
+            this.ClientSize = new System.Drawing.Size(1042, 553);
             this.Controls.Add(this.TimeFilterCheckBox);
             this.Controls.Add(this.comboBoxExhibit);
             this.Controls.Add(this.label3);
@@ -326,6 +326,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Restoration";
             this.Text = "Реставрации";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Restoration_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

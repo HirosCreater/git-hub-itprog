@@ -17,9 +17,13 @@ namespace MuseumObserver
         Logic logic = new Logic();
         protected int idListBox = -1;
         protected bool canChooseShowroom = false;
-        public Showroom()
+        Exhibit ExW;
+        public Showroom(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
+
+            dataset = tempDataset;
+            ExW = tempExhibitWindow;
 
             dataset = new DataSetMuseum();
             LoadDataFromBase();
@@ -139,15 +143,10 @@ namespace MuseumObserver
             }
             canChooseShowroom = true;
         }
-        /*private void SaveToDataBase()
-        {
-            logic.setCategory(dataset);
-            logic.setCrutch(dataset);
-            logic.setExhibit(dataset);
 
-            logic.setMuseum(dataset);
-            logic.setMaecenas(dataset);
-            LoadDataFromBase();
-        }*/
+        private void Showroom_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ExW.Enabled = true;
+        }
     }
 }

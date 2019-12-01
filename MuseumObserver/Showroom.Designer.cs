@@ -40,26 +40,30 @@
             // showroomListBox
             // 
             this.showroomListBox.FormattingEnabled = true;
-            this.showroomListBox.Location = new System.Drawing.Point(12, 28);
+            this.showroomListBox.ItemHeight = 16;
+            this.showroomListBox.Location = new System.Drawing.Point(16, 34);
+            this.showroomListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.showroomListBox.Name = "showroomListBox";
-            this.showroomListBox.Size = new System.Drawing.Size(184, 199);
+            this.showroomListBox.Size = new System.Drawing.Size(244, 244);
             this.showroomListBox.TabIndex = 13;
             this.showroomListBox.SelectedIndexChanged += new System.EventHandler(this.showroomListBox_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 14;
             this.label1.Text = "Выбор зала";
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(296, 83);
+            this.deleteButton.Location = new System.Drawing.Point(395, 102);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(89, 23);
+            this.deleteButton.Size = new System.Drawing.Size(119, 28);
             this.deleteButton.TabIndex = 30;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -67,9 +71,10 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(202, 83);
+            this.addButton.Location = new System.Drawing.Point(269, 102);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(89, 23);
+            this.addButton.Size = new System.Drawing.Size(119, 28);
             this.addButton.TabIndex = 29;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
@@ -77,9 +82,10 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(202, 54);
+            this.saveButton.Location = new System.Drawing.Point(269, 66);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(184, 23);
+            this.saveButton.Size = new System.Drawing.Size(245, 28);
             this.saveButton.TabIndex = 28;
             this.saveButton.Text = "Сохранить изменения";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -88,24 +94,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(199, 9);
+            this.label2.Location = new System.Drawing.Point(265, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 31;
             this.label2.Text = "Название зала";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(202, 28);
+            this.nameTextBox.Location = new System.Drawing.Point(269, 34);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(184, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(244, 22);
             this.nameTextBox.TabIndex = 32;
             // 
             // Showroom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 250);
+            this.ClientSize = new System.Drawing.Size(557, 308);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.deleteButton);
@@ -113,9 +121,10 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.showroomListBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Showroom";
             this.Text = "Выставочные залы";
-            this.Load += new System.EventHandler(this.Showroom_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Showroom_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
