@@ -70,6 +70,11 @@ namespace MuseumObserver
                 return;
             newExhibit["CreatedDate"] = dateCreationTextBox.Text;
             newExhibit["AppearanceDate"] = appearanceDate.Value;
+            if (photoFilePath == "NOTHING")
+            {
+                CFunc.ShowMessage("Выберите фотографию!");
+                return;
+            }
             newExhibit["Photo"] = photoFilePath;
             newExhibit["Description"] = descriptionTextBox.Text;
 

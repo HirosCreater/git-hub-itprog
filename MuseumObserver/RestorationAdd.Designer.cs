@@ -52,6 +52,7 @@
             this.comboBoxExhibit.Name = "comboBoxExhibit";
             this.comboBoxExhibit.Size = new System.Drawing.Size(257, 24);
             this.comboBoxExhibit.TabIndex = 95;
+            this.comboBoxExhibit.SelectedIndexChanged += new System.EventHandler(this.ComboBoxExhibit_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -83,6 +84,7 @@
             this.RestorationRestorerComboBox.Name = "RestorationRestorerComboBox";
             this.RestorationRestorerComboBox.Size = new System.Drawing.Size(257, 24);
             this.RestorationRestorerComboBox.TabIndex = 93;
+            this.RestorationRestorerComboBox.SelectedIndexChanged += new System.EventHandler(this.RestorationRestorerComboBox_SelectedIndexChanged);
             // 
             // photoPictureBox
             // 
@@ -129,6 +131,7 @@
             this.RestorationStart.Name = "RestorationStart";
             this.RestorationStart.Size = new System.Drawing.Size(172, 22);
             this.RestorationStart.TabIndex = 88;
+            this.RestorationStart.ValueChanged += new System.EventHandler(this.RestorationStart_ValueChanged);
             // 
             // label7
             // 

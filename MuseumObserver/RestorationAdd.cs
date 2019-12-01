@@ -20,13 +20,20 @@ namespace MuseumObserver
         Restoration RW;
         bool exit = false;
         string photoFilePath;
-        ControlFunction CFunc = new ControlFunction();
+        ControlFunction CFunc;
 
-        public RestorationAdd(Restoration tempRestorationWindow, ref DataSetMuseum tempDataset)
+        int indexRestorer = -1;
+        int indexExhibit = -1;
+
+        bool CanChooseRestorer = false;
+        bool CanChooseExhibit = false;
+
+        public RestorationAdd(Restoration tempRestorationWindow, ref DataSetMuseum tempDataset, ref ControlFunction tempControlFunction)
         {
             InitializeComponent();
             RW = tempRestorationWindow;
             dataset = tempDataset;
+            CFunc = tempControlFunction;
 
             RestorationRestorerComboBox.DataSource = dataset.Restorer;
             RestorationRestorerComboBox.DisplayMember = "Name";
@@ -35,6 +42,9 @@ namespace MuseumObserver
             comboBoxExhibit.DataSource = dataset.Exhibit;
             comboBoxExhibit.DisplayMember = "Name";
             comboBoxExhibit.ValueMember = "ID";
+
+            CanChooseRestorer = true;
+            CanChooseExhibit = true;
         }
 
         private void SetPhotoButton_Click(object sender, EventArgs e)
@@ -44,7 +54,10 @@ namespace MuseumObserver
         private void getAndCopyPicture()
         {
             photoFilePath = CFunc.GetPicturePath();
-            photoPictureBox.Image = Image.FromFile(photoFilePath);
+            if (photoFilePath != "NOTHING")
+            {
+                photoPictureBox.Image = Image.FromFile(photoFilePath);
+            }
         }
         
         private void SaveNewRestorationButton_Click(object sender, EventArgs e)
@@ -56,11 +69,30 @@ namespace MuseumObserver
         {
             var newExhibit = dataset.Restoration.NewRow();
 
+            if (indexRestorer == -1)
+            {
+                CFunc.ShowMessage("Выберите реставратора!");
+                return;
+            }
             newExhibit["RestorerID"] = RestorationRestorerComboBox.SelectedValue;
+
+            if (indexExhibit == -1)
+            {
+                CFunc.ShowMessage("Выберите экспонат!");
+                return;
+            }
             newExhibit["ExhibitID"] = comboBoxExhibit.SelectedValue;
+
             newExhibit["Start"] = RestorationStart.Value;
             newExhibit["End"] = RestorationEnd.Value;
+
+            if (photoFilePath == "NOTHING")
+            {
+                CFunc.ShowMessage("Выберите фотографию!");
+                return;
+            }
             newExhibit["Photo"] = photoFilePath;
+
             newExhibit["Description"] = descriptionTextBox.Text;
             
             dataset.Restoration.Rows.Add(newExhibit);
@@ -75,6 +107,26 @@ namespace MuseumObserver
             exit = true;
             RW.Enabled = true;
             this.Close();
+        }
+
+        private void RestorationRestorerComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CanChooseRestorer)
+            {
+                indexRestorer = (int)RestorationRestorerComboBox.SelectedValue;
+            }
+        }
+        private void ComboBoxExhibit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CanChooseExhibit)
+            {
+                indexExhibit = (int)comboBoxExhibit.SelectedValue;
+            }
+        }
+
+        private void RestorationStart_ValueChanged(object sender, EventArgs e)
+        {
+            RestorationEnd.MinDate = RestorationStart.Value;
         }
     }
 }
