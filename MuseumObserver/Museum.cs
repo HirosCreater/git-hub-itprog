@@ -18,11 +18,14 @@ namespace MuseumObserver
         protected int idListBox = -1;
         protected bool canChooseMuseum = false;
         Exhibit ExW;
-        public Museum(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
+        ControlFunction CFunc;
+        string EnterNameMuseum = "Введите название музея!!!";
+        public Museum(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset, ref ControlFunction tempConrolFunction)
         {
             InitializeComponent();
             ExW = tempExhibitWindow; ExW.Enabled = false;
             dataset = tempDataset;
+            CFunc = tempConrolFunction;
             MuseumListBox.DataSource = dataset.Museum;
             MuseumListBox.DisplayMember = "Name";
             MuseumListBox.ValueMember = "ID";
@@ -40,35 +43,32 @@ namespace MuseumObserver
 
         private void ChangeMuseum_Click(object sender, EventArgs e)
         {
-            if (idListBox != -1)
+            canChooseMuseum = false;
+            string nameText = CFunc.CheckTextBox(this, NameMuseum.Text, EnterNameMuseum);
+
+            if (nameText != "")
             {
-                canChooseMuseum = false;
                 dataset.Museum.Rows.Find(idListBox)["Name"] = NameMuseum.Text;
-                canChooseMuseum = true;
-                MuseumListBox.DataSource = dataset.Museum;
             }
-            else
-            {
-                MessageBox.Show(
-                    "Нужно выбрать музей!",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
-            }
+            canChooseMuseum = true;
+            return;
         }
 
         private void AddMuseum_Click(object sender, EventArgs e)
         {
-            int newID = 0;
-            if (dataset.Museum.Rows.Count == 0)
-                newID = 1;
-            else
-                newID = (int)dataset.Museum.Rows[dataset.Museum.Rows.Count - 1]["ID"] + 1;
+            string nameText = CFunc.CheckTextBox(this, NameMuseum.Text, EnterNameMuseum);
+            if (nameText == "")
+                return;
+            foreach (DataRow item in dataset.Museum)
+            {
+                if (item["Name"].ToString() == nameText)
+                {
+                    CFunc.ShowMessage("Музей '" + nameText + "' уже существует!");
+                    return;
+                }
+            }
             var dr = dataset.Museum.NewRow();
-            dr["ID"] = newID;
-            dr["Name"] = NameMuseum.Text;
+            dr["Name"] = nameText;
             dataset.Museum.Rows.Add(dr);
         }
 
@@ -84,7 +84,7 @@ namespace MuseumObserver
             else
             {
                 MessageBox.Show(
-                    "Нужно выбрать мецената!",
+                    "Нужно выбрать музей!",
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information,

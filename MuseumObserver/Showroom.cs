@@ -18,54 +18,21 @@ namespace MuseumObserver
         protected int idListBox = -1;
         protected bool canChooseShowroom = false;
         Exhibit ExW;
-        public Showroom(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
+        ControlFunction CFunc;
+        string EnterNameShowRoom = "Введите название зала";
+        public Showroom(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset, ref ControlFunction tempConrolFunction)
         {
             InitializeComponent();
 
             dataset = tempDataset;
             ExW = tempExhibitWindow;
-
-            dataset = new DataSetMuseum();
-            LoadDataFromBase();
+            CFunc = tempConrolFunction;
 
             showroomListBox.DataSource = dataset.Showroom;
             showroomListBox.DisplayMember = "Name";
             showroomListBox.ValueMember = "ID";
 
-            setNameTextBox();
             canChooseShowroom = true;
-        }
-
-        private void LoadDataFromBase()
-        {
-            dataset = new DataSetMuseum();
-            dataset.Merge(logic.getCategory());
-            dataset.Merge(logic.getCrutch());
-            dataset.Merge(logic.getExhibit());
-            dataset.Merge(logic.getExhibition());
-            dataset.Merge(logic.getExhibit_Exhibition());
-            dataset.Merge(logic.getMaecenas());
-            dataset.Merge(logic.getMuseum());
-            dataset.Merge(logic.getRent());
-            dataset.Merge(logic.getRestoration());
-            dataset.Merge(logic.getRestorer());
-            dataset.Merge(logic.getShowroom());
-        }
-
-        private void SaveDataToBase()
-        {
-            logic.setCategory(dataset);
-            logic.setCrutch(dataset);
-            logic.setExhibit(dataset);
-            logic.setExhibition(dataset);
-            logic.setExhibit_Exhibition(dataset);
-            logic.setMaecenas(dataset);
-            logic.setMuseum(dataset);
-            logic.setRent(dataset);
-            logic.setRestoration(dataset);
-            logic.setRestorer(dataset);
-            logic.setShowroom(dataset);
-            LoadDataFromBase();
         }
 
         private void setNameTextBox()
@@ -82,42 +49,29 @@ namespace MuseumObserver
             }
         }
 
-        private void Showroom_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (idListBox != -1)
-            {
-                canChooseShowroom = false;
-                dataset.Showroom.Rows.Find(idListBox)["Name"] = nameTextBox.Text;
-                canChooseShowroom = true;
-                showroomListBox.DataSource = dataset.Showroom;
-                SaveDataToBase();
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Нужно выбрать выставочный зал!",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
-            }
+            string nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterNameShowRoom);
+            if (nameText == "")
+                return;
+            dataset.Showroom.Rows.Find(idListBox)["Name"] = nameText;
+            showroomListBox.DataSource = dataset.Showroom;
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            int newID = 0;
-            if (dataset.Showroom.Rows.Count == 0)
-                newID = 1;
-            else
-                newID = (int)dataset.Showroom.Rows[dataset.Showroom.Rows.Count - 1]["ID"] + 1;
+            string nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterNameShowRoom);
+            if (nameText == "")
+                return;
+            foreach (DataRow item in dataset.Showroom)
+            {
+                if (item["Name"].ToString() == nameText)
+                {
+                    CFunc.ShowMessage("Зал '"+ nameText + "' уже существует!");
+                    return;
+                }
+            }
             var dr = dataset.Showroom.NewRow();
-            dr["ID"] = newID;
             dr["Name"] = nameTextBox.Text;
             dataset.Showroom.Rows.Add(dr);
         }
@@ -133,13 +87,7 @@ namespace MuseumObserver
             }
             else
             {
-                MessageBox.Show(
-                    "Нужно выбрать выставочный зал!",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                CFunc.ShowMessage("Нужно выбрать выставочный зал!");
             }
             canChooseShowroom = true;
         }

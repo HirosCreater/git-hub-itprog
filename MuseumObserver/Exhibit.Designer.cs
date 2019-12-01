@@ -67,6 +67,7 @@
             this.Exhibitions1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Showrooms = new System.Windows.Forms.ToolStripMenuItem();
             this.TimeTextBox = new System.Windows.Forms.TextBox();
+            this.SaveEnterChanges = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -374,7 +375,8 @@
             this.Maecenas,
             this.Rents,
             this.Restorations,
-            this.Exhibitions});
+            this.Exhibitions,
+            this.SaveEnterChanges});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(967, 28);
@@ -454,6 +456,13 @@
             this.TimeTextBox.Name = "TimeTextBox";
             this.TimeTextBox.Size = new System.Drawing.Size(270, 22);
             this.TimeTextBox.TabIndex = 35;
+            // 
+            // SaveEnterChanges
+            // 
+            this.SaveEnterChanges.Name = "SaveEnterChanges";
+            this.SaveEnterChanges.Size = new System.Drawing.Size(260, 24);
+            this.SaveEnterChanges.Text = "Сохранить внесенные изменения";
+            this.SaveEnterChanges.Click += new System.EventHandler(this.SaveEnterChanges_Click);
             // 
             // Exhibit
             // 
@@ -546,5 +555,6 @@
         private System.Windows.Forms.ToolStripMenuItem Exhibitions1;
         private System.Windows.Forms.ToolStripMenuItem Showrooms;
         private System.Windows.Forms.TextBox TimeTextBox;
+        private System.Windows.Forms.ToolStripMenuItem SaveEnterChanges;
     }
 }

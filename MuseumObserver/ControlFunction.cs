@@ -5,14 +5,16 @@ using System.Windows.Forms;
 
 namespace MuseumObserver
 {
-    class ControlFunction
+    public class ControlFunction
     {
         private OpenFileDialog OPF;
         private string ComyPath = "C:\\Pictures";
         private string nothing = "NOTHING";
         string photoFilePath;
         Exhibit ExW;
-
+        Museum MusW;
+        Maecenas MaecW;
+        Showroom ShowW;
         public ControlFunction()
         {
             OPF = new OpenFileDialog();
@@ -63,6 +65,43 @@ namespace MuseumObserver
                     ShowMessage(showSTR);
                 }
                 ExW.Enabled = true;
+                return checkStr;
+            }
+            //Для Museum
+            if (window.GetType() == typeof(Museum))
+            {
+                MusW = (Museum)window;
+                MusW.Enabled = false;
+                if (checkStr.Trim() == "")
+                {
+                    ShowMessage(showSTR);
+                }
+                MusW.Enabled = true;
+                return checkStr;
+            }
+            //Для Maecenas
+            if (window.GetType() == typeof(Maecenas))
+            {
+                MaecW = (Maecenas)window;
+                MaecW.Enabled = false;
+                if (checkStr.Trim() == "")
+                {
+                    ShowMessage(showSTR);
+                }
+                MaecW.Enabled = true;
+                return checkStr;
+            }
+            //Для Showroom
+            if (window.GetType() == typeof(Showroom))
+            {
+                ShowW = (Showroom)window;
+                ShowW.Enabled = false;
+                if (checkStr.Trim() == "")
+                {
+                    ShowMessage(showSTR);
+                }
+                ShowW.Enabled = true;
+                return checkStr;
             }
             return newSTR;
         }

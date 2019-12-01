@@ -26,11 +26,6 @@ namespace MuseumObserver
             exhibitionListBox.DataSource = dataset.Exhibition;
             exhibitionListBox.DisplayMember = "Name";
             exhibitionListBox.ValueMember = "ID";
-
-            setExhibitListBox();
-            setNameTextBox();
-            setStartDate();
-            setEndDate();
         }
 
         private void loadDataFromBase()

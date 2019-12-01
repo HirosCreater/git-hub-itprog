@@ -14,25 +14,25 @@ namespace MuseumObserver
 {
     public partial class Exhibit : Form
     {
-        DataSetMuseum dataset;
-        Logic logic = new Logic();
-        bool canChooseListBox = false;
-        bool canChooseCombo = false;
-        DataView exhibitsCategor;
-        DataView tempViewDaritel;
-        string tableNameDaritel;
-        int tempIDDaritel;
-        bool getEnabledControl = false;
-        string photoFilePath;
-        int getFromID;
-        int categorID;
-        bool canChooseComboBoxGetFrom = false;
-        bool canChooseComboBoxExhibitCategor = false;
-        bool canRemember = false;
+        private DataSetMuseum dataset;
+        private Logic logic = new Logic();
+        private bool canChooseListBox = false;
+        private bool canChooseCombo = false;
+        private DataView exhibitsCategor;
+        private DataView tempViewDaritel;
+        private string tableNameDaritel;
+        private int tempIDDaritel;
+        private bool getEnabledControl = false;
+        private string photoFilePath;
+        private int getFromID;
+        private int categorID;
+        private bool canChooseComboBoxGetFrom = false;
+        private bool canChooseComboBoxExhibitCategor = false;
+        private bool canRemember = false;
 
         private string EnterNameExhibit = "Введите имя экспоната!!!";
 
-        ControlFunction CFunc = new ControlFunction();
+        private ControlFunction CFunc = new ControlFunction();
         public Exhibit()
         {
             InitializeComponent();
@@ -59,20 +59,31 @@ namespace MuseumObserver
         private void LoadDataFromBase()
         {
             dataset = new DataSetMuseum();
-            dataset.Merge(logic.getCategory());
-            dataset.Merge(logic.getExhibit());
-            dataset.Merge(logic.getCrutch());
-            dataset.Merge(logic.getMuseum());
             dataset.Merge(logic.getMaecenas());
+            dataset.Merge(logic.getRestorer());
+            dataset.Merge(logic.getMuseum());
+            dataset.Merge(logic.getCrutch());
+            dataset.Merge(logic.getCategory());
+            dataset.Merge(logic.getShowroom());
+            dataset.Merge(logic.getExhibit()); 
+            dataset.Merge(logic.getExhibition());
+            dataset.Merge(logic.getExhibit_Exhibition());
+            dataset.Merge(logic.getRent());
+            dataset.Merge(logic.getRestoration());
         }
         private void SaveToDataBase()
         {
-            logic.setCategory(dataset);
-            logic.setCrutch(dataset);
-            logic.setExhibit(dataset);
-
-            logic.setMuseum(dataset);
             logic.setMaecenas(dataset);
+            logic.setRestorer(dataset);
+            logic.setMuseum(dataset);
+            logic.setCrutch(dataset);
+            logic.setCategory(dataset);
+            logic.setShowroom(dataset);
+            logic.setExhibit(dataset);
+            logic.setExhibition(dataset);
+            logic.setExhibit_Exhibition(dataset);
+            logic.setRent(dataset);
+            logic.setRestoration(dataset);
             LoadDataFromBase();
         }
         private void setExhibitListBox()
@@ -372,47 +383,45 @@ namespace MuseumObserver
             comboBoxExhibitCategor.DataSource = null;
             descriptionTextBox.Text = "";
         }
-
         private void Museums_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Museum museumOpen = new Museum(this, ref dataset);
+            Museum museumOpen = new Museum(this, ref dataset, ref CFunc);
             museumOpen.Show();
         }
-
         private void Maecenas_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Maecenas maecenasOpen = new Maecenas(this, ref dataset);
+            Maecenas maecenasOpen = new Maecenas(this, ref dataset,ref CFunc);
             maecenasOpen.Show();
         }
-
         private void Rents_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
             Rent rentOpen = new Rent(this, ref dataset);
             rentOpen.Show();
         }
-
         private void Restorations1_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
             Restoration restorationOpen = new Restoration(this, ref dataset);
             restorationOpen.Show();
         }
-
         private void Exhibitions1_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
             Exhibition exhibitionOpen = new Exhibition(this, ref dataset);
             exhibitionOpen.Show();
         }
-
         private void Showrooms_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Showroom showroomOpen = new Showroom(this, ref dataset);
+            Showroom showroomOpen = new Showroom(this, ref dataset,ref CFunc);
             showroomOpen.Show();
+        }
+        private void SaveEnterChanges_Click(object sender, EventArgs e)
+        {
+            SaveToDataBase();
         }
     }
 }

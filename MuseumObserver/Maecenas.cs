@@ -18,11 +18,16 @@ namespace MuseumObserver
         protected int idListBox = -1;
         protected bool canChooseMaecenas = false;
         Exhibit ExW;
-        public Maecenas(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
+        string EnterNameMaecenas = "Введите имя мецената!";
+        string NeedChooseMaecenas = "Нужно выбрать мецената!";
+        ControlFunction CFunc;
+        public Maecenas(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset,ref ControlFunction tempControlFunction)
         {
             InitializeComponent();
             ExW = tempExhibitWindow; ExW.Enabled = false;
             dataset = tempDataset;
+            CFunc = tempControlFunction;
+
             MaecenasListBox.DataSource = dataset.Maecenas;
             MaecenasListBox.DisplayMember = "Name";
             MaecenasListBox.ValueMember = "ID";
@@ -43,32 +48,33 @@ namespace MuseumObserver
         {
             if (idListBox != -1)
             {
-                canChooseMaecenas = false;
+                string nameText = CFunc.CheckTextBox(this, NameMaecenas.Text, EnterNameMaecenas);
+                if (nameText == "")
+                    return;
                 dataset.Maecenas.Rows.Find(idListBox)["Name"] = NameMaecenas.Text;
                 canChooseMaecenas = true;
                 MaecenasListBox.DataSource = dataset.Maecenas;
             }
             else
             {
-                MessageBox.Show(
-                    "Нужно выбрать мецената!",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                CFunc.ShowMessage(NeedChooseMaecenas);
             }
         }
 
         private void AddMaecenas_Click(object sender, EventArgs e)
         {
-            int newID = 0;
-            if (dataset.Maecenas.Rows.Count == 0)
-                newID = 1;
-            else
-                newID = (int)dataset.Maecenas.Rows[dataset.Maecenas.Rows.Count - 1]["ID"] + 1;
+            string nameText = CFunc.CheckTextBox(this, NameMaecenas.Text, EnterNameMaecenas);
+            if (nameText == "")
+                return;
+            foreach (DataRow item in dataset.Maecenas)
+            {
+                if (item["Name"].ToString() == nameText)
+                {
+                    CFunc.ShowMessage("Меценат '" + nameText + "' уже существует!");
+                    return;
+                }
+            }
             var dr = dataset.Maecenas.NewRow();
-            dr["ID"] = newID;
             dr["Name"] = NameMaecenas.Text;
             dataset.Maecenas.Rows.Add(dr);
         }
@@ -84,13 +90,7 @@ namespace MuseumObserver
             }
             else
             {
-                MessageBox.Show(
-                    "Нужно выбрать мецената!",
-                    "Сообщение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+                CFunc.ShowMessage(NeedChooseMaecenas);
             }
             canChooseMaecenas = true;
         }
