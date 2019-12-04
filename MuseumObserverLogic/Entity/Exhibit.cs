@@ -19,7 +19,7 @@ namespace MuseumObserverLogic.Entity
             //dataAdapter.InsertCommand.Parameters.Add("@ID", SqlDbType.Int, 11, "ID");
             dataAdapter.InsertCommand.Parameters.Add("@Name", SqlDbType.NVarChar, 50, "Name");
             dataAdapter.InsertCommand.Parameters.Add("@CategoryID", SqlDbType.Int, 11, "CategoryID");
-            dataAdapter.InsertCommand.Parameters.Add("@CreatedDate", SqlDbType.DateTime, 11, "CreatedDate");
+            dataAdapter.InsertCommand.Parameters.Add("@CreatedDate", SqlDbType.NVarChar, 50, "CreatedDate");
             dataAdapter.InsertCommand.Parameters.Add("@AppearanceDate", SqlDbType.DateTime, 11, "AppearanceDate");
             dataAdapter.InsertCommand.Parameters.Add("@Photo", SqlDbType.NVarChar, 255, "Photo");
             dataAdapter.InsertCommand.Parameters.Add("@Description", SqlDbType.NText, 10000, "Description");
@@ -29,7 +29,7 @@ namespace MuseumObserverLogic.Entity
             dataAdapter.UpdateCommand.Parameters.Add("@ID", SqlDbType.Int, 11, "ID");
             dataAdapter.UpdateCommand.Parameters.Add("@Name", SqlDbType.NVarChar, 50, "Name");
             dataAdapter.UpdateCommand.Parameters.Add("@CategoryID", SqlDbType.Int, 11, "CategoryID");
-            dataAdapter.UpdateCommand.Parameters.Add("@CreatedDate", SqlDbType.DateTime, 11, "CreatedDate");
+            dataAdapter.UpdateCommand.Parameters.Add("@CreatedDate", SqlDbType.NVarChar, 50, "CreatedDate");
             dataAdapter.UpdateCommand.Parameters.Add("@AppearanceDate", SqlDbType.DateTime, 11, "AppearanceDate");
             dataAdapter.UpdateCommand.Parameters.Add("@Photo", SqlDbType.NVarChar, 255, "Photo");
             dataAdapter.UpdateCommand.Parameters.Add("@Description", SqlDbType.NText, 10000, "Description");
@@ -39,7 +39,7 @@ namespace MuseumObserverLogic.Entity
             dataAdapter.DeleteCommand.Parameters.Add("@ID", SqlDbType.Int, 11, "ID");
             dataAdapter.DeleteCommand.Parameters.Add("@Name", SqlDbType.NVarChar, 50, "Name");
             dataAdapter.DeleteCommand.Parameters.Add("@CategoryID", SqlDbType.Int, 11, "CategoryID");
-            dataAdapter.DeleteCommand.Parameters.Add("@CreatedDate", SqlDbType.DateTime, 11, "CreatedDate");
+            dataAdapter.DeleteCommand.Parameters.Add("@CreatedDate", SqlDbType.NVarChar, 50, "CreatedDate");
             dataAdapter.DeleteCommand.Parameters.Add("@AppearanceDate", SqlDbType.DateTime, 11, "AppearanceDate");
             dataAdapter.DeleteCommand.Parameters.Add("@Photo", SqlDbType.NVarChar, 255, "Photo");
             dataAdapter.DeleteCommand.Parameters.Add("@Description", SqlDbType.NText, 10000, "Description");

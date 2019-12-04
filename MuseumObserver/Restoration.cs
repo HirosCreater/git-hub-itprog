@@ -17,14 +17,9 @@ namespace MuseumObserver
         DataSetMuseum dataset;
         Logic logic = new Logic();
 
-        string ComyPath = "C:\\Pictures";
-        string photoFilePath;
-        OpenFileDialog OPF;
 
         DataView exhibitCombo = null;
         DataView RestorationList = null;
-        DataView RestorerMainCombo = null;
-        DataView RestorerCoopCombo = null;
         int restoratorID;
         bool canChooseComboRestorer = false;
         bool canChooseListRestorerExhibit = false;
@@ -32,29 +27,30 @@ namespace MuseumObserver
         bool canRemember = false;
 
         Exhibit ExW;
-        public Restoration(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
+        ControlFunction CFunc;
+        string photoFilePath = "";
+        string EnterNameRestorations = "Введите название реставрации!";
+        string ChooseNewRestorer = "Выберите реставратора!";
+        string ChooseNewExhibit = "Выберите реставрируемый экспонат!";
+        int indexNewRestorer = -1;
+        int indexNewExhibit = -1;
+        public Restoration(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset, ref ControlFunction tempConrolFunction)
         {
             InitializeComponent();
 
             dataset = tempDataset;
             ExW = tempExhibitWindow;
-            LoadDataFromBase();
+            CFunc = tempConrolFunction;
 
             photoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             photoPictureBox.Image = Image.FromFile("Pictures/DefaultImage.jpg");
 
-            OPF = new OpenFileDialog();
-            OPF.FilterIndex = 5;
-
-            OPF.Filter = "Image Files(*.BMP; *.JPG; *.GIF)| *.BMP; *.JPG; *.GIF | All files(*.*) | *.*";
-            OPF.InitialDirectory = "C:\\";
-
-            restorerComboBox.DataSource = getRestorerMainCombo();
+            restorerComboBox.DataSource = dataset.Restorer;
             restorerComboBox.DisplayMember = "Name";
             restorerComboBox.ValueMember = "ID";
 
             RestorationListBox.DataSource = null;
-            RestorationListBox.DisplayMember = "Description";
+            RestorationListBox.DisplayMember = "Name";
             RestorationListBox.ValueMember = "ID";
 
             RestorationRestorerComboBox.DataSource = null;
@@ -119,19 +115,20 @@ namespace MuseumObserver
         }
         private void setRestorationExhibitData() //вывод данных реставрации по данному экспонату
         {
-            RestorationRestorerComboBox.DataSource = getRestorerCoopCombo();
-            RestorationListBox.DataSource = getRestorationList();
-            comboBoxExhibit.DataSource = getExhibitCombo();
-
             DataRow tempRowExhibitRestoration = dataset.Restoration.Rows.Find(RestorationListBox.SelectedValue);
-
+            
             //DataRow tempRowExhibit = dataset.Exhibit.Rows.Find(dataset.Restoration.Rows.Find(restoratorID)["ExhibitID"]);
+
+            //Вывод названиея реставрации
+            {
+                RestorerNameTextBox.Text = (string)tempRowExhibitRestoration["Name"];
+            }
 
             //Вывод экспоната и реставратора
             {
-                RestorationRestorerComboBox.DataSource = getRestorerCoopCombo();
-                RestorationRestorerComboBox.SelectedValue = restoratorID;
-                comboBoxExhibit.DataSource = getExhibitCombo();
+                RestorationRestorerComboBox.DataSource = dataset.Restorer;
+                RestorationRestorerComboBox.SelectedValue = tempRowExhibitRestoration["RestorerID"];
+                comboBoxExhibit.DataSource = dataset.Exhibit;
                 comboBoxExhibit.SelectedValue = tempRowExhibitRestoration["ExhibitID"];
             }
             //вывод дат реставрации
@@ -169,25 +166,12 @@ namespace MuseumObserver
         }
         private void getAndCopyPicture()
         {
-            string filename = "";
-            int newFileName = 0;
-
-            if (OPF.ShowDialog() == DialogResult.Cancel)
-                return;
-            filename = ComyPath + "\\" + Path.GetFileName(OPF.FileName);
-            while (true)
+            photoFilePath = CFunc.GetPicturePath();
+            if (photoFilePath != "NOTHING")
             {
-                if (System.IO.File.Exists(filename))
-                {
-                    newFileName++;
-                    filename = ComyPath + "\\" + Path.GetFileName(OPF.FileName).Split('.')[0] + " - Копия" + newFileName + "." + Path.GetFileName(OPF.FileName).Split('.')[1];
-                }
-                else
-                    break;
+                photoPictureBox.Image = Image.FromFile(photoFilePath);
+                dataset.Restoration.Rows.Find(RestorationListBox.SelectedValue)["Photo"] = photoFilePath;
             }
-            File.Copy(OPF.FileName, filename);
-            photoFilePath = filename;
-            dataset.Restoration.Rows.Find(RestorationListBox.SelectedValue)["Photo"] = filename;
         }
 
         private void RememberChangesButton_Click(object sender, EventArgs e)
@@ -202,7 +186,26 @@ namespace MuseumObserver
         private void RememberChenged()
         {
             int restorationID = (int)RestorationListBox.SelectedValue;
+            string nameText = CFunc.CheckTextBox(this, RestorerNameTextBox.Text, EnterNameRestorations);
+            if (nameText == "")
+                return;
+            if (indexNewRestorer == -1)
+            {
+                CFunc.ShowMessage(ChooseNewRestorer);
+                return;
+            }
+            if (indexNewExhibit == -1)
+            {
+                CFunc.ShowMessage(ChooseNewExhibit);
+                return;
+            }
+            if (photoFilePath != "NOTHING" || photoFilePath != null)
+            {
+                dataset.Exhibit.Rows.Find(restorationID)["Photo"] = photoFilePath;
+                photoFilePath = "";
+            }
 
+            dataset.Restoration.Rows.Find(restorationID)["Name"] = RestorerNameTextBox.Text;
             dataset.Restoration.Rows.Find(restorationID)["ExhibitID"] = RestorationRestorerComboBox.SelectedValue;
             dataset.Restoration.Rows.Find(restorationID)["RestorerID"] = comboBoxExhibit.SelectedValue;
             dataset.Restoration.Rows.Find(restorationID)["Start"] = RestorationStart.Value;
@@ -212,29 +215,15 @@ namespace MuseumObserver
             getRestorationList() = new DataView(dataset.Restoration);
         }
 
-
-        private void LoadDataFromBase()
-        {
-            dataset = new DataSetMuseum();
-            dataset.Merge(logic.getRestorer());
-            dataset.Merge(logic.getRestoration());
-            dataset.Merge(logic.getExhibit());
-
-            UpdateDataView();
-        }
         private void UpdateDataView()
         {
             exhibitCombo = new DataView(dataset.Exhibit);
             RestorationList = new DataView(dataset.Restoration);
-            RestorerMainCombo = new DataView(dataset.Restorer);
-            RestorerCoopCombo = new DataView(dataset.Restorer);
         }
         private void SaveToDataBase()
         {
-            logic.setRestorer(dataset);
-            logic.setRestoration(dataset);
-            logic.setExhibit(dataset);
-            LoadDataFromBase();
+            ExW.SaveToDataBase();
+            UpdateDataView();
         }
 
         private ref DataView getExhibitCombo()
@@ -244,14 +233,6 @@ namespace MuseumObserver
         private ref DataView getRestorationList()
         {
             return ref RestorationList;
-        }
-        private ref DataView getRestorerMainCombo()
-        {
-            return ref RestorerMainCombo;
-        }
-        private ref DataView getRestorerCoopCombo()
-        {
-            return ref RestorerCoopCombo;
         }
         private void SetDataViewFilter(DataView curentView, string strFilter)
         {
@@ -282,13 +263,18 @@ namespace MuseumObserver
         {
             
             this.Enabled = false;
-            RestorationAdd restorationAdd = new RestorationAdd(this, ref dataset);
+            RestorationAdd restorationAdd = new RestorationAdd(this, ref dataset, ref CFunc);
             restorationAdd.Show();
         }
 
         private void Restoration_FormClosed(object sender, FormClosedEventArgs e)
         {
             ExW.Enabled = true;
+        }
+
+        private void AppearanceDateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            appearanceDateTo.MinDate = appearanceDateFrom.Value;
         }
     }
 }

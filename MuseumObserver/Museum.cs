@@ -18,8 +18,9 @@ namespace MuseumObserver
         protected int idListBox = -1;
         protected bool canChooseMuseum = false;
         Exhibit ExW;
-        ControlFunction CFunc;
+        
         string EnterNameMuseum = "Введите название музея!!!";
+        ControlFunction CFunc;
         public Museum(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset, ref ControlFunction tempConrolFunction)
         {
             InitializeComponent();

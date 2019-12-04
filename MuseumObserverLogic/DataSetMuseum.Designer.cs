@@ -842,7 +842,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExhibitRow AddExhibitRow(string Name, CategoryRow parentCategoryRowByCategory_Exhibit, System.DateTime CreatedDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
+            public ExhibitRow AddExhibitRow(string Name, CategoryRow parentCategoryRowByCategory_Exhibit, string CreatedDate, System.DateTime ApperanceDate, string Photo, string Description, CrutchRow parentCrutchRowByCrutch_Exhibit) {
                 ExhibitRow rowExhibitRow = ((ExhibitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -907,7 +907,7 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnName);
                 this.columnCategoryID = new global::System.Data.DataColumn("CategoryID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategoryID);
-                this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedDate);
                 this.columnApperanceDate = new global::System.Data.DataColumn("ApperanceDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApperanceDate);
@@ -925,6 +925,7 @@ namespace MuseumObserverLogic {
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 50;
+                this.columnCreatedDate.MaxLength = 50;
                 this.columnPhoto.MaxLength = 255;
                 this.columnDescription.MaxLength = 10000;
             }
@@ -2522,6 +2523,8 @@ namespace MuseumObserverLogic {
             
             private global::System.Data.DataColumn columnDescription;
             
+            private global::System.Data.DataColumn columnName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RestorationDataTable() {
@@ -2613,6 +2616,14 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2648,7 +2659,7 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RestorationRow AddRestorationRow(ExhibitRow parentExhibitRowByExhibit_Restoration, RestorerRow parentRestorerRowByRestorer_Restoration, System.DateTime Start, System.DateTime @__End_, string Photo, string Description) {
+            public RestorationRow AddRestorationRow(ExhibitRow parentExhibitRowByExhibit_Restoration, RestorerRow parentRestorerRowByRestorer_Restoration, System.DateTime Start, System.DateTime @__End_, string Photo, string Description, string Name) {
                 RestorationRow rowRestorationRow = ((RestorationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2657,7 +2668,8 @@ namespace MuseumObserverLogic {
                         Start,
                         @__End_,
                         Photo,
-                        Description};
+                        Description,
+                        Name};
                 if ((parentExhibitRowByExhibit_Restoration != null)) {
                     columnValuesArray[1] = parentExhibitRowByExhibit_Restoration[0];
                 }
@@ -2700,6 +2712,7 @@ namespace MuseumObserverLogic {
                 this._column_End_ = base.Columns["[End]"];
                 this.columnPhoto = base.Columns["Photo"];
                 this.columnDescription = base.Columns["Description"];
+                this.columnName = base.Columns["Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2721,6 +2734,8 @@ namespace MuseumObserverLogic {
                 base.Columns.Add(this.columnPhoto);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("RestorationKey", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2730,6 +2745,7 @@ namespace MuseumObserverLogic {
                 this.columnID.Unique = true;
                 this.columnPhoto.MaxLength = 255;
                 this.columnDescription.MaxLength = 10000;
+                this.columnName.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4060,10 +4076,10 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime CreatedDate {
+            public string CreatedDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableExhibit.CreatedDateColumn]));
+                        return ((string)(this[this.tableExhibit.CreatedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'CreatedDate\' в таблице \'Exhibit\' равно DBNull.", e);
@@ -4849,6 +4865,22 @@ namespace MuseumObserverLogic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableRestoration.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Name\' в таблице \'Restoration\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRestoration.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RestorerRow RestorerRow {
                 get {
                     return ((RestorerRow)(this.GetParentRow(this.Table.ParentRelations["Restorer_Restoration"])));
@@ -4939,6 +4971,18 @@ namespace MuseumObserverLogic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDescriptionNull() {
                 this[this.tableRestoration.DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableRestoration.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableRestoration.NameColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -71,7 +71,7 @@ namespace MuseumObserver
             dataset.Merge(logic.getRent());
             dataset.Merge(logic.getRestoration());
         }
-        private void SaveToDataBase()
+        public void SaveToDataBase()
         {
             logic.setMaecenas(dataset);
             logic.setRestorer(dataset);
@@ -404,7 +404,7 @@ namespace MuseumObserver
         private void Restorations1_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Restoration restorationOpen = new Restoration(this, ref dataset);
+            Restoration restorationOpen = new Restoration(this, ref dataset, ref CFunc);
             restorationOpen.Show();
         }
         private void Exhibitions1_Click(object sender, EventArgs e)

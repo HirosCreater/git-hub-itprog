@@ -52,6 +52,8 @@
             this.appearanceDateLabel = new System.Windows.Forms.Label();
             this.categoryLabel = new System.Windows.Forms.Label();
             this.restorerComboBox = new System.Windows.Forms.ComboBox();
+            this.RestorerNameTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             this.comboBoxExhibit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExhibit.FormattingEnabled = true;
-            this.comboBoxExhibit.Location = new System.Drawing.Point(772, 154);
+            this.comboBoxExhibit.Location = new System.Drawing.Point(766, 194);
             this.comboBoxExhibit.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxExhibit.Name = "comboBoxExhibit";
             this.comboBoxExhibit.Size = new System.Drawing.Size(257, 24);
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(672, 154);
+            this.label3.Location = new System.Drawing.Point(666, 194);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 17);
@@ -88,7 +90,7 @@
             // 
             // RememberChangesButton
             // 
-            this.RememberChangesButton.Location = new System.Drawing.Point(857, 186);
+            this.RememberChangesButton.Location = new System.Drawing.Point(851, 226);
             this.RememberChangesButton.Margin = new System.Windows.Forms.Padding(4);
             this.RememberChangesButton.Name = "RememberChangesButton";
             this.RememberChangesButton.Size = new System.Drawing.Size(172, 28);
@@ -101,7 +103,7 @@
             // 
             this.RestorationRestorerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RestorationRestorerComboBox.FormattingEnabled = true;
-            this.RestorationRestorerComboBox.Location = new System.Drawing.Point(772, 45);
+            this.RestorationRestorerComboBox.Location = new System.Drawing.Point(766, 85);
             this.RestorationRestorerComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationRestorerComboBox.Name = "RestorationRestorerComboBox";
             this.RestorationRestorerComboBox.Size = new System.Drawing.Size(257, 24);
@@ -161,7 +163,7 @@
             // 
             // setPhotoButton
             // 
-            this.setPhotoButton.Location = new System.Drawing.Point(671, 186);
+            this.setPhotoButton.Location = new System.Drawing.Point(665, 226);
             this.setPhotoButton.Margin = new System.Windows.Forms.Padding(4);
             this.setPhotoButton.Name = "setPhotoButton";
             this.setPhotoButton.Size = new System.Drawing.Size(172, 28);
@@ -172,7 +174,7 @@
             // 
             // RestorationEnd
             // 
-            this.RestorationEnd.Location = new System.Drawing.Point(857, 124);
+            this.RestorationEnd.Location = new System.Drawing.Point(851, 164);
             this.RestorationEnd.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationEnd.Name = "RestorationEnd";
             this.RestorationEnd.Size = new System.Drawing.Size(172, 22);
@@ -180,7 +182,7 @@
             // 
             // RestorationStart
             // 
-            this.RestorationStart.Location = new System.Drawing.Point(857, 86);
+            this.RestorationStart.Location = new System.Drawing.Point(851, 126);
             this.RestorationStart.Margin = new System.Windows.Forms.Padding(4);
             this.RestorationStart.Name = "RestorationStart";
             this.RestorationStart.Size = new System.Drawing.Size(172, 22);
@@ -189,7 +191,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(672, 124);
+            this.label7.Location = new System.Drawing.Point(666, 164);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 17);
@@ -199,7 +201,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(672, 86);
+            this.label6.Location = new System.Drawing.Point(666, 126);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 17);
@@ -209,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(672, 45);
+            this.label5.Location = new System.Drawing.Point(666, 85);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 17);
@@ -262,6 +264,7 @@
             this.appearanceDateFrom.Name = "appearanceDateFrom";
             this.appearanceDateFrom.Size = new System.Drawing.Size(172, 22);
             this.appearanceDateFrom.TabIndex = 64;
+            this.appearanceDateFrom.ValueChanged += new System.EventHandler(this.AppearanceDateFrom_ValueChanged);
             // 
             // appearanceDateLabel
             // 
@@ -294,11 +297,30 @@
             this.restorerComboBox.TabIndex = 61;
             this.restorerComboBox.SelectedIndexChanged += new System.EventHandler(this.restorerComboBox_SelectedIndexChanged);
             // 
+            // RestorerNameTextBox
+            // 
+            this.RestorerNameTextBox.Location = new System.Drawing.Point(669, 52);
+            this.RestorerNameTextBox.Name = "RestorerNameTextBox";
+            this.RestorerNameTextBox.Size = new System.Drawing.Size(354, 22);
+            this.RestorerNameTextBox.TabIndex = 85;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(803, 32);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 17);
+            this.label4.TabIndex = 86;
+            this.label4.Text = "Раставрация";
+            // 
             // Restoration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 553);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.RestorerNameTextBox);
             this.Controls.Add(this.TimeFilterCheckBox);
             this.Controls.Add(this.comboBoxExhibit);
             this.Controls.Add(this.label3);
@@ -359,5 +381,7 @@
         private System.Windows.Forms.Label appearanceDateLabel;
         private System.Windows.Forms.Label categoryLabel;
         private System.Windows.Forms.ComboBox restorerComboBox;
+        private System.Windows.Forms.TextBox RestorerNameTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }
