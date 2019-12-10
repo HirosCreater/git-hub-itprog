@@ -77,6 +77,15 @@ namespace MuseumObserver
             var dr = dataset.Maecenas.NewRow();
             dr["Name"] = NameMaecenas.Text;
             dataset.Maecenas.Rows.Add(dr);
+            ExW.SaveToDataBase();
+
+            DataView tempMaecenas = new DataView(dataset.Maecenas);
+            tempMaecenas.RowFilter = "Name = " + nameText;
+            var newRow = dataset.Maecenas.NewRow();
+            newRow["From"] = "Maecenas";
+            newRow["InstanceID"] = tempMaecenas[0][0];
+            dataset.Crutch.Rows.Add(newRow);
+            ExW.SaveToDataBase();
         }
 
         private void DeleteMaecenas_Click(object sender, EventArgs e)

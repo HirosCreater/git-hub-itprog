@@ -517,18 +517,18 @@ namespace MuseumObserverLogic
             try
             {
                 Transaction transaction = connection.BeginTransaction();
-                try
-                {
+                //try
+                //{
                     exhibit = new Exhibit();
                     exhibit.Save(dataSet, connection, transaction);
                     transaction.Commit();
                     result = true;
-                }
+                /*}
                 catch
                 {
                     transaction.Rollback();
                     result = false;
-                }
+                }*/
             }
             finally
             {

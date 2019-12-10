@@ -64,6 +64,7 @@ namespace MuseumObserver
             string nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterNameExhibit);
             if (nameText == "")
                 return;
+            newExhibit["Name"] = nameText;
             newExhibit["CategoryID"] = comboBoxExhibitCategor.SelectedValue;
             nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterCreationDate);
             if (nameText == "")

@@ -71,6 +71,15 @@ namespace MuseumObserver
             var dr = dataset.Museum.NewRow();
             dr["Name"] = nameText;
             dataset.Museum.Rows.Add(dr);
+            ExW.SaveToDataBase();
+
+            DataView tempMuseum = new DataView(dataset.Museum);
+            tempMuseum.RowFilter = "Name = " + nameText;
+            var newRow = dataset.Crutch.NewRow();
+            newRow["From"] = "Museum";
+            newRow["InstanceID"] = tempMuseum[0][0];
+            dataset.Crutch.Rows.Add(newRow);
+            ExW.SaveToDataBase();
         }
 
         private void DeleteMuseum_Click(object sender, EventArgs e)
