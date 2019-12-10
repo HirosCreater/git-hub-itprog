@@ -55,7 +55,6 @@
             this.radioMuseum = new System.Windows.Forms.RadioButton();
             this.radioMaecenas = new System.Windows.Forms.RadioButton();
             this.checkBoxTimeFilter = new System.Windows.Forms.CheckBox();
-            this.buttonRememberChenged = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Museums = new System.Windows.Forms.ToolStripMenuItem();
             this.Maecenas = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +65,8 @@
             this.Exhibitions = new System.Windows.Forms.ToolStripMenuItem();
             this.Exhibitions1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Showrooms = new System.Windows.Forms.ToolStripMenuItem();
-            this.TimeTextBox = new System.Windows.Forms.TextBox();
             this.SaveEnterChanges = new System.Windows.Forms.ToolStripMenuItem();
+            this.TimeTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -177,12 +176,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(564, 101);
+            this.label7.Location = new System.Drawing.Point(583, 101);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Дата создания";
+            this.label7.Text = "Возраст";
             // 
             // nameTextBox
             // 
@@ -222,7 +221,7 @@
             // 
             // setPhotoButton
             // 
-            this.setPhotoButton.Location = new System.Drawing.Point(567, 275);
+            this.setPhotoButton.Location = new System.Drawing.Point(680, 275);
             this.setPhotoButton.Margin = new System.Windows.Forms.Padding(4);
             this.setPhotoButton.Name = "setPhotoButton";
             this.setPhotoButton.Size = new System.Drawing.Size(172, 28);
@@ -356,17 +355,6 @@
             this.checkBoxTimeFilter.UseVisualStyleBackColor = true;
             this.checkBoxTimeFilter.CheckedChanged += new System.EventHandler(this.CheckBoxTimeFilter_CheckedChanged);
             // 
-            // buttonRememberChenged
-            // 
-            this.buttonRememberChenged.Location = new System.Drawing.Point(778, 275);
-            this.buttonRememberChenged.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonRememberChenged.Name = "buttonRememberChenged";
-            this.buttonRememberChenged.Size = new System.Drawing.Size(172, 28);
-            this.buttonRememberChenged.TabIndex = 33;
-            this.buttonRememberChenged.Text = "Запомнить изменения";
-            this.buttonRememberChenged.UseVisualStyleBackColor = true;
-            this.buttonRememberChenged.Click += new System.EventHandler(this.ButtonRememberChenged_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -449,6 +437,13 @@
             this.Showrooms.Text = "Залы";
             this.Showrooms.Click += new System.EventHandler(this.Showrooms_Click);
             // 
+            // SaveEnterChanges
+            // 
+            this.SaveEnterChanges.Name = "SaveEnterChanges";
+            this.SaveEnterChanges.Size = new System.Drawing.Size(260, 24);
+            this.SaveEnterChanges.Text = "Сохранить внесенные изменения";
+            this.SaveEnterChanges.Click += new System.EventHandler(this.SaveEnterChanges_Click);
+            // 
             // TimeTextBox
             // 
             this.TimeTextBox.Location = new System.Drawing.Point(680, 98);
@@ -457,20 +452,12 @@
             this.TimeTextBox.Size = new System.Drawing.Size(270, 22);
             this.TimeTextBox.TabIndex = 35;
             // 
-            // SaveEnterChanges
-            // 
-            this.SaveEnterChanges.Name = "SaveEnterChanges";
-            this.SaveEnterChanges.Size = new System.Drawing.Size(260, 24);
-            this.SaveEnterChanges.Text = "Сохранить внесенные изменения";
-            this.SaveEnterChanges.Click += new System.EventHandler(this.SaveEnterChanges_Click);
-            // 
             // Exhibit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 513);
             this.Controls.Add(this.TimeTextBox);
-            this.Controls.Add(this.buttonRememberChenged);
             this.Controls.Add(this.checkBoxTimeFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBoxGetFrom);
@@ -543,7 +530,6 @@
         private System.Windows.Forms.RadioButton radioMuseum;
         private System.Windows.Forms.RadioButton radioMaecenas;
         private System.Windows.Forms.CheckBox checkBoxTimeFilter;
-        private System.Windows.Forms.Button buttonRememberChenged;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem Museums;
         private System.Windows.Forms.ToolStripMenuItem Maecenas;

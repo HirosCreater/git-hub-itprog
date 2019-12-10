@@ -31,6 +31,7 @@ namespace MuseumObserver
         private bool canRemember = false;
 
         private string EnterNameExhibit = "Введите имя экспоната!!!";
+        private string EnterCreationDate = "Введите возраст экспоната!!!";
 
         private ControlFunction CFunc = new ControlFunction();
         public Exhibit()
@@ -135,6 +136,7 @@ namespace MuseumObserver
                     tempViewDaritel = new DataView(dataset.Museum);
                     comboBoxGetFrom.DataSource = tempViewDaritel;
                     comboBoxGetFrom.SelectedValue = tempIDDaritel;
+                    getFromID = tempIDDaritel;
                 }
                 else
                 {
@@ -144,6 +146,7 @@ namespace MuseumObserver
                         tempViewDaritel = new DataView(dataset.Maecenas);
                         comboBoxGetFrom.DataSource = tempViewDaritel;
                         comboBoxGetFrom.SelectedValue = tempIDDaritel;
+                        getFromID = tempIDDaritel;
                     }
                     else
                     {
@@ -158,6 +161,7 @@ namespace MuseumObserver
             {
                 comboBoxExhibitCategor.DataSource = exhibitsCategor;
                 comboBoxExhibitCategor.SelectedValue = categoryComboBox.SelectedValue;
+                categorID = (int)tempRow["CategoryID"];
             }
             //Вывод картинки экспоната
             {
@@ -174,14 +178,16 @@ namespace MuseumObserver
             //Вывод дат появления экспоната в музее
             {
                 appearanceDate.Value = (DateTime)tempRow["AppearanceDate"];
+                TimeTextBox.Text = (String)tempRow["CreatedDate"];
             }
             //Вывод описания экспоната
             {
                 descriptionTextBox.Text = (string)tempRow["Description"];
             }
 
-            getFromID = (int)dataset.Crutch.Rows.Find(tempRow["CrutchID"])["InstanceID"];
-            categorID = (int)tempRow["CategoryID"];
+            
+
+
 
             getEnabledControl = true;
             ChangeActivityControl();
@@ -201,7 +207,7 @@ namespace MuseumObserver
         {
             if (canChooseListBox)
             {
-                canChooseListBox = false;
+                canChooseListBox = false;   
                 canRemember = true;
                 canChooseComboBoxGetFrom = false;
                 canChooseComboBoxExhibitCategor = false;
@@ -270,23 +276,11 @@ namespace MuseumObserver
             groupBox1.Enabled = getEnabledControl;
             comboBoxExhibitCategor.Enabled = getEnabledControl;
             setPhotoButton.Enabled = getEnabledControl;
-            buttonRememberChenged.Enabled = getEnabledControl;
+            saveButton.Enabled = getEnabledControl;
         }
         private void ButtonRememberChenged_Click(object sender, EventArgs e)
         {
-            if (canRemember)
-            {
-                canChooseComboBoxGetFrom = false;
-                canChooseComboBoxExhibitCategor = false;
-                canChooseListBox = false;
-                canRemember = false;
-                RememberChenged();
-                canRemember = true;
-                canChooseListBox = true;
-                canChooseComboBoxGetFrom = true;
-                canChooseComboBoxExhibitCategor = true;
-            }
-        }
+                   }
         private void RememberChenged()
         {
             string nameText = CFunc.CheckTextBox(this, nameTextBox.Text, EnterNameExhibit);
@@ -308,7 +302,13 @@ namespace MuseumObserver
 
 
             dataset.Exhibit.Rows.Find(exhibitID)["AppearanceDate"] = appearanceDate.Value;
-            if (photoFilePath != "NOTHING" || photoFilePath != null)
+
+            nameText = CFunc.CheckTextBox(this, TimeTextBox.Text, EnterCreationDate);
+            if (nameText == "")
+                return;
+            dataset.Exhibit.Rows.Find(exhibitID)["CreatedDate"] = nameText;
+
+            //if (photoFilePath != "NOTHING" || photoFilePath != null)
             {
                 dataset.Exhibit.Rows.Find(exhibitID)["Photo"] = photoFilePath;
                 photoFilePath = null;
@@ -369,36 +369,18 @@ namespace MuseumObserver
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            //SaveToDataBase();
-            DataView tempCrutch = new DataView(dataset.Crutch);
-            DataView tempTable = new DataView(dataset.Maecenas);
-            for (int i = 0; i < dataset.Maecenas.Rows.Count; i++)
+            if (canRemember)
             {
-                tempCrutch.RowFilter = "[From] = 'Maecenas' AND InstanceID = " + dataset.Maecenas.Rows[i]["ID"];
-                if (tempCrutch.Count == 0)
-                {
-                    var newRow = dataset.Crutch.NewRow();
-                    /*int newID = (int)dataset.Crutch.Max(row => row.ID) + 1; 
-                    newRow["ID"] = newID;*/
-                    newRow["From"] = "Maecenas";
-                    newRow["InstanceID"] = dataset.Maecenas.Rows[i]["ID"];
-                    dataset.Crutch.Rows.Add(newRow);
-                }
+                canChooseComboBoxGetFrom = false;
+                canChooseComboBoxExhibitCategor = false;
+                canChooseListBox = false;
+                canRemember = false;
+                RememberChenged();
+                canRemember = true;
+                canChooseListBox = true;
+                canChooseComboBoxGetFrom = true;
+                canChooseComboBoxExhibitCategor = true;
             }
-            for (int i = 0; i < dataset.Museum.Rows.Count; i++)
-            {
-                tempCrutch.RowFilter = "[From] = 'Museum' AND InstanceID = " + dataset.Museum.Rows[i]["ID"];
-                if (tempCrutch.Count == 0)
-                {
-                    var newRow = dataset.Crutch.NewRow();
-                    /*int newID = (int)dataset.Crutch.Max(row => row.ID) + 1; 
-                    newRow["ID"] = newID;*/
-                    newRow["From"] = "Museum";
-                    newRow["InstanceID"] = dataset.Museum.Rows[i]["ID"];
-                    dataset.Crutch.Rows.Add(newRow);
-                }
-            }
-            SaveToDataBase();
         }
         private void SetDefaultRestorationControls()
         {
@@ -450,6 +432,18 @@ namespace MuseumObserver
         }
         private void SaveEnterChanges_Click(object sender, EventArgs e)
         {
+            if (canRemember)
+            {
+                canChooseComboBoxGetFrom = false;
+                canChooseComboBoxExhibitCategor = false;
+                canChooseListBox = false;
+                canRemember = false;
+                RememberChenged();
+                canRemember = true;
+                canChooseListBox = true;
+                canChooseComboBoxGetFrom = true;
+                canChooseComboBoxExhibitCategor = true;
+            }
             SaveToDataBase();
         }
     }

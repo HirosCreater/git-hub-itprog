@@ -1,4 +1,6 @@
 ﻿using MuseumObserverLogic.Entity;
+using System;
+using System.Windows.Forms;
 
 namespace MuseumObserverLogic
 {
@@ -66,8 +68,9 @@ namespace MuseumObserverLogic
                     showroom.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -93,8 +96,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -120,8 +124,9 @@ namespace MuseumObserverLogic
                     restorer.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -147,8 +152,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -174,8 +180,9 @@ namespace MuseumObserverLogic
                     restoration.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -201,8 +208,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -228,8 +236,9 @@ namespace MuseumObserverLogic
                     rent.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -255,8 +264,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -282,8 +292,9 @@ namespace MuseumObserverLogic
                     museum.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -309,8 +320,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -336,8 +348,9 @@ namespace MuseumObserverLogic
                     maecenas.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -363,8 +376,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -390,8 +404,9 @@ namespace MuseumObserverLogic
                     exhibition.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -417,8 +432,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -444,8 +460,9 @@ namespace MuseumObserverLogic
                     exhibit_Exhibition.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -471,8 +488,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -497,8 +515,9 @@ namespace MuseumObserverLogic
                     exhibit.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -517,18 +536,19 @@ namespace MuseumObserverLogic
             try
             {
                 Transaction transaction = connection.BeginTransaction();
-                //try
-                //{
+                try
+                {
                     exhibit = new Exhibit();
                     exhibit.Save(dataSet, connection, transaction);
                     transaction.Commit();
                     result = true;
-                /*}
-                catch
+                }
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString()); 
                     transaction.Rollback();
                     result = false;
-                }*/
+                }
             }
             finally
             {
@@ -551,8 +571,9 @@ namespace MuseumObserverLogic
                     crutch.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -578,8 +599,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -605,8 +627,9 @@ namespace MuseumObserverLogic
                     category.Read(result, connection, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = null;
                 }
@@ -632,8 +655,9 @@ namespace MuseumObserverLogic
                     transaction.Commit();
                     result = true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    ShowError(ex.ToString());
                     transaction.Rollback();
                     result = false;
                 }
@@ -644,6 +668,15 @@ namespace MuseumObserverLogic
             }
             return result;
         }
+        public void ShowError(string showSTR)
+        {
+            MessageBox.Show(
+                showSTR,
+                "Сообщение",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
+        }
     }
-    
 }

@@ -25,7 +25,7 @@ namespace MuseumObserverLogic.Entity
             dataAdapter.InsertCommand.Parameters.Add("@Description", SqlDbType.NText, 10000, "Description");
             dataAdapter.InsertCommand.Parameters.Add("@CrutchID", SqlDbType.Int, 11, "CrutchID");
 
-            dataAdapter.UpdateCommand = new System.Data.SqlClient.SqlCommand(string.Format("UPDATE Exhibit SET Name = @Name, CategoryID = @CategoryID, CreatedDate = @CreatedDate, AppearanceDate = @AppearanceDate, Photo = @Photo, Description = @Description, CrutchID = CrutchID WHERE ID = @ID;"), conn.getConnection(), tr.getTransaction());
+            dataAdapter.UpdateCommand = new System.Data.SqlClient.SqlCommand(string.Format("UPDATE Exhibit SET Name = @Name, CategoryID = @CategoryID, CreatedDate = @CreatedDate, AppearanceDate = @AppearanceDate, Photo = @Photo, Description = @Description, CrutchID = @CrutchID WHERE ID = @ID;"), conn.getConnection(), tr.getTransaction());
             dataAdapter.UpdateCommand.Parameters.Add("@ID", SqlDbType.Int, 11, "ID");
             dataAdapter.UpdateCommand.Parameters.Add("@Name", SqlDbType.NVarChar, 50, "Name");
             dataAdapter.UpdateCommand.Parameters.Add("@CategoryID", SqlDbType.Int, 11, "CategoryID");

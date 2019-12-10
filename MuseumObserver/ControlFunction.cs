@@ -138,5 +138,6 @@ namespace MuseumObserver
                 MessageBoxDefaultButton.Button1,
                 MessageBoxOptions.DefaultDesktopOnly);
         }
+
     }
 }
