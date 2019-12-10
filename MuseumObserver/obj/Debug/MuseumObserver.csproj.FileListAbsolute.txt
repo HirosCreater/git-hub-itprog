@@ -49,7 +49,6 @@ E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Museum.resources
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.ExhibitAdd.resources
 C:\Users\olegi\source\repos\MuseumObserver\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Form1.resources
 E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.ExhibitAdd.resources
-E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.Form1.resources
 C:\MuseumObserver\MuseumObserver\bin\Debug\MuseumObserver.exe.config
 C:\MuseumObserver\MuseumObserver\bin\Debug\MuseumObserver.exe
 C:\MuseumObserver\MuseumObserver\bin\Debug\MuseumObserver.pdb
@@ -72,3 +71,4 @@ C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.csproj.CopyComplete
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.exe
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.pdb
 C:\MuseumObserver\MuseumObserver\obj\Debug\MuseumObserver.RestorationAdd.resources
+E:\IT_Project\MuseumObserver\obj\Debug\MuseumObserver.RestorationAdd.resources

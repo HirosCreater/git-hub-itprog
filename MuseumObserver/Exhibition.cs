@@ -16,6 +16,7 @@ namespace MuseumObserver
         DataSetMuseum dataset;
         Logic logic = new Logic();
         Exhibit ExW;
+        private bool canRemember = false;
         public Exhibition(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset)
         {
             InitializeComponent();
@@ -69,18 +70,26 @@ namespace MuseumObserver
 
         private void exhibitionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setExhibitListBox();
-            setNameTextBox();
+            try
+            {
+                setExhibitListBox();
+                setNameTextBox();
+                setStartDate();
+                setEndDate();
+            }
+            catch(Exception ex) { }
         }
 
         private void setStartDate()
         {
-
+            DataRow tempRow = dataset.Exhibition.Rows.Find(exhibitionListBox.SelectedValue);
+            startDate.Value = (DateTime)tempRow["Start"];
         }
         
         private void setEndDate()
         {
-
+            DataRow tempRow = dataset.Exhibition.Rows.Find(exhibitionListBox.SelectedValue);
+            endDate.Value = (DateTime)tempRow["End"];
         }
 
 
@@ -89,6 +98,11 @@ namespace MuseumObserver
         private void Exhibition_FormClosed(object sender, FormClosedEventArgs e)
         {
             ExW.Enabled = true;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
