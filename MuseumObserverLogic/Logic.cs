@@ -257,8 +257,8 @@ namespace MuseumObserverLogic
             try
             {
                 Transaction transaction = connection.BeginTransaction();
-                try
-                {
+               try
+               {
                     rent = new Rent();
                     rent.Save(dataSet, connection, transaction);
                     transaction.Commit();

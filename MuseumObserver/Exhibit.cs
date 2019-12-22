@@ -277,6 +277,7 @@ namespace MuseumObserver
             comboBoxExhibitCategor.Enabled = getEnabledControl;
             setPhotoButton.Enabled = getEnabledControl;
             saveButton.Enabled = getEnabledControl;
+            RememberButton.Enabled = getEnabledControl;
         }
         private void ButtonRememberChenged_Click(object sender, EventArgs e)
         {
@@ -365,6 +366,10 @@ namespace MuseumObserver
                 canChooseComboBoxExhibitCategor = true;
 
                 canChooseListBox = true;
+
+                getEnabledControl = false;
+                ChangeActivityControl();
+                SetDefaultRestorationControls();
             }
         }
         private void SaveButton_Click(object sender, EventArgs e)
@@ -384,6 +389,9 @@ namespace MuseumObserver
         }
         private void SetDefaultRestorationControls()
         {
+            canChooseComboBoxGetFrom = false;
+            canChooseComboBoxExhibitCategor = false;
+
             pictureBox1.Image = Image.FromFile("Pictures/DefaultImage.jpg");
             nameTextBox.Text = "";
             appearanceDate.Value = DateTime.Now;
@@ -409,7 +417,7 @@ namespace MuseumObserver
         private void Rents_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Rent rentOpen = new Rent(this, ref dataset);
+            Rent rentOpen = new Rent(this, ref dataset, ref CFunc);
             rentOpen.Show();
         }
         private void Restorations1_Click(object sender, EventArgs e)
@@ -432,6 +440,24 @@ namespace MuseumObserver
         }
         private void SaveEnterChanges_Click(object sender, EventArgs e)
         {
+            
+            SaveToDataBase();
+        }
+
+        private void Restorersa_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Restorer restorerOpen = new Restorer(this, ref dataset, ref CFunc);
+            restorerOpen.Show();
+        }
+
+        private void AppearanceDateTo_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RememberButton_Click(object sender, EventArgs e)
+        {
             if (canRemember)
             {
                 canChooseComboBoxGetFrom = false;
@@ -444,14 +470,6 @@ namespace MuseumObserver
                 canChooseComboBoxGetFrom = true;
                 canChooseComboBoxExhibitCategor = true;
             }
-            SaveToDataBase();
-        }
-
-        private void Restorersa_Click(object sender, EventArgs e)
-        {
-            this.Enabled = false;
-            Restorer restorerOpen = new Restorer(this, ref dataset, ref CFunc);
-            restorerOpen.Show();
         }
     }
 }

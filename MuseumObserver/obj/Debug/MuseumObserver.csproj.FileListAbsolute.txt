@@ -85,7 +85,6 @@ D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.E
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Maecenas.resources
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Museum.resources
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Properties.Resources.resources
-D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Rent.resources
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Restoration.resources
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.RestorationAdd.resources
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Showroom.resources
@@ -95,3 +94,4 @@ D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.c
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.exe
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.pdb
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Restorer.resources
+D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Rent.resources

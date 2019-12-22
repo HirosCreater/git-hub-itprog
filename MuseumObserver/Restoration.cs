@@ -32,8 +32,8 @@ namespace MuseumObserver
         string EnterNameRestorations = "Введите название реставрации!";
         string ChooseNewRestorer = "Выберите реставратора!";
         string ChooseNewExhibit = "Выберите реставрируемый экспонат!";
-        int indexNewRestorer = -1;
-        int indexNewExhibit = -1;
+        int indexNewRestorer = 0;
+        int indexNewExhibit = 0;
         public Restoration(Exhibit tempExhibitWindow, ref DataSetMuseum tempDataset, ref ControlFunction tempConrolFunction)
         {
             InitializeComponent();
@@ -41,6 +41,7 @@ namespace MuseumObserver
             dataset = tempDataset;
             ExW = tempExhibitWindow;
             CFunc = tempConrolFunction;
+            UpdateDataView();
 
             photoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             photoPictureBox.Image = Image.FromFile("Pictures/DefaultImage.jpg");
@@ -126,9 +127,16 @@ namespace MuseumObserver
 
             //Вывод экспоната и реставратора
             {
+                RestorationRestorerComboBox.DataSource = null;
                 RestorationRestorerComboBox.DataSource = dataset.Restorer;
+                RestorationRestorerComboBox.DisplayMember = "Name";
+                RestorationRestorerComboBox.ValueMember = "ID";
                 RestorationRestorerComboBox.SelectedValue = tempRowExhibitRestoration["RestorerID"];
+
+                comboBoxExhibit.DataSource = null;
                 comboBoxExhibit.DataSource = dataset.Exhibit;
+                comboBoxExhibit.DisplayMember = "Name";
+                comboBoxExhibit.ValueMember = "ID";
                 comboBoxExhibit.SelectedValue = tempRowExhibitRestoration["ExhibitID"];
             }
             //вывод дат реставрации
@@ -189,12 +197,12 @@ namespace MuseumObserver
             string nameText = CFunc.CheckTextBox(this, RestorerNameTextBox.Text, EnterNameRestorations);
             if (nameText == "")
                 return;
-            if (indexNewRestorer == -1)
+            if (indexNewRestorer == 0)
             {
                 CFunc.ShowMessage(ChooseNewRestorer);
                 return;
             }
-            if (indexNewExhibit == -1)
+            if (indexNewExhibit == 0)
             {
                 CFunc.ShowMessage(ChooseNewExhibit);
                 return;
@@ -245,6 +253,7 @@ namespace MuseumObserver
         }
         private void SetDefaultRestorationControls()
         {
+            RestorerNameTextBox.Text = "";
             photoPictureBox.Image = Image.FromFile("Pictures/DefaultImage.jpg");
             RestorationRestorerComboBox.DataSource = null;
             RestorationStart.Value = DateTime.Now;

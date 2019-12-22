@@ -67,6 +67,7 @@
             this.Showrooms = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveEnterChanges = new System.Windows.Forms.ToolStripMenuItem();
             this.TimeTextBox = new System.Windows.Forms.TextBox();
+            this.RememberButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -119,6 +120,7 @@
             this.appearanceDateTo.Name = "appearanceDateTo";
             this.appearanceDateTo.Size = new System.Drawing.Size(172, 22);
             this.appearanceDateTo.TabIndex = 5;
+            this.appearanceDateTo.ValueChanged += new System.EventHandler(this.AppearanceDateTo_ValueChanged_1);
             // 
             // label1
             // 
@@ -202,7 +204,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(677, 130);
+            this.label8.Location = new System.Drawing.Point(677, 190);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(148, 17);
@@ -221,7 +223,7 @@
             // 
             // setPhotoButton
             // 
-            this.setPhotoButton.Location = new System.Drawing.Point(680, 275);
+            this.setPhotoButton.Location = new System.Drawing.Point(567, 275);
             this.setPhotoButton.Margin = new System.Windows.Forms.Padding(4);
             this.setPhotoButton.Name = "setPhotoButton";
             this.setPhotoButton.Size = new System.Drawing.Size(172, 28);
@@ -302,7 +304,7 @@
             // 
             this.comboBoxGetFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGetFrom.FormattingEnabled = true;
-            this.comboBoxGetFrom.Location = new System.Drawing.Point(567, 151);
+            this.comboBoxGetFrom.Location = new System.Drawing.Point(567, 211);
             this.comboBoxGetFrom.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxGetFrom.Name = "comboBoxGetFrom";
             this.comboBoxGetFrom.Size = new System.Drawing.Size(383, 24);
@@ -313,7 +315,7 @@
             // 
             this.groupBox1.Controls.Add(this.radioMuseum);
             this.groupBox1.Controls.Add(this.radioMaecenas);
-            this.groupBox1.Location = new System.Drawing.Point(650, 182);
+            this.groupBox1.Location = new System.Drawing.Point(640, 133);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 54);
             this.groupBox1.TabIndex = 31;
@@ -404,14 +406,14 @@
             // Restorations1
             // 
             this.Restorations1.Name = "Restorations1";
-            this.Restorations1.Size = new System.Drawing.Size(224, 26);
+            this.Restorations1.Size = new System.Drawing.Size(189, 26);
             this.Restorations1.Text = "Реставрации";
             this.Restorations1.Click += new System.EventHandler(this.Restorations1_Click);
             // 
             // Restorersa
             // 
             this.Restorersa.Name = "Restorersa";
-            this.Restorersa.Size = new System.Drawing.Size(224, 26);
+            this.Restorersa.Size = new System.Drawing.Size(189, 26);
             this.Restorersa.Text = "Реставраторы";
             this.Restorersa.Click += new System.EventHandler(this.Restorersa_Click);
             // 
@@ -453,11 +455,23 @@
             this.TimeTextBox.Size = new System.Drawing.Size(270, 22);
             this.TimeTextBox.TabIndex = 35;
             // 
+            // RememberButton
+            // 
+            this.RememberButton.Location = new System.Drawing.Point(778, 275);
+            this.RememberButton.Margin = new System.Windows.Forms.Padding(4);
+            this.RememberButton.Name = "RememberButton";
+            this.RememberButton.Size = new System.Drawing.Size(172, 28);
+            this.RememberButton.TabIndex = 36;
+            this.RememberButton.Text = "Запомнить изменения";
+            this.RememberButton.UseVisualStyleBackColor = true;
+            this.RememberButton.Click += new System.EventHandler(this.RememberButton_Click);
+            // 
             // Exhibit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 513);
+            this.Controls.Add(this.RememberButton);
             this.Controls.Add(this.TimeTextBox);
             this.Controls.Add(this.checkBoxTimeFilter);
             this.Controls.Add(this.groupBox1);
@@ -543,5 +557,6 @@
         private System.Windows.Forms.ToolStripMenuItem Showrooms;
         private System.Windows.Forms.TextBox TimeTextBox;
         private System.Windows.Forms.ToolStripMenuItem SaveEnterChanges;
+        private System.Windows.Forms.Button RememberButton;
     }
 }
