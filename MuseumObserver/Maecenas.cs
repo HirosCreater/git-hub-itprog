@@ -41,6 +41,7 @@ namespace MuseumObserver
             {
                 idListBox = (int)MaecenasListBox.SelectedValue;
                 NameMaecenas.Text = dataset.Maecenas.Rows.Find(idListBox)["Name"].ToString();
+                ChangeMaecenas.Enabled = false;
             }
         }
 
@@ -80,7 +81,7 @@ namespace MuseumObserver
             ExW.SaveToDataBase();
 
             DataView tempMaecenas = new DataView(dataset.Maecenas);
-            tempMaecenas.RowFilter = "Name = " + nameText;
+            tempMaecenas.RowFilter = "Name = " + "'" + nameText + "'";
             var newRow = dataset.Maecenas.NewRow();
             newRow["From"] = "Maecenas";
             newRow["InstanceID"] = tempMaecenas[0][0];
@@ -96,6 +97,7 @@ namespace MuseumObserver
                 NameMaecenas.Text = "";
                 dataset.Maecenas.Rows.Find(idListBox).Delete();
                 idListBox = 0;
+                ExW.SaveToDataBase();
             }
             else
             {

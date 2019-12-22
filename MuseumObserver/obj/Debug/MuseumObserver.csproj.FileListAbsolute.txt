@@ -94,3 +94,4 @@ D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.c
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.csproj.CopyComplete
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.exe
 D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.pdb
+D:\Project\HirosCreater\git-hub-itprog\MuseumObserver\obj\Debug\MuseumObserver.Restorer.resources

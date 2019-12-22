@@ -39,6 +39,7 @@ namespace MuseumObserver
             {
                 idListBox = (int)MuseumListBox.SelectedValue;
                 NameMuseum.Text = dataset.Museum.Rows.Find(idListBox)["Name"].ToString();
+                ChangeMuseum.Enabled = true;
             }
         }
 
@@ -50,6 +51,7 @@ namespace MuseumObserver
             if (nameText != "")
             {
                 dataset.Museum.Rows.Find(idListBox)["Name"] = NameMuseum.Text;
+                ChangeMuseum.Enabled = true;
             }
             canChooseMuseum = true;
             return;
@@ -74,11 +76,12 @@ namespace MuseumObserver
             ExW.SaveToDataBase();
 
             DataView tempMuseum = new DataView(dataset.Museum);
-            tempMuseum.RowFilter = "Name = " + nameText;
+            tempMuseum.RowFilter = "Name = " + "'" + nameText + "'";
             var newRow = dataset.Crutch.NewRow();
             newRow["From"] = "Museum";
             newRow["InstanceID"] = tempMuseum[0][0];
             dataset.Crutch.Rows.Add(newRow);
+            ChangeMuseum.Enabled = false;
             ExW.SaveToDataBase();
         }
 
@@ -89,6 +92,7 @@ namespace MuseumObserver
             {
                 NameMuseum.Text = "";
                 dataset.Museum.Rows.Find(idListBox).Delete();
+                ChangeMuseum.Enabled = false;
                 idListBox = 0;
             }
             else
@@ -101,6 +105,7 @@ namespace MuseumObserver
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.DefaultDesktopOnly);
             }
+            ExW.SaveToDataBase();
             canChooseMuseum = true;
         }
 

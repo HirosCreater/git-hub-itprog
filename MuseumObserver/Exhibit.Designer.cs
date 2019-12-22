@@ -404,15 +404,16 @@
             // Restorations1
             // 
             this.Restorations1.Name = "Restorations1";
-            this.Restorations1.Size = new System.Drawing.Size(189, 26);
+            this.Restorations1.Size = new System.Drawing.Size(224, 26);
             this.Restorations1.Text = "Реставрации";
             this.Restorations1.Click += new System.EventHandler(this.Restorations1_Click);
             // 
             // Restorersa
             // 
             this.Restorersa.Name = "Restorersa";
-            this.Restorersa.Size = new System.Drawing.Size(189, 26);
+            this.Restorersa.Size = new System.Drawing.Size(224, 26);
             this.Restorersa.Text = "Реставраторы";
+            this.Restorersa.Click += new System.EventHandler(this.Restorersa_Click);
             // 
             // Exhibitions
             // 

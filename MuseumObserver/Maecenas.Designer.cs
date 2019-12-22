@@ -92,6 +92,7 @@
             // 
             this.ChangeMaecenas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChangeMaecenas.Enabled = false;
             this.ChangeMaecenas.Location = new System.Drawing.Point(13, 331);
             this.ChangeMaecenas.Name = "ChangeMaecenas";
             this.ChangeMaecenas.Size = new System.Drawing.Size(358, 28);

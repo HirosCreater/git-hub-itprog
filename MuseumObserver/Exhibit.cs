@@ -446,5 +446,12 @@ namespace MuseumObserver
             }
             SaveToDataBase();
         }
+
+        private void Restorersa_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Restorer restorerOpen = new Restorer(this, ref dataset, ref CFunc);
+            restorerOpen.Show();
+        }
     }
 }

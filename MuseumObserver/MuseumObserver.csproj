@@ -97,6 +97,12 @@
     <Compile Include="RestorationAdd.Designer.cs">
       <DependentUpon>RestorationAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Restorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restorer.Designer.cs">
+      <DependentUpon>Restorer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Showroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RestorationAdd.resx">
       <DependentUpon>RestorationAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restorer.resx">
+      <DependentUpon>Restorer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Showroom.resx">
       <DependentUpon>Showroom.cs</DependentUpon>

@@ -15,6 +15,7 @@ namespace MuseumObserver
         Museum MusW;
         Maecenas MaecW;
         Showroom ShowW;
+        Restorer RestorerW;
         ExhibitAdd ExAddW;
         public ControlFunction()
         {
@@ -123,6 +124,20 @@ namespace MuseumObserver
                         ShowMessage(showSTR);
                     }
                     ShowW.Enabled = true;
+                    return checkStr;
+                }
+            }
+            //Для Restorer
+            {
+                if (window.GetType() == typeof(Restorer))
+                {
+                    RestorerW = (Restorer)window;
+                    RestorerW.Enabled = false;
+                    if (checkStr.Trim() == "")
+                    {
+                        ShowMessage(showSTR);
+                    }
+                    RestorerW.Enabled = true;
                     return checkStr;
                 }
             }
