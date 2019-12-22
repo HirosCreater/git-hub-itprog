@@ -15,7 +15,7 @@ namespace MuseumObserver
     {
         DataSetMuseum dataset;
         Logic logic = new Logic();
-        protected int idListBox = -1;
+        protected int idListBox = 0;
         protected bool canChooseMaecenas = false;
         Exhibit ExW;
         string EnterNameMaecenas = "Введите имя мецената!";
@@ -46,7 +46,7 @@ namespace MuseumObserver
 
         private void ChangeMaecenas_Click(object sender, EventArgs e)
         {
-            if (idListBox != -1)
+            if (idListBox != 0)
             {
                 string nameText = CFunc.CheckTextBox(this, NameMaecenas.Text, EnterNameMaecenas);
                 if (nameText == "")
@@ -91,11 +91,11 @@ namespace MuseumObserver
         private void DeleteMaecenas_Click(object sender, EventArgs e)
         {
             canChooseMaecenas = false;
-            if (idListBox != -1)
+            if (idListBox != 0)
             {
                 NameMaecenas.Text = "";
                 dataset.Maecenas.Rows.Find(idListBox).Delete();
-                idListBox = -1;
+                idListBox = 0;
             }
             else
             {

@@ -15,7 +15,7 @@ namespace MuseumObserver
     {
         DataSetMuseum dataset;
         Logic logic = new Logic();
-        protected int idListBox = -1;
+        protected int idListBox = 0;
         protected bool canChooseMuseum = false;
         Exhibit ExW;
         
@@ -85,11 +85,11 @@ namespace MuseumObserver
         private void DeleteMuseum_Click(object sender, EventArgs e)
         {
             canChooseMuseum = false;
-            if (idListBox != -1)
+            if (idListBox != 0)
             {
                 NameMuseum.Text = "";
                 dataset.Museum.Rows.Find(idListBox).Delete();
-                idListBox = -1;
+                idListBox = 0;
             }
             else
             {

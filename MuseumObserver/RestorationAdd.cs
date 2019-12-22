@@ -22,8 +22,8 @@ namespace MuseumObserver
         string photoFilePath;
         ControlFunction CFunc;
 
-        int indexRestorer = -1;
-        int indexExhibit = -1;
+        int indexRestorer = 0;
+        int indexExhibit = 0;
 
         bool CanChooseRestorer = false;
         bool CanChooseExhibit = false;
@@ -69,14 +69,14 @@ namespace MuseumObserver
         {
             var newExhibit = dataset.Restoration.NewRow();
 
-            if (indexRestorer == -1)
+            if (indexRestorer == 0)
             {
                 CFunc.ShowMessage("Выберите реставратора!");
                 return;
             }
             newExhibit["RestorerID"] = RestorationRestorerComboBox.SelectedValue;
 
-            if (indexExhibit == -1)
+            if (indexExhibit == 0)
             {
                 CFunc.ShowMessage("Выберите экспонат!");
                 return;
